@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100
   },
-});
+}); 
 
 class Row extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Row extends React.Component {
   }
 
   _rowPressed() {
-    console.log('Row Pressed lololol')
+    this.props.navigate('Detail', this.props);
   }
 
   render() {

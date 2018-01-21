@@ -24,13 +24,12 @@ export default class ItemDetail extends React.Component {
       
   constructor(props) {
     super(props);
-    console.log(this.name);
   }
   render() {
 
     return (
         <View style={styles.container}>
-          <Text>{this.props.name}</Text>
+          <Text>{`${this.props.navigation.state.params.name}`}</Text>
         </View>
     );
   }

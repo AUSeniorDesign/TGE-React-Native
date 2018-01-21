@@ -47,7 +47,9 @@ class App extends React.Component {
         <ListView
           style={styles.container}
           dataSource={this.state.dataSource}
-          renderRow={(data) => <Row {...data} navigate={navigate}/>}
+          renderRow={(data)  => {
+            return <Row {...data} navigate={navigate}/>
+          }}
         />
       </View>
     );
