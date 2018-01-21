@@ -1,5 +1,5 @@
 {
-  "name": "TGE-React-Native",
+  "name": "TGE",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -19,8 +19,11 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "auth0-js": "8.12.0",
     "expo": "^23.0.4",
     "react": "16.0.0",
-    "react-native": "0.50.3"
+    "react-native": "0.50.3",
+    "react-native-grid-view": "^0.4.1",
+    "react-navigation": "^1.0.0-beta.27"
   }
 }
