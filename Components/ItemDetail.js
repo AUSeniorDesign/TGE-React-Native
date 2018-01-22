@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react' 
 import { 
   AppRegistry, 
   Image,
@@ -6,8 +6,8 @@ import {
   TouchableHighlight,
   StyleSheet,
   Text,
-  View} from 'react-native';
-  import { StackNavigator } from 'react-navigation';
+  View} from 'react-native' 
+import { StackNavigator } from 'react-navigation' 
 
 
   const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ import {
       flex: 1,
       marginTop: 20,
     },
-  });
+  }) 
 
 export default class ItemDetail extends React.Component {
     static navigationOptions = {
@@ -23,7 +23,7 @@ export default class ItemDetail extends React.Component {
       }
       
   constructor(props) {
-    super(props);
+    super(props) 
   }
   render() {
 
@@ -31,7 +31,7 @@ export default class ItemDetail extends React.Component {
         <View style={styles.container}>
           <Text>{`${this.props.navigation.state.params.name}`}</Text>
         </View>
-    );
+    ) 
   }
 }
 

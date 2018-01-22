@@ -1,7 +1,6 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-import App from './App';
+import React from 'react' 
+import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native' 
+import { StackNavigator } from 'react-navigation' 
 import ItemDetail from './ItemDetail'
 
 const styles = StyleSheet.create({
@@ -19,15 +18,15 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100
   },
-}); 
+})  
 
 class Row extends React.Component {
   constructor(props) {
-    super(props);
+    super(props) 
   }
 
   _rowPressed() {
-    this.props.navigate('Detail', this.props);
+    //this.props.navigate('Detail', this.props) 
   }
 
   render() {
@@ -48,4 +47,4 @@ class Row extends React.Component {
 }
 
 
-export default Row;
+export default Row 
