@@ -9,8 +9,7 @@ export function fetchItemsFromAPI() {
             .then(res => res.json())
             .then(json => dispatch(getItemsSuccess(json.items)))
             .catch(err => dispatch(getItemsFailure(err)))
-            //.then(json => console.log(json))
-            //.catch(err => console.log(err))
+
             
     }
 }
@@ -24,7 +23,7 @@ function getItems() {
 }
 
 function getItemsSuccess(payload) {
-    console.log(payload)
+    console.log('getting items was successful ' + payload)
     return {
         type: FETCHING_ITEMS_SUCCESS,
         payload
@@ -32,7 +31,7 @@ function getItemsSuccess(payload) {
 }
 
 function getItemsFailure(err) {
-    console.log("failure " + err)
+    console.log("getting items was unsuccessful " + err)
 
     return {
         type: FETCHING_ITEMS_FAILURE,

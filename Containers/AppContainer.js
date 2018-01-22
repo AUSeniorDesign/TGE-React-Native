@@ -91,5 +91,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(AppContainer)
 //   }) 
 
 //export default TGEApp
-
-//export default AppContainer

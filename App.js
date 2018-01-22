@@ -5,11 +5,11 @@ import {
   } from 'react-native' 
 
   import Row from './Components/Row' 
-  import ItemDetail from './Components/ItemDetail'
   import { StackNavigator } from 'react-navigation' 
   import { Provider } from 'react-redux'
   import configureStore from './Redux/ConfigureStore'
   import AppContainer from './Containers/AppContainer' 
+  import ItemDetail from './Components/ItemDetail'
 
 const store = configureStore()
 
@@ -35,4 +35,4 @@ export default class App extends React.Component {
 //   Detail: { screen: ItemDetail },
 // }) 
 
-// export default TGEApp
+//export default TGEApp

@@ -92244,10 +92244,6 @@ var _Row = require(840               ); // 840 = ./Components/Row
 
 var _Row2 = _interopRequireDefault(_Row);
 
-var _ItemDetail = require(908                      ); // 908 = ./Components/ItemDetail
-
-var _ItemDetail2 = _interopRequireDefault(_ItemDetail);
-
 var _reactNavigation = require(841               ); // 841 = react-navigation
 
 var _reactRedux = require(909          ); // 909 = react-redux
@@ -92259,6 +92255,10 @@ var _ConfigureStore2 = _interopRequireDefault(_ConfigureStore);
 var _AppContainer = require(939                        ); // 939 = ./Containers/AppContainer
 
 var _AppContainer2 = _interopRequireDefault(_AppContainer);
+
+var _ItemDetail = require(908                      ); // 908 = ./Components/ItemDetail
+
+var _ItemDetail2 = _interopRequireDefault(_ItemDetail);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
