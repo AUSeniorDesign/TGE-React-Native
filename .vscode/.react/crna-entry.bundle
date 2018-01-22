@@ -92383,9 +92383,10 @@ function _wrapComponent(id) {
 var styles = _reactNative.StyleSheet.create({
   container: {
     flex: 1,
-    padding: 12,
+    padding: 20,
     flexDirection: 'column',
-    alignItems: 'center'
+    justifyContent: 'center'
+
   },
   text: {
     fontSize: 16
@@ -92393,9 +92394,9 @@ var styles = _reactNative.StyleSheet.create({
   photo: {
     backgroundColor: '#C1C1C1',
     height: 100,
-    width: 100,
-    alignItems: 'center'
+    width: 100
   }
+
 });
 
 var Row = _wrapComponent('Row')(function (_React$Component) {
@@ -92417,11 +92418,11 @@ var Row = _wrapComponent('Row')(function (_React$Component) {
 
       return _react3.default.createElement(
         _reactNative.TouchableHighlight,
-        { style: styles.container, onPress: function onPress() {
+        { underlayColor: '#C1C1C1', style: styles.container, onPress: function onPress() {
             return _this2._rowPressed();
           }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 37
           }
         },
         _react3.default.createElement(
@@ -92429,19 +92430,19 @@ var Row = _wrapComponent('Row')(function (_React$Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 38
             }
           },
           _react3.default.createElement(_reactNative.Image, { source: { uri: this.props.image }, style: styles.photo, __source: {
               fileName: _jsxFileName,
-              lineNumber: 38
+              lineNumber: 39
             }
           }),
           _react3.default.createElement(
             _reactNative.Text,
             { style: styles.text, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 40
+                lineNumber: 41
               }
             },
             '' + this.props.name
@@ -103894,6 +103895,8 @@ __d(/* TGE/Utils/Constants.js */function(global, require, module, exports) {Obje
 var FETCHING_ITEMS = exports.FETCHING_ITEMS = "FETCHING_ITEMS";
 var FETCHING_ITEMS_SUCCESS = exports.FETCHING_ITEMS_SUCCESS = "FETCHING_ITEMS_SUCCESS";
 var FETCHING_ITEMS_FAILURE = exports.FETCHING_ITEMS_FAILURE = "FETCHING_ITEMS_FAILURE";
+var ADD_ITEM = exports.ADD_ITEM = "ADD_ITEM";
+var REMOVE_ITEM = exports.REMOVE_ITEM = "REMOVE_ITEM";
 }, 937, null, "TGE/Utils/Constants.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
@@ -103984,14 +103987,13 @@ function _wrapComponent(id) {
 
 var styles = _reactNative.StyleSheet.create({
     container: {
-        marginTop: 20,
-        paddingLeft: 20,
-        paddingTop: 20,
+        paddingVertical: 20,
         flex: 1
-    },
-    row: {}
+    }
 
 });
+
+var counter = 0;
 
 var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_Component) {
     _inherits(AppContainer, _Component);
@@ -104002,7 +104004,6 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
         var _this = _possibleConstructorReturn(this, (AppContainer.__proto__ || Object.getPrototypeOf(AppContainer)).call(this, props));
 
         _this.props.getItems();
-
         return _this;
     }
 
@@ -104022,10 +104023,10 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
             console.log("items length: " + items.length);
             console.log("isFetching: " + isFetching);
             return _react3.default.createElement(
-                _reactNative.View,
+                _reactNative.ScrollView,
                 { style: styles.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 57
+                        lineNumber: 50
                     }
                 },
                 isFetching && _react3.default.createElement(
@@ -104033,17 +104034,17 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 59
+                            lineNumber: 52
                         }
                     },
                     'Loading'
                 ),
                 items.length ? items.map(function (item, index) {
                     console.log("length: " + items.length);
-                    return _react3.default.createElement(_Row2.default, _extends({ style: styles.row }, item, {
+                    return _react3.default.createElement(_Row2.default, _extends({ key: counter++, style: styles.row }, item, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 60
                         }
                     }));
                 }) : null

@@ -4,7 +4,8 @@ import {
     ListView,
     View,
     StyleSheet,
-    Text
+    Text,
+    ScrollView
 } from 'react-native'
 import { StackNavigator } from 'react-navigation' 
 import { connect } from 'react-redux'
@@ -14,16 +15,13 @@ import Row from '../Components/Row'
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 20,
-        paddingLeft: 20,
-        paddingTop: 20,
+        paddingVertical: 20,
         flex: 1
     },
-    row: {
-        
-    },
-    
+
 }) 
+
+let counter = 0
 
 class AppContainer extends Component {
 
@@ -35,11 +33,6 @@ class AppContainer extends Component {
         super(props)
 
         this.props.getItems()
-
-        //const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}) 
-        // this.state = {
-        //   dataSource: ds.cloneWithRows(items),
-        // } 
     }
     
     _buttonPressed() {
@@ -54,7 +47,7 @@ class AppContainer extends Component {
         console.log("items length: " + items.length)
         console.log("isFetching: " + isFetching)
         return(
-            <View style={styles.container}>
+            <ScrollView style={styles.container}>
                 {
                     isFetching && <Text>Loading</Text>
                 }
@@ -64,7 +57,7 @@ class AppContainer extends Component {
                     items.map((item, index) => {
                         console.log("length: " + items.length)
                         return(
-                            <Row style={styles.row} {...item}/> 
+                            <Row key={counter++} style={styles.row} {...item}/> 
                         )
                     })
                    ) : null
@@ -72,17 +65,10 @@ class AppContainer extends Component {
                 
                 
                 
-          </View>
+          </ScrollView>
         )
     }
 }
-
-// <ListView
-//                     style={styles.container}
-//                     dataSource={this.state.dataSource}
-//                     renderRow={(data)  => {
-//                     return <Row {...data}/>
-//                     }}
 
 function mapStateToProps(state) {
     return {

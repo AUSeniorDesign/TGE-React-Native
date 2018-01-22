@@ -6,9 +6,10 @@ import ItemDetail from './ItemDetail'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 12,
+    padding: 20,
     flexDirection: 'column',
-    alignItems: 'center',
+    justifyContent: 'center',
+
   },
   text: {
     fontSize: 16,
@@ -17,8 +18,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#C1C1C1',
     height: 100,
     width: 100,
-    alignItems: 'center'
   },
+
 })  
 
 class Row extends React.Component {
@@ -33,14 +34,14 @@ class Row extends React.Component {
   render() {
 
     return (
-      <TouchableHighlight style={styles.container} onPress={() => this._rowPressed()}>
-      <View> 
-          <Image source={{uri: this.props.image}} style={styles.photo}/>
-  
-          <Text style={styles.text}>
-          {`${this.props.name}`}
-          </Text>
-      </View>
+      <TouchableHighlight underlayColor={'#C1C1C1'} style={styles.container} onPress={() => this._rowPressed()}>
+        <View> 
+            <Image source={{uri: this.props.image}} style={styles.photo}/>
+    
+            <Text style={styles.text}>
+            {`${this.props.name}`}
+            </Text>
+        </View>
   
     </TouchableHighlight>
     )
