@@ -13,7 +13,7 @@ import {fetchItemsFromAPI}  from '../Redux/Actions'
 import ItemDetail from '../Components/ItemDetail'
 import Row from '../Components/Row'
 import ItemListContainer from './ItemListContainer'
-import FeaturedItemList from '../Components/FeaturedItemList'
+import FeaturedItemListContainer from './FeaturedItemListContainer'
 import TabNavigator from 'react-native-tab-navigator';
 
 
@@ -32,7 +32,6 @@ export default class AppContainer extends Component {
 
     constructor(props) {
         super(props)
-        
     }
 
     render() {
@@ -50,7 +49,7 @@ export default class AppContainer extends Component {
                     selected={this.state.selectedTab === 'featuredList'}
                     title='Featured'
                     onPress={() => this.setState({ selectedTab: 'featuredList' })}>
-                    <FeaturedItemList/>
+                    <FeaturedItemListContainer/>
                 </TabNavigator.Item>
             </TabNavigator>
 
