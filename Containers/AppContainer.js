@@ -12,14 +12,6 @@ import {fetchItemsFromAPI}  from '../Redux/Actions'
 import ItemDetail from '../Components/ItemDetail'
 import Row from '../Components/Row'
 
-
-
-
-// const items = [{'name': 'Comic Book', url: 'http://media.comicbook.com/uploads1/2015/02/amazing-spider-man-136-cover-123891.jpg'},
-//                 {'name': 'Action Figure', url: 'https://target.scene7.com/is/image/Target/21562552_Alt02?wid=328&hei=328&qlt=80&fmt=pjpeg'},
-//                 {'name': 'Board Game', url: 'https://i.pinimg.com/736x/6c/18/65/6c1865c93124936ecdcc427b23bc0818--coming-out-board-games.jpg'},
-//                 {'name': 'Playing Cards', url: 'https://i5.walmartimages.com/asr/df30dd27-3fd8-44df-a496-436e1e77c50a_1.7d17f2a87b309e098566be29ef33100c.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF'}] 
-
 const styles = StyleSheet.create({
     container: {
         marginTop: 20,
@@ -27,9 +19,10 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         flex: 1
     },
-    text: {
-        textAlign: 'center'
-    }
+    row: {
+        
+    },
+    
 }) 
 
 class AppContainer extends Component {
@@ -41,6 +34,8 @@ class AppContainer extends Component {
     constructor(props) {
         super(props)
 
+        this.props.getItems()
+
         //const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}) 
         // this.state = {
         //   dataSource: ds.cloneWithRows(items),
@@ -49,7 +44,6 @@ class AppContainer extends Component {
     
     _buttonPressed() {
         console.log('ButtonPressed')
-        this.props.getItems()
 
       }
 
@@ -61,10 +55,6 @@ class AppContainer extends Component {
         console.log("isFetching: " + isFetching)
         return(
             <View style={styles.container}>
-                <Button
-                    title={"Get Items"}
-                    onPress={() => this._buttonPressed()}
-                />
                 {
                     isFetching && <Text>Loading</Text>
                 }
@@ -74,9 +64,7 @@ class AppContainer extends Component {
                     items.map((item, index) => {
                         console.log("length: " + items.length)
                         return(
-                            <View>
-                               <Text style={styles.text}>Name: {item.name}</Text>
-                            </View>
+                            <Row style={styles.row} {...item}/> 
                         )
                     })
                    ) : null

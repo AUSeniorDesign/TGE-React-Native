@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
   photo: {
     backgroundColor: '#C1C1C1',
     height: 100,
-    width: 100
+    width: 100,
+    alignItems: 'center'
   },
 })  
 
@@ -34,7 +35,7 @@ class Row extends React.Component {
     return (
       <TouchableHighlight style={styles.container} onPress={() => this._rowPressed()}>
       <View> 
-          <Image source={{uri: this.props.url}} style={styles.photo}/>
+          <Image source={{uri: this.props.image}} style={styles.photo}/>
   
           <Text style={styles.text}>
           {`${this.props.name}`}

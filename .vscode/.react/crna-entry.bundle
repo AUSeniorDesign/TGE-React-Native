@@ -92393,7 +92393,8 @@ var styles = _reactNative.StyleSheet.create({
   photo: {
     backgroundColor: '#C1C1C1',
     height: 100,
-    width: 100
+    width: 100,
+    alignItems: 'center'
   }
 });
 
@@ -92420,7 +92421,7 @@ var Row = _wrapComponent('Row')(function (_React$Component) {
             return _this2._rowPressed();
           }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 36
           }
         },
         _react3.default.createElement(
@@ -92428,19 +92429,19 @@ var Row = _wrapComponent('Row')(function (_React$Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 37
             }
           },
-          _react3.default.createElement(_reactNative.Image, { source: { uri: this.props.url }, style: styles.photo, __source: {
+          _react3.default.createElement(_reactNative.Image, { source: { uri: this.props.image }, style: styles.photo, __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 38
             }
           }),
           _react3.default.createElement(
             _reactNative.Text,
             { style: styles.text, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 39
+                lineNumber: 40
               }
             },
             '' + this.props.name
@@ -103930,6 +103931,8 @@ var _index = require(214                                                 ); // 2
 
 var _index2 = _interopRequireDefault(_index);
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _class,
@@ -103986,9 +103989,8 @@ var styles = _reactNative.StyleSheet.create({
         paddingTop: 20,
         flex: 1
     },
-    text: {
-        textAlign: 'center'
-    }
+    row: {}
+
 });
 
 var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_Component) {
@@ -103997,20 +103999,21 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
     function AppContainer(props) {
         _classCallCheck(this, AppContainer);
 
-        return _possibleConstructorReturn(this, (AppContainer.__proto__ || Object.getPrototypeOf(AppContainer)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (AppContainer.__proto__ || Object.getPrototypeOf(AppContainer)).call(this, props));
+
+        _this.props.getItems();
+
+        return _this;
     }
 
     _createClass(AppContainer, [{
         key: '_buttonPressed',
         value: function _buttonPressed() {
             console.log('ButtonPressed');
-            this.props.getItems();
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             var _props$items = this.props.items,
                 items = _props$items.items,
                 isFetching = _props$items.isFetching;
@@ -104022,50 +104025,27 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
                 _reactNative.View,
                 { style: styles.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 63
+                        lineNumber: 57
                     }
                 },
-                _react3.default.createElement(_reactNative.Button, {
-                    title: "Get Items",
-                    onPress: function onPress() {
-                        return _this2._buttonPressed();
-                    },
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 64
-                    }
-                }),
                 isFetching && _react3.default.createElement(
                     _reactNative.Text,
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 69
+                            lineNumber: 59
                         }
                     },
                     'Loading'
                 ),
                 items.length ? items.map(function (item, index) {
                     console.log("length: " + items.length);
-                    return _react3.default.createElement(
-                        _reactNative.View,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 77
-                            }
-                        },
-                        _react3.default.createElement(
-                            _reactNative.Text,
-                            { style: styles.text, __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 78
-                                }
-                            },
-                            'Name: ',
-                            item.name
-                        )
-                    );
+                    return _react3.default.createElement(_Row2.default, _extends({ style: styles.row }, item, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 67
+                        }
+                    }));
                 }) : null
             );
         }
