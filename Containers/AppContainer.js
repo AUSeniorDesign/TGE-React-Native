@@ -17,6 +17,7 @@ import FeaturedItemListContainer from './FeaturedItemListContainer'
 import TabNavigator from 'react-native-tab-navigator';
 import { ItemsStack } from '../Components/ItemsList'
 import ItemListTab from './ItemListTab'
+import PropTypes from 'prop-types'
 
 
 const styles = StyleSheet.create({

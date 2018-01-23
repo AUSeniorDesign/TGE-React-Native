@@ -38,8 +38,6 @@ class ItemsList extends Component {
 
       }
 
-    
-
     render() {
         const { navigate } = this.props.navigation 
 
