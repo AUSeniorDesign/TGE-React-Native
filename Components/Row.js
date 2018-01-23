@@ -28,7 +28,7 @@ class Row extends React.Component {
   }
 
   _rowPressed() {
-    //this.props.navigate('Detail', this.props) 
+    this.props.navigate('Detail', this.props) 
   }
 
   render() {

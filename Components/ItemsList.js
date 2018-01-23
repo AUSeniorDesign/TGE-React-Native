@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
 }) 
 
-export default class ItemsList extends Component {
+class ItemsList extends Component {
     static navigationOptions = {
         title: 'List',
     }
@@ -41,7 +41,7 @@ export default class ItemsList extends Component {
     
 
     render() {
-        //const { navigate } = this.props.navigation 
+        const { navigate } = this.props.navigation 
 
         const { items, isFetching } = this.props.items
         return(
@@ -54,7 +54,7 @@ export default class ItemsList extends Component {
                     items.length ? (
                     items.map((item, index) => {
                         return(
-                            <Row key={counter++} style={styles.row} {...item}/> 
+                            <Row key={counter++} style={styles.row} {...item} navigate={navigate}/> 
                         )
                     })
                    ) : null
@@ -63,3 +63,5 @@ export default class ItemsList extends Component {
         )
     }
 }
+
+export default ItemsList
