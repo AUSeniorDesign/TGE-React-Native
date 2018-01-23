@@ -29,10 +29,3 @@ export default class App extends React.Component {
   }
 
 }
-
-// const TGEApp = StackNavigator({
-//   List: { screen: AppContainer },
-//   Detail: { screen: ItemDetail },
-// }) 
-
-//export default TGEApp

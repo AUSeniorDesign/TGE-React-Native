@@ -1,28 +1,16 @@
 import React, {Component} from 'react'
 import {
-    Button,
-    ListView,
-    View,
-    StyleSheet,
     Text,
-    ScrollView
+    StyleSheet,
+    ScrollView,
+    View,
+    ListView
 } from 'react-native'
-import { StackNavigator } from 'react-navigation' 
-import { connect } from 'react-redux'
-import ItemDetail from '../Components/ItemDetail'
 import Row from '../Components/Row'
 
 let counter = 0
 
-const styles = StyleSheet.create({
-    container: {
-        paddingVertical: 20,
-        flex: 1
-    },
-
-}) 
-
-class ItemsList extends Component {
+export default class ItemsList extends Component {
     static navigationOptions = {
         title: 'List',
     }
@@ -30,6 +18,12 @@ class ItemsList extends Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            ds: new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
+        }
+    }
+
+    componentWillMount() {
         this.props.getItems()
     }
     
@@ -38,28 +32,35 @@ class ItemsList extends Component {
 
       }
 
+      _renderRowData(navigate, rowData) {
+        return <Row key={counter++} style={styles.row} name={rowData.name} image={rowData.image} navigate={navigate}/>
+    }
+
     render() {
         const { navigate } = this.props.navigation 
 
         const { items, isFetching } = this.props.items
+
+        const dataSource = this.state.ds.cloneWithRows(items)
+
         return(
-            <ScrollView style={styles.container}>
-                {
-                    isFetching && <Text>Loading</Text>
-                }
-                {
-                    
-                    items.length ? (
-                    items.map((item, index) => {
-                        return(
-                            <Row key={counter++} style={styles.row} {...item} navigate={navigate}/> 
-                        )
-                    })
-                   ) : null
-                }                
-          </ScrollView>
+          <View style={styles.container}>
+                
+                <ListView
+                    renderRow={ (rowData, sectionID, rowID) => this._renderRowData(navigate, rowData) }
+                    automaticallyAdjustContentInsets={ false }
+                    enableEmptySections={ true }
+                    style={ styles.container }
+                    dataSource={ dataSource }
+                />
+          </View>
         )
     }
 }
 
-export default ItemsList
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
+
+}) 
