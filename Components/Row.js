@@ -2,6 +2,8 @@ import React from 'react'
 import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native' 
 import { StackNavigator } from 'react-navigation' 
 import ItemDetail from './ItemDetail'
+import PropTypes from 'prop-types'
+
 
 const styles = StyleSheet.create({
   container: {
@@ -46,6 +48,12 @@ class Row extends React.Component {
     </TouchableHighlight>
     )
   }
+}
+
+Row.propTypes = {
+  navigate: PropTypes.any.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired
 }
 
 
