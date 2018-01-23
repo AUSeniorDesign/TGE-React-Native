@@ -1,30 +1,8 @@
 import React from 'react' 
 import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native' 
-import { StackNavigator } from 'react-navigation' 
-import ItemDetail from './ItemDetail'
 import PropTypes from 'prop-types'
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    flexDirection: 'column',
-    justifyContent: 'center',
-
-  },
-  text: {
-    fontSize: 16,
-  },
-  photo: {
-    backgroundColor: '#C1C1C1',
-    height: 100,
-    width: 100,
-  },
-
-})  
-
-class Row extends React.Component {
+export default class Row extends React.Component {
   constructor(props) {
     super(props) 
   }
@@ -56,5 +34,20 @@ Row.propTypes = {
   image: PropTypes.string.isRequired
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    flexDirection: 'column',
+    justifyContent: 'center',
 
-export default Row 
+  },
+  text: {
+    fontSize: 16,
+  },
+  photo: {
+    backgroundColor: '#C1C1C1',
+    height: 100,
+    width: 100,
+  },
+})

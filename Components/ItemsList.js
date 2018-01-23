@@ -1,28 +1,14 @@
 import React, {Component} from 'react'
 import {
-    Button,
-    ListView,
-    View,
-    StyleSheet,
     Text,
+    StyleSheet,
     ScrollView
 } from 'react-native'
-import { StackNavigator } from 'react-navigation' 
-import { connect } from 'react-redux'
-import ItemDetail from '../Components/ItemDetail'
 import Row from '../Components/Row'
 
 let counter = 0
 
-const styles = StyleSheet.create({
-    container: {
-        paddingVertical: 20,
-        flex: 1
-    },
-
-}) 
-
-class ItemsList extends Component {
+export default class ItemsList extends Component {
     static navigationOptions = {
         title: 'List',
     }
@@ -62,4 +48,10 @@ class ItemsList extends Component {
     }
 }
 
-export default ItemsList
+const styles = StyleSheet.create({
+    container: {
+        paddingVertical: 20,
+        flex: 1
+    },
+
+}) 

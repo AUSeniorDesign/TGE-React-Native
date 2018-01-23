@@ -1,8 +1,6 @@
 import { connect } from 'react-redux'
 import ItemsList from '../Components/ItemsList'
 import {fetchItemsFromAPI}  from '../Redux/Actions'
-import ItemDetail from '../Components/ItemDetail'
-import { StackNavigator } from 'react-navigation' 
 
 function mapStateToProps(state) {
     return {
