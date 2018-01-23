@@ -15,6 +15,8 @@ import Row from '../Components/Row'
 import ItemListContainer from './ItemListContainer'
 import FeaturedItemListContainer from './FeaturedItemListContainer'
 import TabNavigator from 'react-native-tab-navigator';
+import { ItemsStack } from '../Components/ItemsList'
+import ItemListTab from './ItemListTab'
 
 
 const styles = StyleSheet.create({
@@ -35,15 +37,13 @@ export default class AppContainer extends Component {
     }
 
     render() {
-        //const { navigate } = this.props.navigation 
-
         return(
             <TabNavigator>
                 <TabNavigator.Item
                     selected={this.state.selectedTab === 'itemsList'}
                     title='Items'
                     onPress={() => this.setState({ selectedTab: 'itemsList' })}>
-                    <ItemListContainer/>
+                    <ItemListTab/>
                 </TabNavigator.Item>
                 <TabNavigator.Item
                     selected={this.state.selectedTab === 'featuredList'}
