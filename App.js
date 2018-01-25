@@ -10,6 +10,7 @@ import {
   import configureStore from './Redux/ConfigureStore'
   import AppContainer from './Containers/AppContainer' 
   import ItemDetail from './Components/ItemDetail'
+  import AppStack from './Containers/AppStack'
 
 const store = configureStore()
 
@@ -23,7 +24,7 @@ export default class App extends React.Component {
   render() {
     return (
         <Provider store={store}>
-          <AppContainer/>
+          <AppStack/>
         </Provider>
     ) 
   }
