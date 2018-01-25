@@ -1,7 +1,4 @@
 import React, {Component} from 'react'
-import {
-    StyleSheet,
-} from 'react-native'
 import FeaturedItemListContainer from './FeaturedItemListContainer'
 import TabNavigator from 'react-native-tab-navigator';
 import ItemListStack from './ItemListStack'
@@ -38,12 +35,3 @@ export default class AppContainer extends Component {
         )   
     }
 }
-
-
-const styles = StyleSheet.create({
-    container: {
-        paddingVertical: 20,
-        flex: 1
-    },
-
-}) 

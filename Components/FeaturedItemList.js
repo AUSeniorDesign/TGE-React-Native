@@ -3,6 +3,7 @@ import {
     Text,
     StyleSheet
 } from 'react-native'
+import styles from '../Style/FeaturedItemListStyle'
 
 export default class FeaturedItemsList extends Component {
     render() {
@@ -12,10 +13,3 @@ export default class FeaturedItemsList extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        paddingVertical: 20,
-        flex: 1
-    },
-
-}) 

@@ -9,8 +9,6 @@ import {
 import { StackNavigator } from 'react-navigation' 
 import styles from '../Style/ItemDetailStyle'
 
-
-
 export default class ItemDetail extends React.Component {
     static navigationOptions = {
         title: 'Detail',
