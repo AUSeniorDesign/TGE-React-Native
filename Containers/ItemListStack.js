@@ -10,6 +10,7 @@ export default StackNavigator({
     Detail: {
       screen: ItemDetail,
     },
-  });
+  }
+);
   
 

@@ -4,12 +4,15 @@ import {
 } from 'react-native'
 import FeaturedItemListContainer from './FeaturedItemListContainer'
 import TabNavigator from 'react-native-tab-navigator';
-import ItemListTab from './ItemListTab'
+import ItemListStack from './ItemListStack'
 
 export default class AppContainer extends Component {
     state= {
         selectedTab: 'itemsList'
     };
+    static navigationOptions = {
+        header: null
+    }
 
     constructor(props) {
         super(props)
@@ -22,7 +25,7 @@ export default class AppContainer extends Component {
                     selected={this.state.selectedTab === 'itemsList'}
                     title='Items'
                     onPress={() => this.setState({ selectedTab: 'itemsList' })}>
-                    <ItemListTab/>
+                    <ItemListStack/>
                 </TabNavigator.Item>
                 <TabNavigator.Item
                     selected={this.state.selectedTab === 'featuredList'}
