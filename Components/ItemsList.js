@@ -7,6 +7,7 @@ import {
     ListView
 } from 'react-native'
 import Row from '../Components/Row'
+import styles from '../Style/ItemListStyle'
 
 let counter = 0
 
@@ -58,9 +59,3 @@ export default class ItemsList extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
-
-}) 

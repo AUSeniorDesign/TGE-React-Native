@@ -1,6 +1,7 @@
 import React from 'react' 
 import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native' 
 import PropTypes from 'prop-types'
+import styles from '../Style/RowStyle'
 
 export default class Row extends React.Component {
   constructor(props) {
@@ -34,20 +35,3 @@ Row.propTypes = {
   image: PropTypes.string.isRequired
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    flexDirection: 'column',
-    justifyContent: 'center',
-
-  },
-  text: {
-    fontSize: 16,
-  },
-  photo: {
-    backgroundColor: '#C1C1C1',
-    height: 100,
-    width: 100,
-  },
-})
