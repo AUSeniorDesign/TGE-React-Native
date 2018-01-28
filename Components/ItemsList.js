@@ -4,7 +4,7 @@ import {
     StyleSheet,
     ScrollView,
     View,
-    ListView
+    FlatList
 } from 'react-native'
 import Row from '../Components/Row'
 import styles from '../Style/ItemListStyle'
@@ -19,9 +19,7 @@ export default class ItemsList extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            ds: new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 })
-        }
+       
     }
 
     componentWillMount() {
@@ -33,26 +31,26 @@ export default class ItemsList extends Component {
 
       }
 
-      _renderRowData(navigate, rowData) {
-        return <Row key={counter++} style={styles.row} name={rowData.name} image={rowData.image} navigate={navigate}/>
+      _renderRowData(navigate, item) {
+        return <Row key={counter++} style={styles.row} name={item.name} image={item.image} navigate={navigate}/>
     }
+
+    // CHANGE THIS WHEN I GET ID
+    _keyExtractor = (item, index) => item.name
 
     render() {
         const { navigate } = this.props.navigation 
 
-        const { items, isFetching } = this.props.items
+        const { items } = this.props.items
 
-        const dataSource = this.state.ds.cloneWithRows(items)
 
         return(
           <View style={styles.container}>
-                
-                <ListView
-                    renderRow={ (rowData, sectionID, rowID) => this._renderRowData(navigate, rowData) }
-                    automaticallyAdjustContentInsets={ false }
-                    enableEmptySections={ true }
-                    style={ styles.container }
-                    dataSource={ dataSource }
+                <FlatList
+                    keyExtractor={this._keyExtractor}
+                    data={items}
+                    numColumns={2}
+                    renderItem={(rowData) => this._renderRowData(navigate, rowData.item)}
                 />
           </View>
         )

@@ -22,4 +22,16 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
       },
+      buttonView: {
+        backgroundColor: '#00C853',
+        height: 40,
+        width: 300,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 20
+        
+      },
+      buyText: {
+        color: 'white'
+      },
 })
