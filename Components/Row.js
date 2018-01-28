@@ -17,7 +17,10 @@ export default class Row extends React.Component {
     return (
       <TouchableHighlight underlayColor={'#C1C1C1'} style={styles.container} onPress={() => this._rowPressed()}>
         <View> 
+          <View style={styles.viewCenter}>
             <Image source={{uri: this.props.image}} style={styles.photo}/>
+            
+          </View>
     
             <Text style={styles.text}>
             {`${this.props.name}`}
