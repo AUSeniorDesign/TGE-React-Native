@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import FeaturedItemListContainer from './FeaturedItemListContainer'
 import TabNavigator from 'react-native-tab-navigator';
 import ItemListStack from './ItemListStack'
+import FeaturedItemListStack from './FeaturedItemListStack'
 
 export default class AppContainer extends Component {
     state= {
@@ -28,7 +28,7 @@ export default class AppContainer extends Component {
                     selected={this.state.selectedTab === 'featuredList'}
                     title='Featured'
                     onPress={() => this.setState({ selectedTab: 'featuredList' })}>
-                    <FeaturedItemListContainer/>
+                    <FeaturedItemListStack/>
                 </TabNavigator.Item>
             </TabNavigator>
 

@@ -6,8 +6,6 @@ export default StyleSheet.create({
       padding: 20,
       flexDirection: 'column',
       width: 150,
-
-
   
     },
     text: {

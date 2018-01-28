@@ -4,7 +4,6 @@ import {
   StyleSheet
   } from 'react-native' 
 
-  import Row from './Components/Row' 
   import { StackNavigator } from 'react-navigation' 
   import { Provider } from 'react-redux'
   import configureStore from './Redux/ConfigureStore'
