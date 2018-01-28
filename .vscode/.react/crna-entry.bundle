@@ -92240,10 +92240,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _Row = require(840               ); // 840 = ./Components/Row
-
-var _Row2 = _interopRequireDefault(_Row);
-
 var _reactNavigation = require(842               ); // 842 = react-navigation
 
 var _reactRedux = require(909          ); // 909 = react-redux
@@ -92315,13 +92311,13 @@ var App = _wrapComponent('App')(function (_React$Component) {
         _reactRedux.Provider,
         { store: store, __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 25
           }
         },
         _react3.default.createElement(_AppStack2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 26
           }
         })
       );
@@ -92333,164 +92329,6 @@ var App = _wrapComponent('App')(function (_React$Component) {
 
 exports.default = App;
 }, 839, null, "TGE/App.js");
-__d(/* TGE/Components/Row.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react2 = require(122    ); // 122 = react
-
-var _react3 = _interopRequireDefault(_react2);
-
-var _index = require(214                                                 ); // 214 = ./../node_modules/react-transform-hmr/lib/index.js
-
-var _index2 = _interopRequireDefault(_index);
-
-var _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Components/Row.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _reactNative = require(99            ); // 99 = react-native
-
-var _propTypes = require(378         ); // 378 = prop-types
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _RowStyle = require(841                ); // 841 = ../Style/RowStyle
-
-var _RowStyle2 = _interopRequireDefault(_RowStyle);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _components = {
-  Row: {
-    displayName: 'Row'
-  }
-};
-
-var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-  filename: '/Users/Harry/Developer/TGE-React-Native/Components/Row.js',
-  components: _components,
-  locals: [module],
-  imports: [_react3.default]
-});
-
-function _wrapComponent(id) {
-  return function (Component) {
-    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-  };
-}
-
-var Row = _wrapComponent('Row')(function (_React$Component) {
-  _inherits(Row, _React$Component);
-
-  function Row(props) {
-    _classCallCheck(this, Row);
-
-    return _possibleConstructorReturn(this, (Row.__proto__ || Object.getPrototypeOf(Row)).call(this, props));
-  }
-
-  _createClass(Row, [{
-    key: '_rowPressed',
-    value: function _rowPressed() {
-      this.props.navigate('Detail', this.props);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return _react3.default.createElement(
-        _reactNative.TouchableHighlight,
-        { underlayColor: '#C1C1C1', style: _RowStyle2.default.container, onPress: function onPress() {
-            return _this2._rowPressed();
-          }, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 18
-          }
-        },
-        _react3.default.createElement(
-          _reactNative.View,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 19
-            }
-          },
-          _react3.default.createElement(
-            _reactNative.View,
-            { style: _RowStyle2.default.viewCenter, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 20
-              }
-            },
-            _react3.default.createElement(_reactNative.Image, { source: { uri: this.props.image }, style: _RowStyle2.default.photo, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 21
-              }
-            })
-          ),
-          _react3.default.createElement(
-            _reactNative.Text,
-            { style: _RowStyle2.default.text, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 25
-              }
-            },
-            '' + this.props.name
-          )
-        )
-      );
-    }
-  }]);
-
-  return Row;
-}(_react3.default.Component));
-
-exports.default = Row;
-
-
-Row.propTypes = {
-  navigate: _propTypes2.default.any.isRequired,
-  name: _propTypes2.default.string.isRequired,
-  image: _propTypes2.default.string.isRequired
-};
-}, 840, null, "TGE/Components/Row.js");
-__d(/* TGE/Style/RowStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _reactNative = require(99            ); // 99 = react-native
-
-exports.default = _reactNative.StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    flexDirection: 'column',
-    width: 150,
-    height: 150
-
-  },
-  text: {
-    fontSize: 16,
-    textAlign: 'center'
-  },
-  photo: {
-    backgroundColor: '#C1C1C1',
-    height: 100,
-    width: 100
-  },
-  viewCenter: {
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
-}, 841, null, "TGE/Style/RowStyle.js");
 __d(/* react-navigation/src/react-navigation.js */function(global, require, module, exports) {
 
 module.exports = {
@@ -103877,10 +103715,6 @@ var _class,
     _temp,
     _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Containers/AppContainer.js';
 
-var _FeaturedItemListContainer = require(940                          ); // 940 = ./FeaturedItemListContainer
-
-var _FeaturedItemListContainer2 = _interopRequireDefault(_FeaturedItemListContainer);
-
 var _reactNativeTabNavigator = require(943                         ); // 943 = react-native-tab-navigator
 
 var _reactNativeTabNavigator2 = _interopRequireDefault(_reactNativeTabNavigator);
@@ -103888,6 +103722,10 @@ var _reactNativeTabNavigator2 = _interopRequireDefault(_reactNativeTabNavigator)
 var _ItemListStack = require(952              ); // 952 = ./ItemListStack
 
 var _ItemListStack2 = _interopRequireDefault(_ItemListStack);
+
+var _FeaturedItemListStack = require(1005                     ); // 1005 = ./FeaturedItemListStack
+
+var _FeaturedItemListStack2 = _interopRequireDefault(_FeaturedItemListStack);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -103974,7 +103812,7 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
                             lineNumber: 27
                         }
                     },
-                    _react3.default.createElement(_FeaturedItemListContainer2.default, {
+                    _react3.default.createElement(_FeaturedItemListStack2.default, {
                         __source: {
                             fileName: _jsxFileName,
                             lineNumber: 31
@@ -103992,126 +103830,6 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
 
 exports.default = AppContainer;
 }, 939, null, "TGE/Containers/AppContainer.js");
-__d(/* TGE/Containers/FeaturedItemListContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _FeaturedItemList = require(941                             ); // 941 = ../Components/FeaturedItemList
-
-var _FeaturedItemList2 = _interopRequireDefault(_FeaturedItemList);
-
-var _reactRedux = require(909          ); // 909 = react-redux
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function mapStateToProps(state) {
-    return {
-        items: state.items
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        getItems: function getItems() {
-            return dispatch(fetchItemsFromAPI());
-        }
-    };
-}
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_FeaturedItemList2.default);
-}, 940, null, "TGE/Containers/FeaturedItemListContainer.js");
-__d(/* TGE/Components/FeaturedItemList.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react2 = require(122    ); // 122 = react
-
-var _react3 = _interopRequireDefault(_react2);
-
-var _index = require(214                                                 ); // 214 = ./../node_modules/react-transform-hmr/lib/index.js
-
-var _index2 = _interopRequireDefault(_index);
-
-var _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Components/FeaturedItemList.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _reactNative = require(99            ); // 99 = react-native
-
-var _FeaturedItemListStyle = require(942                             ); // 942 = ../Style/FeaturedItemListStyle
-
-var _FeaturedItemListStyle2 = _interopRequireDefault(_FeaturedItemListStyle);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _components = {
-    FeaturedItemsList: {
-        displayName: 'FeaturedItemsList'
-    }
-};
-
-var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: '/Users/Harry/Developer/TGE-React-Native/Components/FeaturedItemList.js',
-    components: _components,
-    locals: [module],
-    imports: [_react3.default]
-});
-
-function _wrapComponent(id) {
-    return function (Component) {
-        return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-}
-
-var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component) {
-    _inherits(FeaturedItemsList, _Component);
-
-    function FeaturedItemsList() {
-        _classCallCheck(this, FeaturedItemsList);
-
-        return _possibleConstructorReturn(this, (FeaturedItemsList.__proto__ || Object.getPrototypeOf(FeaturedItemsList)).apply(this, arguments));
-    }
-
-    _createClass(FeaturedItemsList, [{
-        key: 'render',
-        value: function render() {
-            return _react3.default.createElement(
-                _reactNative.Text,
-                { style: _FeaturedItemListStyle2.default.container, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 11
-                    }
-                },
-                'Hello World'
-            );
-        }
-    }]);
-
-    return FeaturedItemsList;
-}(_react2.Component));
-
-exports.default = FeaturedItemsList;
-}, 941, null, "TGE/Components/FeaturedItemList.js");
-__d(/* TGE/Style/FeaturedItemListStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _reactNative = require(99            ); // 99 = react-native
-
-exports.default = _reactNative.StyleSheet.create({
-    container: {
-        paddingVertical: 20,
-        flex: 1
-    }
-
-});
-}, 942, null, "TGE/Style/FeaturedItemListStyle.js");
 __d(/* react-native-tab-navigator/TabNavigator.js */function(global, require, module, exports) {'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -109833,7 +109551,7 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
 
   return ItemDetail;
 }(_react3.default.Component), _class.navigationOptions = {
-  title: 'Detail'
+  title: 'Item Information'
 }, _temp));
 
 exports.default = ItemDetail;
@@ -109937,14 +109655,14 @@ var _index2 = _interopRequireDefault(_index);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _class,
-    _temp,
+    _temp2,
     _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Components/ItemsList.js';
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _Row = require(840                ); // 840 = ../Components/Row
+var _ItemListTile = require(1007                        ); // 1007 = ../Components/ItemListTile
 
-var _Row2 = _interopRequireDefault(_Row);
+var _ItemListTile2 = _interopRequireDefault(_ItemListTile);
 
 var _ItemListStyle = require(957                     ); // 957 = ../Style/ItemListStyle
 
@@ -109979,19 +109697,23 @@ function _wrapComponent(id) {
 
 var counter = 0;
 
-var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Component) {
+var ItemsList = _wrapComponent('ItemsList')((_temp2 = _class = function (_Component) {
     _inherits(ItemsList, _Component);
 
-    function ItemsList(props) {
+    function ItemsList() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, ItemsList);
 
-        var _this = _possibleConstructorReturn(this, (ItemsList.__proto__ || Object.getPrototypeOf(ItemsList)).call(this, props));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
 
-        _this._keyExtractor = function (item, index) {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ItemsList.__proto__ || Object.getPrototypeOf(ItemsList)).call.apply(_ref, [this].concat(args))), _this), _this._keyExtractor = function (item, index) {
             return item.name;
-        };
-
-        return _this;
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(ItemsList, [{
@@ -110007,9 +109729,9 @@ var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Compone
     }, {
         key: '_renderRowData',
         value: function _renderRowData(navigate, item) {
-            return _react3.default.createElement(_Row2.default, { key: counter++, style: _ItemListStyle2.default.row, name: item.name, image: item.image, navigate: navigate, __source: {
+            return _react3.default.createElement(_ItemListTile2.default, { style: _ItemListStyle2.default.row, name: item.name, image: item.image, navigate: navigate, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 35
+                    lineNumber: 29
                 }
             });
         }
@@ -110026,7 +109748,7 @@ var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Compone
                 _reactNative.View,
                 { style: _ItemListStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 48
+                        lineNumber: 42
                     }
                 },
                 _react3.default.createElement(_reactNative.FlatList, {
@@ -110038,7 +109760,7 @@ var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Compone
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 49
+                        lineNumber: 43
                     }
                 })
             );
@@ -110047,11 +109769,168 @@ var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Compone
 
     return ItemsList;
 }(_react2.Component), _class.navigationOptions = {
-    title: 'List'
-}, _temp));
+    title: 'For Sale'
+}, _temp2));
 
 exports.default = ItemsList;
 }, 956, null, "TGE/Components/ItemsList.js");
+__d(/* TGE/Components/ItemListTile.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require(122    ); // 122 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(214                                                 ); // 214 = ./../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Components/ItemListTile.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _reactNative = require(99            ); // 99 = react-native
+
+var _propTypes = require(378         ); // 378 = prop-types
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _ItemListTileStyle = require(1008                        ); // 1008 = ../Style/ItemListTileStyle
+
+var _ItemListTileStyle2 = _interopRequireDefault(_ItemListTileStyle);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  ItemListTile: {
+    displayName: 'ItemListTile'
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: '/Users/Harry/Developer/TGE-React-Native/Components/ItemListTile.js',
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+var ItemListTile = _wrapComponent('ItemListTile')(function (_React$Component) {
+  _inherits(ItemListTile, _React$Component);
+
+  function ItemListTile(props) {
+    _classCallCheck(this, ItemListTile);
+
+    return _possibleConstructorReturn(this, (ItemListTile.__proto__ || Object.getPrototypeOf(ItemListTile)).call(this, props));
+  }
+
+  _createClass(ItemListTile, [{
+    key: '_rowPressed',
+    value: function _rowPressed() {
+      this.props.navigate('Detail', this.props);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react3.default.createElement(
+        _reactNative.TouchableHighlight,
+        { underlayColor: '#C1C1C1', style: _ItemListTileStyle2.default.container, onPress: function onPress() {
+            return _this2._rowPressed();
+          }, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18
+          }
+        },
+        _react3.default.createElement(
+          _reactNative.View,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 19
+            }
+          },
+          _react3.default.createElement(
+            _reactNative.View,
+            { style: _ItemListTileStyle2.default.viewCenter, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 20
+              }
+            },
+            _react3.default.createElement(_reactNative.Image, { source: { uri: this.props.image }, style: _ItemListTileStyle2.default.photo, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 21
+              }
+            })
+          ),
+          _react3.default.createElement(
+            _reactNative.Text,
+            { style: _ItemListTileStyle2.default.text, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 24
+              }
+            },
+            '' + this.props.name
+          )
+        )
+      );
+    }
+  }]);
+
+  return ItemListTile;
+}(_react3.default.Component));
+
+exports.default = ItemListTile;
+
+
+ItemListTile.propTypes = {
+  navigate: _propTypes2.default.any.isRequired,
+  name: _propTypes2.default.string.isRequired,
+  image: _propTypes2.default.string.isRequired
+};
+}, 1007, null, "TGE/Components/ItemListTile.js");
+__d(/* TGE/Style/ItemListTileStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactNative = require(99            ); // 99 = react-native
+
+exports.default = _reactNative.StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    flexDirection: 'column',
+    width: 150
+
+  },
+  text: {
+    fontSize: 16,
+    textAlign: 'center'
+  },
+  photo: {
+    backgroundColor: '#C1C1C1',
+    height: 100,
+    width: 100
+  },
+  viewCenter: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});
+}, 1008, null, "TGE/Style/ItemListTileStyle.js");
 __d(/* TGE/Style/ItemListStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110112,6 +109991,340 @@ function getItemsFailure(err) {
     };
 }
 }, 958, null, "TGE/Redux/Actions.js");
+__d(/* TGE/Containers/FeaturedItemListStack.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ItemDetail = require(953                       ); // 953 = ../Components/ItemDetail
+
+var _ItemDetail2 = _interopRequireDefault(_ItemDetail);
+
+var _FeaturedItemListContainer = require(940                          ); // 940 = ./FeaturedItemListContainer
+
+var _FeaturedItemListContainer2 = _interopRequireDefault(_FeaturedItemListContainer);
+
+var _reactNavigation = require(842               ); // 842 = react-navigation
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _reactNavigation.StackNavigator)({
+  List: {
+    screen: _FeaturedItemListContainer2.default
+  },
+  Detail: {
+    screen: _ItemDetail2.default
+  }
+});
+}, 1005, null, "TGE/Containers/FeaturedItemListStack.js");
+__d(/* TGE/Containers/FeaturedItemListContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _FeaturedItemList = require(941                             ); // 941 = ../Components/FeaturedItemList
+
+var _FeaturedItemList2 = _interopRequireDefault(_FeaturedItemList);
+
+var _reactRedux = require(909          ); // 909 = react-redux
+
+var _Actions = require(958               ); // 958 = ../Redux/Actions
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function mapStateToProps(state) {
+    return {
+        items: state.items
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        getItems: function getItems() {
+            return dispatch((0, _Actions.fetchItemsFromAPI)());
+        }
+    };
+}
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_FeaturedItemList2.default);
+}, 940, null, "TGE/Containers/FeaturedItemListContainer.js");
+__d(/* TGE/Components/FeaturedItemList.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react2 = require(122    ); // 122 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(214                                                 ); // 214 = ./../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Components/FeaturedItemList.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _reactNative = require(99            ); // 99 = react-native
+
+var _FeaturedItemRow = require(1009               ); // 1009 = ./FeaturedItemRow
+
+var _FeaturedItemRow2 = _interopRequireDefault(_FeaturedItemRow);
+
+var _FeaturedItemListStyle = require(942                             ); // 942 = ../Style/FeaturedItemListStyle
+
+var _FeaturedItemListStyle2 = _interopRequireDefault(_FeaturedItemListStyle);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+    FeaturedItemsList: {
+        displayName: 'FeaturedItemsList'
+    }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: '/Users/Harry/Developer/TGE-React-Native/Components/FeaturedItemList.js',
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+    return function (Component) {
+        return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+}
+
+var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component) {
+    _inherits(FeaturedItemsList, _Component);
+
+    function FeaturedItemsList() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, FeaturedItemsList);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FeaturedItemsList.__proto__ || Object.getPrototypeOf(FeaturedItemsList)).call.apply(_ref, [this].concat(args))), _this), _this._keyExtractor = function (item, index) {
+            return item.name;
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(FeaturedItemsList, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.props.getItems();
+        }
+    }, {
+        key: '_buttonPressed',
+        value: function _buttonPressed() {
+            console.log('ButtonPressed');
+        }
+    }, {
+        key: '_renderRowData',
+        value: function _renderRowData(navigate, item) {
+            return _react3.default.createElement(_FeaturedItemRow2.default, { name: item.name, image: item.image, navigate: navigate, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 24
+                }
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var navigate = this.props.navigation.navigate;
+            var items = this.props.items.items;
+
+
+            return _react3.default.createElement(
+                _reactNative.View,
+                { style: _FeaturedItemListStyle2.default.container, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 37
+                    }
+                },
+                _react3.default.createElement(_reactNative.FlatList, {
+                    keyExtractor: this._keyExtractor,
+                    data: items,
+                    renderItem: function renderItem(rowData) {
+                        return _this2._renderRowData(navigate, rowData.item);
+                    },
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 38
+                    }
+                })
+            );
+        }
+    }]);
+
+    return FeaturedItemsList;
+}(_react2.Component));
+
+exports.default = FeaturedItemsList;
+}, 941, null, "TGE/Components/FeaturedItemList.js");
+__d(/* TGE/Components/FeaturedItemRow.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react2 = require(122    ); // 122 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(214                                                 ); // 214 = ./../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Components/FeaturedItemRow.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _reactNative = require(99            ); // 99 = react-native
+
+var _FeaturedItemRowStyle = require(1010                           ); // 1010 = ../Style/FeaturedItemRowStyle
+
+var _FeaturedItemRowStyle2 = _interopRequireDefault(_FeaturedItemRowStyle);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+    FeaturedItemRow: {
+        displayName: 'FeaturedItemRow'
+    }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: '/Users/Harry/Developer/TGE-React-Native/Components/FeaturedItemRow.js',
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+    return function (Component) {
+        return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+}
+
+var FeaturedItemRow = _wrapComponent('FeaturedItemRow')(function (_React$Component) {
+    _inherits(FeaturedItemRow, _React$Component);
+
+    function FeaturedItemRow() {
+        _classCallCheck(this, FeaturedItemRow);
+
+        return _possibleConstructorReturn(this, (FeaturedItemRow.__proto__ || Object.getPrototypeOf(FeaturedItemRow)).apply(this, arguments));
+    }
+
+    _createClass(FeaturedItemRow, [{
+        key: '_rowPressed',
+        value: function _rowPressed() {
+            this.props.navigate('Detail', this.props);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react3.default.createElement(
+                _reactNative.TouchableHighlight,
+                { underlayColor: '#BDBDBD', style: _FeaturedItemRowStyle2.default.container, onPress: function onPress() {
+                        return _this2._rowPressed();
+                    }, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 14
+                    }
+                },
+                _react3.default.createElement(
+                    _reactNative.View,
+                    { style: _FeaturedItemRowStyle2.default.viewCenter, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 15
+                        }
+                    },
+                    _react3.default.createElement(_reactNative.Image, { source: { uri: this.props.image }, style: _FeaturedItemRowStyle2.default.photo, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 16
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        { style: _FeaturedItemRowStyle2.default.title, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 17
+                            }
+                        },
+                        this.props.name
+                    )
+                )
+            );
+        }
+    }]);
+
+    return FeaturedItemRow;
+}(_react3.default.Component));
+
+exports.default = FeaturedItemRow;
+}, 1009, null, "TGE/Components/FeaturedItemRow.js");
+__d(/* TGE/Style/FeaturedItemRowStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactNative = require(99            ); // 99 = react-native
+
+exports.default = _reactNative.StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingTop: 20
+    },
+    photo: {
+        width: '90%',
+        height: 500
+
+    },
+    viewCenter: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    title: {
+        paddingTop: 10,
+        paddingBottom: 20,
+        fontSize: 20
+    }
+});
+}, 1010, null, "TGE/Style/FeaturedItemRowStyle.js");
+__d(/* TGE/Style/FeaturedItemListStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactNative = require(99            ); // 99 = react-native
+
+exports.default = _reactNative.StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    photo: {
+        width: '80px'
+
+    }
+
+});
+}, 942, null, "TGE/Style/FeaturedItemListStyle.js");
 __d(/* TGE/Containers/AppStack.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -110258,16 +110471,33 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
                             lineNumber: 28
                         }
                     },
-                    _react3.default.createElement(_reactNative.Button, {
-                        title: 'Login',
-                        onPress: function onPress() {
-                            return _this2._loginPressed(navigate);
+                    _react3.default.createElement(
+                        _reactNative.View,
+                        { style: _LoginStyle2.default.viewCenter, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 29
+                            }
                         },
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 29
-                        }
-                    })
+                        _react3.default.createElement(
+                            _reactNative.TouchableHighlight,
+                            { style: _LoginStyle2.default.buttonView, onPress: function onPress() {
+                                    return _this2._loginPressed(navigate);
+                                }, underlayColor: '#00E676', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 30
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                { style: _LoginStyle2.default.buyText, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 31
+                                    }
+                                },
+                                'Login'
+                            )
+                        )
+                    )
                 )
             );
         }
@@ -110307,6 +110537,18 @@ exports.default = _reactNative.StyleSheet.create({
     viewCenter: {
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    buttonView: {
+        backgroundColor: '#00C853',
+        height: 40,
+        width: 300,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 20
+
+    },
+    buyText: {
+        color: 'white'
     }
 });
 }, 961, null, "TGE/Style/LoginStyle.js");

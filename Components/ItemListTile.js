@@ -1,9 +1,9 @@
 import React from 'react' 
 import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native' 
 import PropTypes from 'prop-types'
-import styles from '../Style/RowStyle'
+import styles from '../Style/ItemListTileStyle'
 
-export default class Row extends React.Component {
+export default class ItemListTile extends React.Component {
   constructor(props) {
     super(props) 
   }
@@ -19,7 +19,6 @@ export default class Row extends React.Component {
         <View> 
           <View style={styles.viewCenter}>
             <Image source={{uri: this.props.image}} style={styles.photo}/>
-            
           </View>
     
             <Text style={styles.text}>
@@ -32,7 +31,7 @@ export default class Row extends React.Component {
   }
 }
 
-Row.propTypes = {
+ItemListTile.propTypes = {
   navigate: PropTypes.any.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired
