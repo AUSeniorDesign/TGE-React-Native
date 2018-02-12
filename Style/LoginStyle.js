@@ -8,9 +8,10 @@ export default StyleSheet.create({
     },
     logo: {
         marginTop: 30,
+        marginBottom: 20
     },
     textField: {
-        marginTop: 20,
+        marginBottom: 20,
         marginLeft: 20,
         marginRight: 20,
         height: 30,
@@ -20,10 +21,11 @@ export default StyleSheet.create({
     },
     viewCenter: {
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 20
       },
       buttonView: {
-        backgroundColor: '#00C853',
+        backgroundColor: '#3b5998',
         height: 40,
         width: 300,
         justifyContent: 'center',

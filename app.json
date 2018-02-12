@@ -1,5 +1,12 @@
 {
   "expo": {
-    "sdkVersion": "23.0.0"
+    "sdkVersion": "23.0.0",
+    "name": "TGE",
+    "icon": "./Images/logo.png",
+    "version": "1.0.0"
+  },
+  "facebookScheme": "fb325985624578151",
+  "android": {
+    "package": "com.thegreatescape.TGE"
   }
 }
