@@ -109729,11 +109729,21 @@ var ItemsList = _wrapComponent('ItemsList')((_temp2 = _class = function (_Compon
     }, {
         key: '_renderRowData',
         value: function _renderRowData(navigate, item) {
-            return _react3.default.createElement(_ItemListTile2.default, { style: _ItemListStyle2.default.row, name: item.name, image: item.image, navigate: navigate, __source: {
+            console.log("image" + item.images);
+            return _react3.default.createElement(_ItemListTile2.default, { style: _ItemListStyle2.default.row, name: item.name, image: this._getFirstImage(item.images), navigate: navigate, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 29
+                    lineNumber: 30
                 }
             });
+        }
+    }, {
+        key: '_getFirstImage',
+        value: function _getFirstImage(images) {
+            if (images != "") {
+                return images.split(',')[0];
+            } else {
+                return 'https://vignette.wikia.nocookie.net/simpsons/images/6/60/No_Image_Available.png/revision/latest?cb=20170219125728';
+            }
         }
     }, {
         key: 'render',
@@ -109748,7 +109758,7 @@ var ItemsList = _wrapComponent('ItemsList')((_temp2 = _class = function (_Compon
                 _reactNative.View,
                 { style: _ItemListStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 42
+                        lineNumber: 51
                     }
                 },
                 _react3.default.createElement(_reactNative.FlatList, {
@@ -109760,7 +109770,7 @@ var ItemsList = _wrapComponent('ItemsList')((_temp2 = _class = function (_Compon
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 43
+                        lineNumber: 52
                     }
                 })
             );
@@ -109959,7 +109969,7 @@ function fetchItemsFromAPI() {
         fetch('https://tge.mybluemix.net/items').then(function (res) {
             return res.json();
         }).then(function (json) {
-            return dispatch(getItemsSuccess(json.items));
+            return dispatch(getItemsSuccess(json));
         }).catch(function (err) {
             return dispatch(getItemsFailure(err));
         });
@@ -110131,11 +110141,20 @@ var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component
     }, {
         key: '_renderRowData',
         value: function _renderRowData(navigate, item) {
-            return _react3.default.createElement(_FeaturedItemRow2.default, { name: item.name, image: item.image, navigate: navigate, __source: {
+            return _react3.default.createElement(_FeaturedItemRow2.default, { name: item.name, image: this._getFirstImage(item.images), navigate: navigate, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 24
                 }
             });
+        }
+    }, {
+        key: '_getFirstImage',
+        value: function _getFirstImage(images) {
+            if (images != "") {
+                return images.split(',')[0];
+            } else {
+                return 'https://vignette.wikia.nocookie.net/simpsons/images/6/60/No_Image_Available.png/revision/latest?cb=20170219125728';
+            }
         }
     }, {
         key: 'render',
@@ -110150,7 +110169,7 @@ var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component
                 _reactNative.View,
                 { style: _FeaturedItemListStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 37
+                        lineNumber: 45
                     }
                 },
                 _react3.default.createElement(_reactNative.FlatList, {
@@ -110161,7 +110180,7 @@ var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 38
+                        lineNumber: 46
                     }
                 })
             );

@@ -7,7 +7,7 @@ export function fetchItemsFromAPI() {
         // TODO: Refactor this so it's not using Promises because Haven will yell at me.
         fetch('https://tge.mybluemix.net/items')
             .then(res => res.json())
-            .then(json => dispatch(getItemsSuccess(json.items)))
+            .then(json => dispatch(getItemsSuccess(json)))
             .catch(err => dispatch(getItemsFailure(err)))
 
             
