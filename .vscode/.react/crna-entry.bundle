@@ -110422,7 +110422,7 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
     }, {
         key: '_logInFB',
         value: function _logInFB(navigate) {
-            var _ref, type, token, response;
+            var _ref, type, token, response, res, email, name, id;
 
             return regeneratorRuntime.async(function _logInFB$(_context) {
                 while (1) {
@@ -110430,7 +110430,7 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
                         case 0:
                             _context.next = 2;
                             return regeneratorRuntime.awrap(Expo.Facebook.logInWithReadPermissionsAsync('325985624578151', {
-                                permissions: ['public_profile']
+                                permissions: ['public_profile', 'email']
                             }));
 
                         case 2:
@@ -110439,7 +110439,7 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
                             token = _ref.token;
 
                             if (!(type === 'success')) {
-                                _context.next = 11;
+                                _context.next = 19;
                                 break;
                             }
 
@@ -110448,16 +110448,50 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
 
                         case 8:
                             response = _context.sent;
-
-                            console.log(token);
-                            navigate('Content');
+                            _context.next = 11;
+                            return regeneratorRuntime.awrap(response.json());
 
                         case 11:
+                            res = _context.sent;
+                            email = 'hsummers96@gmail.com';
+                            name = res.name;
+                            id = res.id;
+
+
+                            console.log(name);
+                            console.log(id);
+                            console.log(email);
+
+                            this._createUser(id, name, token, email);
+
+                        case 19:
                         case 'end':
                             return _context.stop();
                     }
                 }
             }, null, this);
+        }
+    }, {
+        key: '_createUser',
+        value: function _createUser(facebookId, name, token, email) {
+            var body = {
+                "facebook": {
+                    "facebookId": facebookId,
+                    "name": name,
+                    "token": token
+                }
+            };
+            fetch('http://172.20.10.7:3000/users/create/facebook', {
+                method: 'POST',
+                body: JSON.stringify(body),
+                headers: { 'Content-Type': 'application/json' }
+            }).then(function (res) {
+                return console.log(res.json());
+            }).then(function () {
+                return console.log('success');
+            }).catch(function (err) {
+                return console.log('failure' + err);
+            });
         }
     }, {
         key: 'render',
@@ -110471,19 +110505,19 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
                 _reactNative.View,
                 { style: _LoginStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 35
+                        lineNumber: 68
                     }
                 },
                 _react3.default.createElement(
                     _reactNative.View,
                     { style: _LoginStyle2.default.viewCenter, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 36
+                            lineNumber: 69
                         }
                     },
                     _react3.default.createElement(_reactNative.Image, { source: _logo2.default, style: _LoginStyle2.default.logo, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 37
+                            lineNumber: 70
                         }
                     })
                 ),
@@ -110491,7 +110525,7 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
                     _reactNative.View,
                     { style: _LoginStyle2.default.viewCenter, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 42
+                            lineNumber: 75
                         }
                     },
                     _react3.default.createElement(
@@ -110500,14 +110534,14 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
                                 return _this2._logInFB(navigate);
                             }, underlayColor: '#afbdd4', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 43
+                                lineNumber: 76
                             }
                         },
                         _react3.default.createElement(
                             _reactNative.Text,
                             { style: _LoginStyle2.default.buyText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 44
+                                    lineNumber: 77
                                 }
                             },
                             'Login with Facebook'
@@ -110518,7 +110552,7 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
                     _reactNative.View,
                     { style: _LoginStyle2.default.viewCenter, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 48
+                            lineNumber: 81
                         }
                     },
                     _react3.default.createElement(
@@ -110527,14 +110561,14 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
                                 return _this2._loginPressed(navigate);
                             }, underlayColor: '#afbdd4', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 49
+                                lineNumber: 82
                             }
                         },
                         _react3.default.createElement(
                             _reactNative.Text,
                             { style: _LoginStyle2.default.buyText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 50
+                                    lineNumber: 83
                                 }
                             },
                             'Admin Login'
