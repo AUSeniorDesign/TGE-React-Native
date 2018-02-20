@@ -1,3 +1,15 @@
+/*
+Created by: Harry Summers
+
+FeaturedItemList.js
+
+Description:
+This class renders the component for the featured items in the app.
+A list of instagram-like images are displayed and can be scrolled through.
+The component is connected to redux and the when the items array changes
+the component is re-rendered.
+*/
+
 import React, {Component} from 'react'
 import {
     Text,

@@ -1,3 +1,16 @@
+/*
+Created by: Harry Summers
+
+Actions.js
+
+Description:
+This function defines all the actions that can be requested from 
+redux. The result of the action will be passed through the reducer so make sure
+to update the corresponding reducer file when a new action is added here.
+These actions add to the immutable state dictionary that redux manages.
+*/
+
+
 import { FETCHING_ITEMS, FETCHING_ITEMS_SUCCESS, FETCHING_ITEMS_FAILURE } from '../Utils/Constants'
 
 export function fetchItemsFromAPI() {

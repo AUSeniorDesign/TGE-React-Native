@@ -1,3 +1,16 @@
+/*
+Created by: Harry Summers
+
+ItemsList.js
+
+Description:
+This is the component that the user will see first if they have already logged 
+into the app. This component will display all the items in the TGE database in a grid.
+The user can then click on one and view their details. The items state is mapped to props
+(see ItemListContainer) and requests the items from the api in the componentsWillMount().
+*/
+
+
 import React, {Component} from 'react'
 import {
     Text,
@@ -8,8 +21,6 @@ import {
 } from 'react-native'
 import ItemListTile from '../Components/ItemListTile'
 import styles from '../Style/ItemListStyle'
-
-let counter = 0
 
 export default class ItemsList extends Component {
     static navigationOptions = {
@@ -24,15 +35,18 @@ export default class ItemsList extends Component {
         this.props.getItems()
     }
     
-    _buttonPressed() {
-        console.log('ButtonPressed')
-
-      }
-
-    _renderRowData(navigate, item) {
+    /*
+        Renders the tile for the specific item.
+    */
+    _renderTile(navigate, item) {
           console.log("image" + item.images)
         return <ItemListTile style={styles.row} name={item.name} image={this._getFirstImage(item.images)} navigate={navigate}/>
     }
+
+    /*
+        This method returns the first image in the list of images 
+        that each item contains so that it can be displayed in the list.
+    */
 
     _getFirstImage(images) {
         if (images != "") {
@@ -57,7 +71,7 @@ export default class ItemsList extends Component {
                     keyExtractor={this._keyExtractor}
                     data={items}
                     numColumns={2}
-                    renderItem={(rowData) => this._renderRowData(navigate, rowData.item)}
+                    renderItem={(rowData) => this._renderTile(navigate, rowData.item)}
                 />
           </View>
         )

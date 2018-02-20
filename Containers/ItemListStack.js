@@ -1,14 +1,24 @@
+/*
+Created by: Harry Summers
+
+ItemListStack.js
+
+Description:
+This file defines the StackNavigator for the ItemList and ItemDetail component.
+It also contains the logic for the Cart button which takes you to your items 
+in the cart.
+*/
+
+
 import ItemDetail from '../Components/ItemDetail'
 import ItemListContainer from './ItemListContainer'
 import { StackNavigator } from 'react-navigation' 
 import React from 'react'
 import { Button, TouchableHighlight } from 'react-native'
-import CartContainer from '../Components/CartList'
+import CartContainer from './CartContainer'
 
 function rightPressed(navigate) {
-  console.log('Hello')
   navigate('Cart')
-  
 }
 
 ItemListContainer.navigationOptions = props => {
@@ -33,10 +43,3 @@ export default StackNavigator({
 
   }
 );
-  
-// header: ({navigate}) => ({
-//   right: (
-//       <Button title={"Cart"} onPress={() => rightPressed(navigate)} />
-//   ),
-// }),
-

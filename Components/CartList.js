@@ -1,3 +1,16 @@
+/*
+Created by: Harry Summers
+
+CartList.js
+
+Description:
+This componenet defines the screen for the cart.
+The user will be able to add items from the detail screen of that
+image and then checkout on this screen. This component is wired
+to redux and will fetch for items in the cart with the API. When the items
+are received they are added to a simple table.
+*/
+
 import React from 'react' 
 import { 
   StyleSheet,

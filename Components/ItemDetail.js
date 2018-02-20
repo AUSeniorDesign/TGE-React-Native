@@ -1,3 +1,14 @@
+/*
+Created by: Harry Summers
+
+ItemDetail.js
+
+Description:
+This component defines the detail screen for the item.
+The user has the ability to add the item to their cart to make
+a later purchase. 
+*/
+
 import React from 'react' 
 import { 
   StyleSheet,
@@ -20,8 +31,8 @@ export default class ItemDetail extends React.Component {
     this.image = props.navigation.state.params.image
   } 
 
-  _buyPressed() {
-    console.log('Buy Pressed')
+  _addToCartPressed() {
+    console.log('Add to cart pressed')
   }
 
   render() {
@@ -34,7 +45,7 @@ export default class ItemDetail extends React.Component {
           <Text style={styles.titleText}>{this.name}</Text>
           <Text style={styles.subTitleText}>Item Price + Discount Info</Text>
           <View style={styles.viewCenter}>
-            <TouchableHighlight style={styles.buttonView}  onPress={this._buyPressed} underlayColor={'#00E676'}>
+            <TouchableHighlight style={styles.buttonView}  onPress={this._addToCartPressed} underlayColor={'#00E676'}>
             <Text style={styles.buyText}>Add To Cart</Text>
             </TouchableHighlight>
           </View>
