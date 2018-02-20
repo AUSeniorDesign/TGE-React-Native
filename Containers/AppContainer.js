@@ -16,6 +16,7 @@ export default class AppContainer extends Component {
     }
 
     render() {
+        
         return(
             <TabNavigator>
                 <TabNavigator.Item

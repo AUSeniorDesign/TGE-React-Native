@@ -18,7 +18,7 @@ export default class ItemDetail extends React.Component {
     super(props) 
     this.name = props.navigation.state.params.name
     this.image = props.navigation.state.params.image
-  }
+  } 
 
   _buyPressed() {
     console.log('Buy Pressed')
@@ -35,7 +35,7 @@ export default class ItemDetail extends React.Component {
           <Text style={styles.subTitleText}>Item Price + Discount Info</Text>
           <View style={styles.viewCenter}>
             <TouchableHighlight style={styles.buttonView}  onPress={this._buyPressed} underlayColor={'#00E676'}>
-            <Text style={styles.buyText}>Buy Now</Text>
+            <Text style={styles.buyText}>Add To Cart</Text>
             </TouchableHighlight>
           </View>
           <Text style={styles.titleText}>Item Description</Text>
