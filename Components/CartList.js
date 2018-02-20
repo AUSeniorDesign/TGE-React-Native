@@ -7,7 +7,7 @@ import {
   TouchableHighlight,
   FlatList} from 'react-native' 
 import { StackNavigator } from 'react-navigation' 
-import styles from '../Style/ItemDetailStyle'
+import styles from '../Style/CartListStyle'
 
 export default class CartList extends React.Component {
 
@@ -15,10 +15,25 @@ export default class CartList extends React.Component {
         super(props)
     }
 
+    _renderRowData(data) {
+        return <Text>Really</Text>
+    }
+
+    _keyExtractor = (item, index) => item.name
+
     render() {
+        const items = [
+            "Comic Book",
+            "Action Figure",
+            "X-Men Lunchbox"
+        ]
         return(
-            <View>
-                <Text>Hello World</Text>
+            <View style={styles.container}>
+                <FlatList
+                    keyExtractor={this._keyExtractor}
+                    data={items}
+                    renderItem={(rowData) => this._renderRowData(rowData)}
+                />
             </View>
         )
     }

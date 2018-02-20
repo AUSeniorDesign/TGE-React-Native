@@ -8,5 +8,4 @@ export default StyleSheet.create({
         width: '80px',
         
     }
-
 }) 

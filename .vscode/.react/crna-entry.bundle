@@ -109981,7 +109981,6 @@ exports.default = _reactNative.StyleSheet.create({
     container: {
         flex: 1
     }
-
 });
 }, 954, null, "TGE/Style/ItemListStyle.js");
 __d(/* TGE/Redux/Actions.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
@@ -110088,7 +110087,13 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
     function CartList(props) {
         _classCallCheck(this, CartList);
 
-        return _possibleConstructorReturn(this, (CartList.__proto__ || Object.getPrototypeOf(CartList)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (CartList.__proto__ || Object.getPrototypeOf(CartList)).call(this, props));
+
+        _this._keyExtractor = function (item, index) {
+            return item.name;
+        };
+
+        return _this;
     }
 
     _createClass(CartList, [{
@@ -110096,22 +110101,18 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
         value: function render() {
             return _react3.default.createElement(
                 _reactNative.View,
-                {
-                    __source: {
+                { style: _ItemDetailStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 20
+                        lineNumber: 22
                     }
                 },
-                _react3.default.createElement(
-                    _reactNative.Text,
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 21
-                        }
-                    },
-                    'Hello World'
-                )
+                _react3.default.createElement(_reactNative.FlatList, {
+                    keyExtractor: this._keyExtractor,
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 23
+                    }
+                })
             );
         }
     }]);
@@ -110461,7 +110462,6 @@ exports.default = _reactNative.StyleSheet.create({
         width: '80px'
 
     }
-
 });
 }, 962, null, "TGE/Style/FeaturedItemListStyle.js");
 __d(/* TGE/Containers/AppStack.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
