@@ -12,7 +12,7 @@ are received they are added to a simple table.
 */
 
 import React from 'react' 
-import { 
+import {
   StyleSheet,
   Text,
   Image,
@@ -28,23 +28,24 @@ export default class CartList extends React.Component {
         super(props)
     }
 
+    componentWillMount() {
+        this.props.getCart()
+    }
+
     _renderRowData(data) {
-        return <Text>Really</Text>
+        return <Text>data</Text>
     }
 
     _keyExtractor = (item, index) => item.name
 
     render() {
-        const items = [
-            "Comic Book",
-            "Action Figure",
-            "X-Men Lunchbox"
-        ]
+        const { cartItems } = this.props.cartItems
+
         return(
             <View style={styles.container}>
                 <FlatList
                     keyExtractor={this._keyExtractor}
-                    data={items}
+                    data={cartItems}
                     renderItem={(rowData) => this._renderRowData(rowData)}
                 />
             </View>

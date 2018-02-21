@@ -15,7 +15,7 @@ import ItemListContainer from './ItemListContainer'
 import { StackNavigator } from 'react-navigation' 
 import React from 'react'
 import { Button, TouchableHighlight } from 'react-native'
-import CartContainer from './CartContainer'
+import CartListContainer from './CartListContainer'
 
 function rightPressed(navigate) {
   navigate('Cart')
@@ -38,7 +38,7 @@ export default StackNavigator({
       screen: ItemDetail,
     },
     Cart: {
-      screen: CartContainer,
+      screen: CartListContainer,
     }
 
   }

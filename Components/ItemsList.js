@@ -39,7 +39,6 @@ export default class ItemsList extends Component {
         Renders the tile for the specific item.
     */
     _renderTile(navigate, item) {
-          console.log("image" + item.images)
         return <ItemListTile style={styles.row} name={item.name} image={this._getFirstImage(item.images)} navigate={navigate}/>
     }
 

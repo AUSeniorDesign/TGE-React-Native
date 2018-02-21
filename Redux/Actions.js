@@ -11,10 +11,15 @@ These actions add to the immutable state dictionary that redux manages.
 */
 
 
-import { FETCHING_ITEMS, FETCHING_ITEMS_SUCCESS, FETCHING_ITEMS_FAILURE } from '../Utils/Constants'
+import { FETCHING_ITEMS, 
+    FETCHING_ITEMS_SUCCESS, 
+    FETCHING_ITEMS_FAILURE,
+    FETCHING_CART,
+    FETCHING_CART_SUCCESS,
+    FETCHING_CART_FAILURE } from '../Utils/Constants'
 
 export function fetchItemsFromAPI() {
-    console.log('fetching from api')
+    console.log('fetching items from api')
     return(dispatch) => {
         dispatch(getItems())
         // TODO: Refactor this so it's not using Promises because Haven will yell at me.
@@ -48,6 +53,48 @@ function getItemsFailure(err) {
 
     return {
         type: FETCHING_ITEMS_FAILURE,
+        error: true
+    }
+}
+
+export function fetchCartFromAPI() {
+    console.log('fetching cart from api')
+
+    return(dispatch) => {
+        dispatch(getCart())
+
+        fetch('http://172.20.10.7:3000/users/1/cart', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => res.json())
+            .then(json => dispatch(getCartSuccess(json)))
+            .catch(json => dispatch(getCartFailure()))
+    }
+}
+
+function getCart() {
+    console.log('getting cart')
+
+    return {
+        type: FETCHING_CART
+    }
+}
+
+
+function getCartSuccess(payload) {
+    console.log('cart')
+    console.log(payload)
+    return {
+        type: FETCHING_CART_SUCCESS,
+        payload
+    }
+}
+
+function getCartFailure(payload) {
+    console.log('get cart was unsuccessful ')
+    return {
+        type: FETCHING_CART_FAILURE,
         error: true
     }
 }

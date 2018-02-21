@@ -12,16 +12,18 @@ they are rendered into the table.
 
 import CartList from '../Components/CartList'
 import { connect } from 'react-redux'
+import {fetchCartFromAPI}  from '../Redux/Actions'
+
 
 function mapStateToProps(state) {
     return {
-
+        cartItems: state.cartItems
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-
+        getCart: () => dispatch(fetchCartFromAPI())
     }
 }
 

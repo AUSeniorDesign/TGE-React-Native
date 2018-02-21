@@ -11,9 +11,11 @@ separate files.
 
 import { combineReducers } from 'redux'
 import items from './items'
+import cartItems from './cart'
 
 const rootReducer = combineReducers({
-    items
+    items,
+    cartItems
 })
 
 export default rootReducer
