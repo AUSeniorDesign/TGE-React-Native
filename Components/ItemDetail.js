@@ -34,7 +34,7 @@ export default class ItemDetail extends React.Component {
   _addToCartPressed() {
     console.log('Add to cart pressed')
 
-    fetch('http://172.20.10.7:3000/users/1/cart', {
+    fetch('https://tge.mybluemix.net/users/1/cart', {
             method: 'POST',
             body: JSON.stringify({ 'itemId': 12 }), 
             headers: { 'Content-Type': 'application/json' }

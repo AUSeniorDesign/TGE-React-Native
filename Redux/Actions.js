@@ -63,7 +63,7 @@ export function fetchCartFromAPI() {
     return(dispatch) => {
         dispatch(getCart())
 
-        fetch('http://172.20.10.7:3000/users/1/cart', {
+        fetch('https://tge.mybluemix.net/users/1/cart', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
