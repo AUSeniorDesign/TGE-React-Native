@@ -109786,6 +109786,10 @@ var _ItemDetailStyle = require(954                       ); // 954 = ../Style/It
 
 var _ItemDetailStyle2 = _interopRequireDefault(_ItemDetailStyle);
 
+var _StringParser = require(969                    ); // 969 = ../Utils/StringParser
+
+var _StringParser2 = _interopRequireDefault(_StringParser);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -109821,8 +109825,10 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
 
     var _this = _possibleConstructorReturn(this, (ItemDetail.__proto__ || Object.getPrototypeOf(ItemDetail)).call(this, props));
 
-    _this.name = props.navigation.state.params.name;
-    _this.image = props.navigation.state.params.image;
+    _this.id = props.navigation.state.params.item.id;
+    _this.name = props.navigation.state.params.item.name;
+    _this.image = _StringParser2.default.getFirstImage(props.navigation.state.params.item.images);
+    _this.price = props.navigation.state.params.item.price;
     return _this;
   }
 
@@ -109833,7 +109839,7 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
 
       fetch('https://tge.mybluemix.net/users/1/cart', {
         method: 'POST',
-        body: JSON.stringify({ 'itemId': 12 }),
+        body: JSON.stringify({ 'itemId': this.id }),
         headers: { 'Content-Type': 'application/json' }
       }).then(function (res) {
         return res.json();
@@ -109851,19 +109857,19 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
         _reactNative.ScrollView,
         { style: _ItemDetailStyle2.default.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 53
           }
         },
         _react3.default.createElement(
           _reactNative.View,
           { style: _ItemDetailStyle2.default.viewCenter, __source: {
               fileName: _jsxFileName,
-              lineNumber: 51
+              lineNumber: 54
             }
           },
           _react3.default.createElement(_reactNative.Image, { source: { uri: this.image }, style: _ItemDetailStyle2.default.photo, __source: {
               fileName: _jsxFileName,
-              lineNumber: 52
+              lineNumber: 55
             }
           })
         ),
@@ -109871,7 +109877,7 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
           _reactNative.Text,
           { style: _ItemDetailStyle2.default.titleText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 54
+              lineNumber: 57
             }
           },
           this.name
@@ -109880,30 +109886,30 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
           _reactNative.Text,
           { style: _ItemDetailStyle2.default.subTitleText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 55
+              lineNumber: 58
             }
           },
-          'Item Price + Discount Info'
+          this.price
         ),
         _react3.default.createElement(
           _reactNative.View,
           { style: _ItemDetailStyle2.default.viewCenter, __source: {
               fileName: _jsxFileName,
-              lineNumber: 56
+              lineNumber: 59
             }
           },
           _react3.default.createElement(
             _reactNative.TouchableHighlight,
             { style: _ItemDetailStyle2.default.buttonView, onPress: this._addToCartPressed, underlayColor: '#00E676', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 57
+                lineNumber: 60
               }
             },
             _react3.default.createElement(
               _reactNative.Text,
               { style: _ItemDetailStyle2.default.buyText, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 58
+                  lineNumber: 61
                 }
               },
               'Add To Cart'
@@ -109914,7 +109920,7 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
           _reactNative.Text,
           { style: _ItemDetailStyle2.default.titleText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 61
+              lineNumber: 64
             }
           },
           'Item Description'
@@ -109923,7 +109929,7 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
           _reactNative.Text,
           { style: _ItemDetailStyle2.default.descriptionText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 62
+              lineNumber: 65
             }
           },
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices, orci eget tincidunt lobortis, urna risus pretium sapien, sed posuere metus sapien eu eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam imperdiet eu purus in rutrum. '
@@ -109993,6 +109999,35 @@ exports.default = _reactNative.StyleSheet.create({
   }
 });
 }, 954, null, "TGE/Style/ItemDetailStyle.js");
+__d(/* TGE/Utils/StringParser.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var StringParser = function () {
+    function StringParser() {
+        _classCallCheck(this, StringParser);
+    }
+
+    _createClass(StringParser, null, [{
+        key: 'getFirstImage',
+        value: function getFirstImage(images) {
+            if (images != "") {
+                return images.split(',')[0];
+            } else {
+                return 'https://vignette.wikia.nocookie.net/simpsons/images/6/60/No_Image_Available.png/revision/latest?cb=20170219125728';
+            }
+        }
+    }]);
+
+    return StringParser;
+}();
+
+exports.default = StringParser;
+}, 969, null, "TGE/Utils/StringParser.js");
 __d(/* TGE/Containers/ItemListContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110101,20 +110136,11 @@ var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Compone
     }, {
         key: '_renderTile',
         value: function _renderTile(navigate, item) {
-            return _react3.default.createElement(_ItemListTile2.default, { style: _ItemListStyle2.default.row, name: item.name, image: this._getFirstImage(item.images), navigate: navigate, __source: {
+            return _react3.default.createElement(_ItemListTile2.default, { style: _ItemListStyle2.default.row, item: item, navigate: navigate, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 42
                 }
             });
-        }
-    }, {
-        key: '_getFirstImage',
-        value: function _getFirstImage(images) {
-            if (images != "") {
-                return images.split(',')[0];
-            } else {
-                return 'https://vignette.wikia.nocookie.net/simpsons/images/6/60/No_Image_Available.png/revision/latest?cb=20170219125728';
-            }
         }
     }, {
         key: 'render',
@@ -110129,7 +110155,7 @@ var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Compone
                 _reactNative.View,
                 { style: _ItemListStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 68
+                        lineNumber: 57
                     }
                 },
                 _react3.default.createElement(_reactNative.FlatList, {
@@ -110141,7 +110167,7 @@ var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Compone
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 69
+                        lineNumber: 58
                     }
                 })
             );
@@ -110180,6 +110206,10 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 var _ItemListTileStyle = require(958                         ); // 958 = ../Style/ItemListTileStyle
 
 var _ItemListTileStyle2 = _interopRequireDefault(_ItemListTileStyle);
+
+var _StringParser = require(969                    ); // 969 = ../Utils/StringParser
+
+var _StringParser2 = _interopRequireDefault(_StringParser);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110227,13 +110257,16 @@ var ItemListTile = _wrapComponent('ItemListTile')(function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var name = this.props.item.name;
+      var image = _StringParser2.default.getFirstImage(this.props.item.images);
+
       return _react3.default.createElement(
         _reactNative.TouchableHighlight,
         { underlayColor: '#C1C1C1', style: _ItemListTileStyle2.default.container, onPress: function onPress() {
             return _this2._rowPressed();
           }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 39
           }
         },
         _react3.default.createElement(
@@ -110241,19 +110274,19 @@ var ItemListTile = _wrapComponent('ItemListTile')(function (_React$Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 35
+              lineNumber: 40
             }
           },
           _react3.default.createElement(
             _reactNative.View,
             { style: _ItemListTileStyle2.default.viewCenter, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 36
+                lineNumber: 41
               }
             },
-            _react3.default.createElement(_reactNative.Image, { source: { uri: this.props.image }, style: _ItemListTileStyle2.default.photo, __source: {
+            _react3.default.createElement(_reactNative.Image, { source: { uri: image }, style: _ItemListTileStyle2.default.photo, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 37
+                lineNumber: 42
               }
             })
           ),
@@ -110261,10 +110294,10 @@ var ItemListTile = _wrapComponent('ItemListTile')(function (_React$Component) {
             _reactNative.Text,
             { style: _ItemListTileStyle2.default.text, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 39
+                lineNumber: 44
               }
             },
-            '' + this.props.name
+            '' + name
           )
         )
       );
@@ -110280,9 +110313,7 @@ exports.default = ItemListTile;
 ItemListTile.propTypes = {
   navigate: _propTypes2.default.any.isRequired,
 
-  name: _propTypes2.default.string.isRequired,
-
-  image: _propTypes2.default.string.isRequired
+  item: _propTypes2.default.object.isRequired
 };
 }, 957, null, "TGE/Components/ItemListTile.js");
 __d(/* TGE/Style/ItemListTileStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
@@ -110472,6 +110503,10 @@ var _CartListStyle = require(963                     ); // 963 = ../Style/CartLi
 
 var _CartListStyle2 = _interopRequireDefault(_CartListStyle);
 
+var _CartItemRow = require(971            ); // 971 = ./CartItemRow
+
+var _CartItemRow2 = _interopRequireDefault(_CartItemRow);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -110508,7 +110543,7 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (CartList.__proto__ || Object.getPrototypeOf(CartList)).call(this, props));
 
         _this._keyExtractor = function (item, index) {
-            return item.name;
+            return item.id;
         };
 
         return _this;
@@ -110521,17 +110556,12 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
         }
     }, {
         key: '_renderRowData',
-        value: function _renderRowData(data) {
-            return _react3.default.createElement(
-                _reactNative.Text,
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 36
-                    }
-                },
-                'data'
-            );
+        value: function _renderRowData(item) {
+            return _react3.default.createElement(_CartItemRow2.default, { item: item, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 37
+                }
+            });
         }
     }, {
         key: 'render',
@@ -110545,7 +110575,7 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
                 _reactNative.View,
                 { style: _CartListStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 45
+                        lineNumber: 46
                     }
                 },
                 _react3.default.createElement(_reactNative.FlatList, {
@@ -110556,7 +110586,7 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 46
+                        lineNumber: 47
                     }
                 })
             );
@@ -110581,6 +110611,134 @@ exports.default = _reactNative.StyleSheet.create({
 
 });
 }, 963, null, "TGE/Style/CartListStyle.js");
+__d(/* TGE/Components/CartItemRow.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react2 = require(122    ); // 122 = react
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require(214                                                 ); // 214 = ./../node_modules/react-transform-hmr/lib/index.js
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Components/CartItemRow.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _reactNative = require(99            ); // 99 = react-native
+
+var _CartItemRowStyle = require(972                        ); // 972 = ../Style/CartItemRowStyle
+
+var _CartItemRowStyle2 = _interopRequireDefault(_CartItemRowStyle);
+
+var _StringParser = require(969                    ); // 969 = ../Utils/StringParser
+
+var _StringParser2 = _interopRequireDefault(_StringParser);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+    CartItemRow: {
+        displayName: 'CartItemRow'
+    }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: '/Users/Harry/Developer/TGE-React-Native/Components/CartItemRow.js',
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+    return function (Component) {
+        return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+}
+
+var CartItemRow = _wrapComponent('CartItemRow')(function (_React$Component) {
+    _inherits(CartItemRow, _React$Component);
+
+    function CartItemRow(props) {
+        _classCallCheck(this, CartItemRow);
+
+        var _this = _possibleConstructorReturn(this, (CartItemRow.__proto__ || Object.getPrototypeOf(CartItemRow)).call(this, props));
+
+        _this.name = _this.props.item.item.Item.name;
+        _this.image = _StringParser2.default.getFirstImage(_this.props.item.item.Item.images);
+        _this.price = _this.props.item.item.Item.price;
+
+        return _this;
+    }
+
+    _createClass(CartItemRow, [{
+        key: 'render',
+        value: function render() {
+            return _react3.default.createElement(
+                _reactNative.TouchableHighlight,
+                { underlayColor: '#C1C1C1', style: _CartItemRowStyle2.default.container, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 28
+                    }
+                },
+                _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 29
+                        }
+                    },
+                    _react3.default.createElement(_reactNative.Image, { source: { uri: this.image }, style: _CartItemRowStyle2.default.photo, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 30
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 31
+                            }
+                        },
+                        this.name
+                    )
+                )
+            );
+        }
+    }]);
+
+    return CartItemRow;
+}(_react3.default.Component));
+
+exports.default = CartItemRow;
+}, 971, null, "TGE/Components/CartItemRow.js");
+__d(/* TGE/Style/CartItemRowStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactNative = require(99            ); // 99 = react-native
+
+exports.default = _reactNative.StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    photo: {
+        backgroundColor: '#C1C1C1',
+        height: 40,
+        width: 40
+    }
+});
+}, 972, null, "TGE/Style/CartItemRowStyle.js");
 __d(/* TGE/Containers/FeaturedItemListStack.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -110658,7 +110816,7 @@ var _FeaturedItemRow = require(967                ); // 967 = ./FeaturedItemRow
 
 var _FeaturedItemRow2 = _interopRequireDefault(_FeaturedItemRow);
 
-var _FeaturedItemListStyle = require(969                             ); // 969 = ../Style/FeaturedItemListStyle
+var _FeaturedItemListStyle = require(970                             ); // 970 = ../Style/FeaturedItemListStyle
 
 var _FeaturedItemListStyle2 = _interopRequireDefault(_FeaturedItemListStyle);
 
@@ -110721,20 +110879,11 @@ var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component
     }, {
         key: '_renderRowData',
         value: function _renderRowData(navigate, item) {
-            return _react3.default.createElement(_FeaturedItemRow2.default, { name: item.name, image: this._getFirstImage(item.images), navigate: navigate, __source: {
+            return _react3.default.createElement(_FeaturedItemRow2.default, { item: item, navigate: navigate, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 36
                 }
             });
-        }
-    }, {
-        key: '_getFirstImage',
-        value: function _getFirstImage(images) {
-            if (images != "") {
-                return images.split(',')[0];
-            } else {
-                return 'https://vignette.wikia.nocookie.net/simpsons/images/6/60/No_Image_Available.png/revision/latest?cb=20170219125728';
-            }
         }
     }, {
         key: 'render',
@@ -110749,7 +110898,7 @@ var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component
                 _reactNative.View,
                 { style: _FeaturedItemListStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 57
+                        lineNumber: 49
                     }
                 },
                 _react3.default.createElement(_reactNative.FlatList, {
@@ -110760,7 +110909,7 @@ var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 58
+                        lineNumber: 50
                     }
                 })
             );
@@ -110793,6 +110942,10 @@ var _reactNative = require(99            ); // 99 = react-native
 var _FeaturedItemRowStyle = require(968                            ); // 968 = ../Style/FeaturedItemRowStyle
 
 var _FeaturedItemRowStyle2 = _interopRequireDefault(_FeaturedItemRowStyle);
+
+var _StringParser = require(969                    ); // 969 = ../Utils/StringParser
+
+var _StringParser2 = _interopRequireDefault(_StringParser);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110840,35 +110993,38 @@ var FeaturedItemRow = _wrapComponent('FeaturedItemRow')(function (_React$Compone
         value: function render() {
             var _this2 = this;
 
+            var image = _StringParser2.default.getFirstImage(this.props.item.images);
+            var name = this.props.item.name;
+
             return _react3.default.createElement(
                 _reactNative.TouchableHighlight,
                 { underlayColor: '#BDBDBD', style: _FeaturedItemRowStyle2.default.container, onPress: function onPress() {
                         return _this2._rowPressed();
                     }, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 24
+                        lineNumber: 28
                     }
                 },
                 _react3.default.createElement(
                     _reactNative.View,
                     { style: _FeaturedItemRowStyle2.default.viewCenter, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 25
+                            lineNumber: 29
                         }
                     },
-                    _react3.default.createElement(_reactNative.Image, { source: { uri: this.props.image }, style: _FeaturedItemRowStyle2.default.photo, __source: {
+                    _react3.default.createElement(_reactNative.Image, { source: { uri: image }, style: _FeaturedItemRowStyle2.default.photo, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 26
+                            lineNumber: 30
                         }
                     }),
                     _react3.default.createElement(
                         _reactNative.Text,
                         { style: _FeaturedItemRowStyle2.default.title, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 27
+                                lineNumber: 31
                             }
                         },
-                        this.props.name
+                        name
                     )
                 )
             );
@@ -110922,7 +111078,7 @@ exports.default = _reactNative.StyleSheet.create({
 
     }
 });
-}, 969, null, "TGE/Style/FeaturedItemListStyle.js");
+}, 970, null, "TGE/Style/FeaturedItemListStyle.js");
 ;require(137);
 ;require(0);
 //# sourceMappingURL=crna-entry.map

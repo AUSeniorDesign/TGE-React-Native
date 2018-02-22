@@ -39,21 +39,10 @@ export default class ItemsList extends Component {
         Renders the tile for the specific item.
     */
     _renderTile(navigate, item) {
-        return <ItemListTile style={styles.row} name={item.name} image={this._getFirstImage(item.images)} navigate={navigate}/>
+        return <ItemListTile style={styles.row} item={item} navigate={navigate}/>
     }
 
-    /*
-        This method returns the first image in the list of images 
-        that each item contains so that it can be displayed in the list.
-    */
 
-    _getFirstImage(images) {
-        if (images != "") {
-            return images.split(',')[0]
-        } else {
-            return 'https://vignette.wikia.nocookie.net/simpsons/images/6/60/No_Image_Available.png/revision/latest?cb=20170219125728'
-        }
-    }
 
     // CHANGE THIS WHEN I GET ID
     _keyExtractor = (item, index) => item.name

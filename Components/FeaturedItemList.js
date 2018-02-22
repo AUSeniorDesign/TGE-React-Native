@@ -33,16 +33,8 @@ export default class FeaturedItemsList extends Component {
 
     _renderRowData(navigate, item) {
         return (
-            <FeaturedItemRow name={item.name} image={this._getFirstImage(item.images)} navigate={navigate}/>
+            <FeaturedItemRow item={item} navigate={navigate}/>
         )
-    }
-
-    _getFirstImage(images) {
-        if (images != "") {
-            return images.split(',')[0]
-        } else {
-            return 'https://vignette.wikia.nocookie.net/simpsons/images/6/60/No_Image_Available.png/revision/latest?cb=20170219125728'
-        }
     }
 
     // CHANGE THIS WHEN I GET ID

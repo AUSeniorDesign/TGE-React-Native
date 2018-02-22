@@ -19,6 +19,7 @@ import {
   ScrollView} from 'react-native' 
 import { StackNavigator } from 'react-navigation' 
 import styles from '../Style/ItemDetailStyle'
+import StringParser from '../Utils/StringParser'
 
 export default class ItemDetail extends React.Component {
     static navigationOptions = {
@@ -27,16 +28,18 @@ export default class ItemDetail extends React.Component {
       
   constructor(props) {
     super(props) 
-    this.name = props.navigation.state.params.name
-    this.image = props.navigation.state.params.image
-  } 
+    this.id = props.navigation.state.params.item.id
+    this.name = props.navigation.state.params.item.name
+    this.image = StringParser.getFirstImage(props.navigation.state.params.item.images)
+    this.price = props.navigation.state.params.item.price
+  }
 
   _addToCartPressed() {
     console.log('Add to cart pressed')
 
     fetch('https://tge.mybluemix.net/users/1/cart', {
             method: 'POST',
-            body: JSON.stringify({ 'itemId': 12 }), 
+            body: JSON.stringify({ 'itemId': this.id }), 
             headers: { 'Content-Type': 'application/json' }
         })
             .then(res => res.json())
@@ -52,7 +55,7 @@ export default class ItemDetail extends React.Component {
             <Image source={{uri: this.image}} style={styles.photo}/>
           </View>
           <Text style={styles.titleText}>{this.name}</Text>
-          <Text style={styles.subTitleText}>Item Price + Discount Info</Text>
+          <Text style={styles.subTitleText}>{this.price}</Text>
           <View style={styles.viewCenter}>
             <TouchableHighlight style={styles.buttonView}  onPress={this._addToCartPressed} underlayColor={'#00E676'}>
             <Text style={styles.buyText}>Add To Cart</Text>

@@ -21,6 +21,7 @@ import {
   FlatList} from 'react-native' 
 import { StackNavigator } from 'react-navigation' 
 import styles from '../Style/CartListStyle'
+import CartItemRow from './CartItemRow'
 
 export default class CartList extends React.Component {
 
@@ -32,11 +33,11 @@ export default class CartList extends React.Component {
         this.props.getCart()
     }
 
-    _renderRowData(data) {
-        return <Text>data</Text>
+    _renderRowData(item) {
+        return <CartItemRow item={item}/>
     }
 
-    _keyExtractor = (item, index) => item.name
+    _keyExtractor = (item, index) => item.id
 
     render() {
         const { cartItems } = this.props.cartItems

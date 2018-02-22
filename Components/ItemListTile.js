@@ -15,8 +15,10 @@ import React from 'react'
 import { View, Text, Image, TouchableHighlight } from 'react-native' 
 import PropTypes from 'prop-types'
 import styles from '../Style/ItemListTileStyle'
+import StringParser from '../Utils/StringParser'
 
 export default class ItemListTile extends React.Component {
+
   constructor(props) {
     super(props) 
   }
@@ -30,14 +32,17 @@ export default class ItemListTile extends React.Component {
 
   render() {
 
+    const name = this.props.item.name
+    const image = StringParser.getFirstImage(this.props.item.images)
+
     return (
       <TouchableHighlight underlayColor={'#C1C1C1'} style={styles.container} onPress={() => this._rowPressed()}>
         <View> 
           <View style={styles.viewCenter}>
-            <Image source={{uri: this.props.image}} style={styles.photo}/>
+            <Image source={{uri: image}} style={styles.photo}/>
           </View>
             <Text style={styles.text}>
-            {`${this.props.name}`}
+            {`${name}`}
             </Text>
         </View>
   
@@ -50,10 +55,7 @@ ItemListTile.propTypes = {
   /* Needed for navigating to the detail screen */
   navigate: PropTypes.any.isRequired,
 
-  /* The name of the item to be displayed in the row */ 
-  name: PropTypes.string.isRequired,
-
-  /* The image to be displayed for the item. */
-  image: PropTypes.string.isRequired
+  /* The item to be displayed in the row */ 
+  item: PropTypes.object.isRequired,
 }
 
