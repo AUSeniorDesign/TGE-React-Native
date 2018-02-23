@@ -104061,7 +104061,7 @@ var _ItemListStack = require(952              ); // 952 = ./ItemListStack
 
 var _ItemListStack2 = _interopRequireDefault(_ItemListStack);
 
-var _FeaturedItemListStack = require(964                      ); // 964 = ./FeaturedItemListStack
+var _FeaturedItemListStack = require(967                      ); // 967 = ./FeaturedItemListStack
 
 var _FeaturedItemListStack2 = _interopRequireDefault(_FeaturedItemListStack);
 
@@ -109711,7 +109711,7 @@ var _ItemDetail = require(953                       ); // 953 = ../Components/It
 
 var _ItemDetail2 = _interopRequireDefault(_ItemDetail);
 
-var _ItemListContainer = require(955                  ); // 955 = ./ItemListContainer
+var _ItemListContainer = require(956                  ); // 956 = ./ItemListContainer
 
 var _ItemListContainer2 = _interopRequireDefault(_ItemListContainer);
 
@@ -109723,7 +109723,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _CartListContainer = require(961                  ); // 961 = ./CartListContainer
+var _CartListContainer = require(962                  ); // 962 = ./CartListContainer
 
 var _CartListContainer2 = _interopRequireDefault(_CartListContainer);
 
@@ -109786,7 +109786,7 @@ var _ItemDetailStyle = require(954                       ); // 954 = ../Style/It
 
 var _ItemDetailStyle2 = _interopRequireDefault(_ItemDetailStyle);
 
-var _StringParser = require(969                    ); // 969 = ../Utils/StringParser
+var _StringParser = require(955                    ); // 955 = ../Utils/StringParser
 
 var _StringParser2 = _interopRequireDefault(_StringParser);
 
@@ -109825,21 +109825,22 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
 
     var _this = _possibleConstructorReturn(this, (ItemDetail.__proto__ || Object.getPrototypeOf(ItemDetail)).call(this, props));
 
-    _this.id = props.navigation.state.params.item.id;
+    _this.itemId = props.navigation.state.params.item.id;
     _this.name = props.navigation.state.params.item.name;
     _this.image = _StringParser2.default.getFirstImage(props.navigation.state.params.item.images);
     _this.price = props.navigation.state.params.item.price;
+    _this.description = _StringParser2.default.removeHTML(props.navigation.state.params.item.description);
     return _this;
   }
 
   _createClass(ItemDetail, [{
     key: '_addToCartPressed',
-    value: function _addToCartPressed() {
+    value: function _addToCartPressed(itemId) {
       console.log('Add to cart pressed');
 
-      fetch('https://tge.mybluemix.net/users/1/cart', {
+      fetch('https://tge.mybluemix.net/users/3/cart', {
         method: 'POST',
-        body: JSON.stringify({ 'itemId': this.id }),
+        body: JSON.stringify({ "itemId": itemId }),
         headers: { 'Content-Type': 'application/json' }
       }).then(function (res) {
         return res.json();
@@ -109852,24 +109853,25 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
 
       return _react3.default.createElement(
         _reactNative.ScrollView,
         { style: _ItemDetailStyle2.default.container, __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 54
           }
         },
         _react3.default.createElement(
           _reactNative.View,
           { style: _ItemDetailStyle2.default.viewCenter, __source: {
               fileName: _jsxFileName,
-              lineNumber: 54
+              lineNumber: 55
             }
           },
           _react3.default.createElement(_reactNative.Image, { source: { uri: this.image }, style: _ItemDetailStyle2.default.photo, __source: {
               fileName: _jsxFileName,
-              lineNumber: 55
+              lineNumber: 56
             }
           })
         ),
@@ -109877,7 +109879,7 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
           _reactNative.Text,
           { style: _ItemDetailStyle2.default.titleText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 57
+              lineNumber: 58
             }
           },
           this.name
@@ -109886,7 +109888,7 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
           _reactNative.Text,
           { style: _ItemDetailStyle2.default.subTitleText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 58
+              lineNumber: 59
             }
           },
           this.price
@@ -109895,21 +109897,23 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
           _reactNative.View,
           { style: _ItemDetailStyle2.default.viewCenter, __source: {
               fileName: _jsxFileName,
-              lineNumber: 59
+              lineNumber: 60
             }
           },
           _react3.default.createElement(
             _reactNative.TouchableHighlight,
-            { style: _ItemDetailStyle2.default.buttonView, onPress: this._addToCartPressed, underlayColor: '#00E676', __source: {
+            { style: _ItemDetailStyle2.default.buttonView, onPress: function onPress() {
+                return _this2._addToCartPressed(_this2.itemId);
+              }, underlayColor: '#00E676', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 60
+                lineNumber: 61
               }
             },
             _react3.default.createElement(
               _reactNative.Text,
               { style: _ItemDetailStyle2.default.buyText, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 61
+                  lineNumber: 62
                 }
               },
               'Add To Cart'
@@ -109920,7 +109924,7 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
           _reactNative.Text,
           { style: _ItemDetailStyle2.default.titleText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 64
+              lineNumber: 65
             }
           },
           'Item Description'
@@ -109929,10 +109933,10 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
           _reactNative.Text,
           { style: _ItemDetailStyle2.default.descriptionText, __source: {
               fileName: _jsxFileName,
-              lineNumber: 65
+              lineNumber: 66
             }
           },
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices, orci eget tincidunt lobortis, urna risus pretium sapien, sed posuere metus sapien eu eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam imperdiet eu purus in rutrum. '
+          this.description
         )
       );
     }
@@ -110021,24 +110025,34 @@ var StringParser = function () {
                 return 'https://vignette.wikia.nocookie.net/simpsons/images/6/60/No_Image_Available.png/revision/latest?cb=20170219125728';
             }
         }
+    }, {
+        key: 'removeHTML',
+        value: function removeHTML(description) {
+            var str = description;
+            str = str.replace(/<br>/gi, "\n");
+            str = str.replace(/<p.*>/gi, "\n");
+            str = str.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 (Link->$1) ");
+            str = str.replace(/<(?:.|\s)*?>/g, "");
+            return str;
+        }
     }]);
 
     return StringParser;
 }();
 
 exports.default = StringParser;
-}, 969, null, "TGE/Utils/StringParser.js");
+}, 955, null, "TGE/Utils/StringParser.js");
 __d(/* TGE/Containers/ItemListContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
 var _reactRedux = require(840          ); // 840 = react-redux
 
-var _ItemsList = require(956                      ); // 956 = ../Components/ItemsList
+var _ItemsList = require(957                      ); // 957 = ../Components/ItemsList
 
 var _ItemsList2 = _interopRequireDefault(_ItemsList);
 
-var _Actions = require(960               ); // 960 = ../Redux/Actions
+var _Actions = require(961               ); // 961 = ../Redux/Actions
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110057,7 +110071,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_ItemsList2.default);
-}, 955, null, "TGE/Containers/ItemListContainer.js");
+}, 956, null, "TGE/Containers/ItemListContainer.js");
 __d(/* TGE/Components/ItemsList.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110078,11 +110092,11 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _ItemListTile = require(957                         ); // 957 = ../Components/ItemListTile
+var _ItemListTile = require(958                         ); // 958 = ../Components/ItemListTile
 
 var _ItemListTile2 = _interopRequireDefault(_ItemListTile);
 
-var _ItemListStyle = require(959                     ); // 959 = ../Style/ItemListStyle
+var _ItemListStyle = require(960                     ); // 960 = ../Style/ItemListStyle
 
 var _ItemListStyle2 = _interopRequireDefault(_ItemListStyle);
 
@@ -110180,7 +110194,7 @@ var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Compone
 }, _temp));
 
 exports.default = ItemsList;
-}, 956, null, "TGE/Components/ItemsList.js");
+}, 957, null, "TGE/Components/ItemsList.js");
 __d(/* TGE/Components/ItemListTile.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -110203,11 +110217,11 @@ var _propTypes = require(378         ); // 378 = prop-types
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _ItemListTileStyle = require(958                         ); // 958 = ../Style/ItemListTileStyle
+var _ItemListTileStyle = require(959                         ); // 959 = ../Style/ItemListTileStyle
 
 var _ItemListTileStyle2 = _interopRequireDefault(_ItemListTileStyle);
 
-var _StringParser = require(969                    ); // 969 = ../Utils/StringParser
+var _StringParser = require(955                    ); // 955 = ../Utils/StringParser
 
 var _StringParser2 = _interopRequireDefault(_StringParser);
 
@@ -110315,7 +110329,7 @@ ItemListTile.propTypes = {
 
   item: _propTypes2.default.object.isRequired
 };
-}, 957, null, "TGE/Components/ItemListTile.js");
+}, 958, null, "TGE/Components/ItemListTile.js");
 __d(/* TGE/Style/ItemListTileStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -110344,7 +110358,7 @@ exports.default = _reactNative.StyleSheet.create({
     alignItems: 'center'
   }
 });
-}, 958, null, "TGE/Style/ItemListTileStyle.js");
+}, 959, null, "TGE/Style/ItemListTileStyle.js");
 __d(/* TGE/Style/ItemListStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110356,7 +110370,7 @@ exports.default = _reactNative.StyleSheet.create({
         flex: 1
     }
 });
-}, 959, null, "TGE/Style/ItemListStyle.js");
+}, 960, null, "TGE/Style/ItemListStyle.js");
 __d(/* TGE/Redux/Actions.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110411,7 +110425,7 @@ function fetchCartFromAPI() {
     return function (dispatch) {
         dispatch(getCart());
 
-        fetch('https://tge.mybluemix.net/users/1/cart', {
+        fetch('https://tge.mybluemix.net/users/3/cart', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         }).then(function (res) {
@@ -110448,18 +110462,18 @@ function getCartFailure(payload) {
         error: true
     };
 }
-}, 960, null, "TGE/Redux/Actions.js");
+}, 961, null, "TGE/Redux/Actions.js");
 __d(/* TGE/Containers/CartListContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _CartList = require(962                     ); // 962 = ../Components/CartList
+var _CartList = require(963                     ); // 963 = ../Components/CartList
 
 var _CartList2 = _interopRequireDefault(_CartList);
 
 var _reactRedux = require(840          ); // 840 = react-redux
 
-var _Actions = require(960               ); // 960 = ../Redux/Actions
+var _Actions = require(961               ); // 961 = ../Redux/Actions
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110478,7 +110492,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_CartList2.default);
-}, 961, null, "TGE/Containers/CartListContainer.js");
+}, 962, null, "TGE/Containers/CartListContainer.js");
 __d(/* TGE/Components/CartList.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110499,11 +110513,11 @@ var _reactNative = require(99            ); // 99 = react-native
 
 var _reactNavigation = require(873               ); // 873 = react-navigation
 
-var _CartListStyle = require(963                     ); // 963 = ../Style/CartListStyle
+var _CartListStyle = require(964                     ); // 964 = ../Style/CartListStyle
 
 var _CartListStyle2 = _interopRequireDefault(_CartListStyle);
 
-var _CartItemRow = require(971            ); // 971 = ./CartItemRow
+var _CartItemRow = require(965            ); // 965 = ./CartItemRow
 
 var _CartItemRow2 = _interopRequireDefault(_CartItemRow);
 
@@ -110597,7 +110611,7 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
 }(_react3.default.Component));
 
 exports.default = CartList;
-}, 962, null, "TGE/Components/CartList.js");
+}, 963, null, "TGE/Components/CartList.js");
 __d(/* TGE/Style/CartListStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110610,7 +110624,7 @@ exports.default = _reactNative.StyleSheet.create({
     }
 
 });
-}, 963, null, "TGE/Style/CartListStyle.js");
+}, 964, null, "TGE/Style/CartListStyle.js");
 __d(/* TGE/Components/CartItemRow.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110629,11 +110643,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _CartItemRowStyle = require(972                        ); // 972 = ../Style/CartItemRowStyle
+var _CartItemRowStyle = require(966                        ); // 966 = ../Style/CartItemRowStyle
 
 var _CartItemRowStyle2 = _interopRequireDefault(_CartItemRowStyle);
 
-var _StringParser = require(969                    ); // 969 = ../Utils/StringParser
+var _StringParser = require(955                    ); // 955 = ../Utils/StringParser
 
 var _StringParser2 = _interopRequireDefault(_StringParser);
 
@@ -110691,8 +110705,7 @@ var CartItemRow = _wrapComponent('CartItemRow')(function (_React$Component) {
                 },
                 _react3.default.createElement(
                     _reactNative.View,
-                    {
-                        __source: {
+                    { style: _CartItemRowStyle2.default.viewContainer, __source: {
                             fileName: _jsxFileName,
                             lineNumber: 29
                         }
@@ -110703,14 +110716,30 @@ var CartItemRow = _wrapComponent('CartItemRow')(function (_React$Component) {
                         }
                     }),
                     _react3.default.createElement(
-                        _reactNative.Text,
-                        {
-                            __source: {
+                        _reactNative.View,
+                        { style: _CartItemRowStyle2.default.textContainer, __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 31
                             }
                         },
-                        this.name
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            { style: _CartItemRowStyle2.default.nameText, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 32
+                                }
+                            },
+                            this.name
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            { style: _CartItemRowStyle2.default.priceText, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 33
+                                }
+                            },
+                            this.price
+                        )
                     )
                 )
             );
@@ -110721,7 +110750,7 @@ var CartItemRow = _wrapComponent('CartItemRow')(function (_React$Component) {
 }(_react3.default.Component));
 
 exports.default = CartItemRow;
-}, 971, null, "TGE/Components/CartItemRow.js");
+}, 965, null, "TGE/Components/CartItemRow.js");
 __d(/* TGE/Style/CartItemRowStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110732,13 +110761,31 @@ exports.default = _reactNative.StyleSheet.create({
     container: {
         flex: 1
     },
+    viewContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        padding: 10
+    },
+    textContainer: {
+        flex: 1,
+        flexDirection: 'column'
+    },
     photo: {
         backgroundColor: '#C1C1C1',
-        height: 40,
-        width: 40
+        height: 50,
+        width: 50
+    },
+    nameText: {
+        paddingLeft: 10,
+        paddingRight: 10
+    },
+    priceText: {
+        paddingTop: 5,
+        paddingLeft: 10,
+        fontWeight: 'bold'
     }
 });
-}, 972, null, "TGE/Style/CartItemRowStyle.js");
+}, 966, null, "TGE/Style/CartItemRowStyle.js");
 __d(/* TGE/Containers/FeaturedItemListStack.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -110747,7 +110794,7 @@ var _ItemDetail = require(953                       ); // 953 = ../Components/It
 
 var _ItemDetail2 = _interopRequireDefault(_ItemDetail);
 
-var _FeaturedItemListContainer = require(965                          ); // 965 = ./FeaturedItemListContainer
+var _FeaturedItemListContainer = require(968                          ); // 968 = ./FeaturedItemListContainer
 
 var _FeaturedItemListContainer2 = _interopRequireDefault(_FeaturedItemListContainer);
 
@@ -110763,18 +110810,18 @@ exports.default = (0, _reactNavigation.StackNavigator)({
     screen: _ItemDetail2.default
   }
 });
-}, 964, null, "TGE/Containers/FeaturedItemListStack.js");
+}, 967, null, "TGE/Containers/FeaturedItemListStack.js");
 __d(/* TGE/Containers/FeaturedItemListContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _FeaturedItemList = require(966                             ); // 966 = ../Components/FeaturedItemList
+var _FeaturedItemList = require(969                             ); // 969 = ../Components/FeaturedItemList
 
 var _FeaturedItemList2 = _interopRequireDefault(_FeaturedItemList);
 
 var _reactRedux = require(840          ); // 840 = react-redux
 
-var _Actions = require(960               ); // 960 = ../Redux/Actions
+var _Actions = require(961               ); // 961 = ../Redux/Actions
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110793,7 +110840,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_FeaturedItemList2.default);
-}, 965, null, "TGE/Containers/FeaturedItemListContainer.js");
+}, 968, null, "TGE/Containers/FeaturedItemListContainer.js");
 __d(/* TGE/Components/FeaturedItemList.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110812,11 +110859,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _FeaturedItemRow = require(967                ); // 967 = ./FeaturedItemRow
+var _FeaturedItemRow = require(970                ); // 970 = ./FeaturedItemRow
 
 var _FeaturedItemRow2 = _interopRequireDefault(_FeaturedItemRow);
 
-var _FeaturedItemListStyle = require(970                             ); // 970 = ../Style/FeaturedItemListStyle
+var _FeaturedItemListStyle = require(972                             ); // 972 = ../Style/FeaturedItemListStyle
 
 var _FeaturedItemListStyle2 = _interopRequireDefault(_FeaturedItemListStyle);
 
@@ -110920,7 +110967,7 @@ var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component
 }(_react2.Component));
 
 exports.default = FeaturedItemsList;
-}, 966, null, "TGE/Components/FeaturedItemList.js");
+}, 969, null, "TGE/Components/FeaturedItemList.js");
 __d(/* TGE/Components/FeaturedItemRow.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110939,11 +110986,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _FeaturedItemRowStyle = require(968                            ); // 968 = ../Style/FeaturedItemRowStyle
+var _FeaturedItemRowStyle = require(971                            ); // 971 = ../Style/FeaturedItemRowStyle
 
 var _FeaturedItemRowStyle2 = _interopRequireDefault(_FeaturedItemRowStyle);
 
-var _StringParser = require(969                    ); // 969 = ../Utils/StringParser
+var _StringParser = require(955                    ); // 955 = ../Utils/StringParser
 
 var _StringParser2 = _interopRequireDefault(_StringParser);
 
@@ -111035,7 +111082,7 @@ var FeaturedItemRow = _wrapComponent('FeaturedItemRow')(function (_React$Compone
 }(_react3.default.Component));
 
 exports.default = FeaturedItemRow;
-}, 967, null, "TGE/Components/FeaturedItemRow.js");
+}, 970, null, "TGE/Components/FeaturedItemRow.js");
 __d(/* TGE/Style/FeaturedItemRowStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111062,7 +111109,7 @@ exports.default = _reactNative.StyleSheet.create({
         fontSize: 20
     }
 });
-}, 968, null, "TGE/Style/FeaturedItemRowStyle.js");
+}, 971, null, "TGE/Style/FeaturedItemRowStyle.js");
 __d(/* TGE/Style/FeaturedItemListStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111078,7 +111125,7 @@ exports.default = _reactNative.StyleSheet.create({
 
     }
 });
-}, 970, null, "TGE/Style/FeaturedItemListStyle.js");
+}, 972, null, "TGE/Style/FeaturedItemListStyle.js");
 ;require(137);
 ;require(0);
 //# sourceMappingURL=crna-entry.map

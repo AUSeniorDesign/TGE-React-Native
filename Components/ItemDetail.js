@@ -28,18 +28,19 @@ export default class ItemDetail extends React.Component {
       
   constructor(props) {
     super(props) 
-    this.id = props.navigation.state.params.item.id
+    this.itemId = props.navigation.state.params.item.id
     this.name = props.navigation.state.params.item.name
     this.image = StringParser.getFirstImage(props.navigation.state.params.item.images)
     this.price = props.navigation.state.params.item.price
+    this.description = StringParser.removeHTML(props.navigation.state.params.item.description)
   }
 
-  _addToCartPressed() {
+  _addToCartPressed(itemId) {
     console.log('Add to cart pressed')
 
-    fetch('https://tge.mybluemix.net/users/1/cart', {
+    fetch('https://tge.mybluemix.net/users/3/cart', {
             method: 'POST',
-            body: JSON.stringify({ 'itemId': this.id }), 
+            body: JSON.stringify({"itemId": itemId}), 
             headers: { 'Content-Type': 'application/json' }
         })
             .then(res => res.json())
@@ -57,12 +58,12 @@ export default class ItemDetail extends React.Component {
           <Text style={styles.titleText}>{this.name}</Text>
           <Text style={styles.subTitleText}>{this.price}</Text>
           <View style={styles.viewCenter}>
-            <TouchableHighlight style={styles.buttonView}  onPress={this._addToCartPressed} underlayColor={'#00E676'}>
+            <TouchableHighlight style={styles.buttonView}  onPress={() => this._addToCartPressed(this.itemId)} underlayColor={'#00E676'}>
             <Text style={styles.buyText}>Add To Cart</Text>
             </TouchableHighlight>
           </View>
           <Text style={styles.titleText}>Item Description</Text>
-          <Text style={styles.descriptionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices, orci eget tincidunt lobortis, urna risus pretium sapien, sed posuere metus sapien eu eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam imperdiet eu purus in rutrum. </Text>
+          <Text style={styles.descriptionText}>{this.description}</Text>
         </ScrollView>
     ) 
   }

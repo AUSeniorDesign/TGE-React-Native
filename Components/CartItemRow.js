@@ -26,9 +26,12 @@ export default class CartItemRow extends React.Component {
     render() {
         return(
             <TouchableHighlight underlayColor={'#C1C1C1'} style={styles.container}>
-                <View>
+                <View style={styles.viewContainer}>
                     <Image source={{uri: this.image}} style={styles.photo} />
-                    <Text>{this.name}</Text>
+                    <View style={styles.textContainer}>
+                        <Text style={styles.nameText}>{this.name}</Text>
+                        <Text style={styles.priceText}>{this.price}</Text>
+                    </View>
                 </View>
             </TouchableHighlight>
         )
