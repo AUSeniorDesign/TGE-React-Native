@@ -1,3 +1,13 @@
+/*
+Created by: Harry Summers
+
+StringParser.js
+
+Description:
+This is a utility class to take the string data that is in the CSV files and 
+convert them that is usable in the application.
+*/
+
 
 export default class StringParser {
 
@@ -14,6 +24,9 @@ export default class StringParser {
         }
     }
 
+    /*
+    *   This function takes in the description in the CSV files which contains HTML and returns raw text.
+    */
     static removeHTML(description) {
         var str = description
         str=str.replace(/<br>/gi, "\n");
