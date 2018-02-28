@@ -17,6 +17,7 @@ import {
 } from 'react-native'
 import styles from '../Style/LoginStyle'
 import loginImage from '../Images/logo.png'
+import { BASE_URL } from '../Utils/Constants';
 
 export default class Login extends Component {
     static navigationOptions = {
@@ -66,7 +67,7 @@ export default class Login extends Component {
                 "token": token,
             }
         }
-        fetch('http://172.20.10.7:3000/users/create/facebook', {
+        fetch(BASE_URL + 'users/create/facebook', {
             method: 'POST',
             body: JSON.stringify(body),
             headers: { 'Content-Type': 'application/json' }

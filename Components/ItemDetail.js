@@ -22,15 +22,16 @@ import styles from '../Style/ItemDetailStyle'
 import StringParser from '../Utils/StringParser'
 
 export default class ItemDetail extends React.Component {
-    static navigationOptions = {
-        title: 'Item Information',
-      }
+    
+  static navigationOptions = {
+      title: 'Item Information',
+    }
       
   constructor(props) {
     super(props) 
     this.itemId = props.navigation.state.params.item.id
     this.name = props.navigation.state.params.item.name
-    this.image = StringParser.getFirstImage(props.navigation.state.params.item.images)
+    this.image = StringParser.getFirstImage(props.navigation.state.params.item.images)``
     this.price = props.navigation.state.params.item.price
     this.description = StringParser.removeHTML(props.navigation.state.params.item.description)
   }

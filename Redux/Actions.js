@@ -16,14 +16,14 @@ import { FETCHING_ITEMS,
     FETCHING_ITEMS_FAILURE,
     FETCHING_CART,
     FETCHING_CART_SUCCESS,
-    FETCHING_CART_FAILURE } from '../Utils/Constants'
+    FETCHING_CART_FAILURE, BASE_URL } from '../Utils/Constants'
 
 export function fetchItemsFromAPI() {
     console.log('fetching items from api')
     return(dispatch) => {
         dispatch(getItems())
         // TODO: Refactor this so it's not using Promises because Haven will yell at me.
-        fetch('https://tge.mybluemix.net/items')
+        fetch(BASE_URL + 'items')
             .then(res => res.json())
             .then(json => dispatch(getItemsSuccess(json)))
             .catch(err => dispatch(getItemsFailure(err)))
@@ -63,7 +63,7 @@ export function fetchCartFromAPI() {
     return(dispatch) => {
         dispatch(getCart())
 
-        fetch('https://tge.mybluemix.net/users/3/cart', {
+        fetch(BASE_URL + 'users/3/cart', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
