@@ -40,18 +40,11 @@ export default class Login extends Component {
 
     async _logInFB(navigate) {
         const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('325985624578151', {
-            permissions: ['public_profile'],
+            permissions: ['public_profile', 'email'],
           });
         if (type === 'success') {
-        // Get the user's name using Facebook's Graph API
-          const response = await fetch(
-            `https://graph.facebook.com/me?access_token=${token}`)
-
-            var res = await response.json()
-            var name = res.name
-            var id = res.id
-            this._createUser(id, name, token)
-            
+            console.log(token);
+            this._createUser(token)
         }
     }
 
@@ -59,19 +52,17 @@ export default class Login extends Component {
         Adds the user with the Facebook data to the TGE database.
     */
 
-    _createUser(facebookId, name, token) {
+    _createUser(token) {
         var body = {
-            "facebook": {
-                "facebookId": facebookId,
-                "name": name,
-                "token": token,
-            }
+            "access_token": token
         }
-        fetch(BASE_URL + 'users/create/facebook', {
+
+        fetch(BASE_URL + 'users/auth/facebook', {
             method: 'POST',
             body: JSON.stringify(body),
             headers: { 'Content-Type': 'application/json' }
         })
+
             .then(res => console.log(res.json()))
             .then(() => console.log('success'))
             .catch(err => console.log('failure' + err))
