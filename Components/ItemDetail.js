@@ -31,7 +31,7 @@ export default class ItemDetail extends React.Component {
     super(props) 
     this.itemId = props.navigation.state.params.item.id
     this.name = props.navigation.state.params.item.name
-    this.image = StringParser.getFirstImage(props.navigation.state.params.item.images)``
+    this.image = StringParser.getFirstImage(props.navigation.state.params.item.images)
     this.price = props.navigation.state.params.item.price
     this.description = StringParser.removeHTML(props.navigation.state.params.item.description)
   }
@@ -39,7 +39,7 @@ export default class ItemDetail extends React.Component {
   _addToCartPressed(itemId) {
     console.log('Add to cart pressed')
 
-    fetch('https://tge.mybluemix.net/users/3/cart', {
+    fetch('https://tge.mybluemix.net/users/1/cart', {
             method: 'POST',
             body: JSON.stringify({"itemId": itemId}), 
             headers: { 'Content-Type': 'application/json' }
@@ -50,7 +50,6 @@ export default class ItemDetail extends React.Component {
   }
 
   render() {
-
     return (
         <ScrollView style={styles.container}>
           <View style={styles.viewCenter}>

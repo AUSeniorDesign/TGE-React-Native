@@ -43,8 +43,17 @@ export default class Login extends Component {
             permissions: ['public_profile', 'email'],
           });
         if (type === 'success') {
-            console.log(token);
-            this._createUser(token)
+
+        // Get the user's name using Facebook's Graph API
+          const response = await fetch(
+            `https://graph.facebook.com/me?access_token=${token}`)
+
+            var res = await response.json()
+            var name = res.name
+            var id = res.id
+            this._createUser(id, name, token,navigate)
+            
+
         }
     }
 
@@ -52,7 +61,9 @@ export default class Login extends Component {
         Adds the user with the Facebook data to the TGE database.
     */
 
-    _createUser(token) {
+
+    _createUser(facebookId, name, token, navigate) {
+
         var body = {
             "access_token": token
         }
@@ -64,8 +75,13 @@ export default class Login extends Component {
         })
 
             .then(res => console.log(res.json()))
-            .then(() => console.log('success'))
-            .catch(err => console.log('failure' + err))
+            .then(() => {
+                console.log('success')
+                navigate('Content')
+            })
+            .catch((err) => {
+                console.log('failure' + err)
+            })
     }
     
     render() {

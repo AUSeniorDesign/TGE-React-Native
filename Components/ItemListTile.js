@@ -31,7 +31,6 @@ export default class ItemListTile extends React.Component {
   }
 
   render() {
-
     const name = this.props.item.name
     const image = StringParser.getFirstImage(this.props.item.images)
 
