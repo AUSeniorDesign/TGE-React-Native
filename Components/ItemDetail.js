@@ -34,10 +34,17 @@ export default class ItemDetail extends React.Component {
     this.image = StringParser.getFirstImage(props.navigation.state.params.item.images)
     this.price = props.navigation.state.params.item.price
     this.description = StringParser.removeHTML(props.navigation.state.params.item.description)
+
+    this.state = {
+      isAddedToCart: false
+    }
   }
 
   _addToCartPressed(itemId) {
     console.log('Add to cart pressed')
+    this.setState({
+      isAddedToCart: true
+    })
 
     fetch('https://tge.mybluemix.net/users/1/cart', {
             method: 'POST',
@@ -50,6 +57,9 @@ export default class ItemDetail extends React.Component {
   }
 
   render() {
+
+    var buttonText = this.state.isAddedToCart ? "Added" :  "Add to Cart"
+
     return (
         <ScrollView style={styles.container}>
           <View style={styles.viewCenter}>
@@ -59,7 +69,7 @@ export default class ItemDetail extends React.Component {
           <Text style={styles.subTitleText}>{this.price}</Text>
           <View style={styles.viewCenter}>
             <TouchableHighlight style={styles.buttonView}  onPress={() => this._addToCartPressed(this.itemId)} underlayColor={'#00E676'}>
-            <Text style={styles.buyText}>Add To Cart</Text>
+            <Text style={styles.buyText}>{buttonText}</Text>
             </TouchableHighlight>
           </View>
           <Text style={styles.titleText}>Item Description</Text>

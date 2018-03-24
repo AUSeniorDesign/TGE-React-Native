@@ -27,6 +27,15 @@ export default class CartList extends React.Component {
 
     constructor(props) {
         super(props)
+
+        this.state = {
+            item: {
+                id: 1,
+                name: "Underground Sea MTG Card Revised Edition Dual Land RARE Magic the Gathering",
+                image: "http://i.frg.im/5YhjFSrb/underground-1.jpg",
+                price: 9.99
+            }
+        }
     }
 
     componentWillMount() {
@@ -40,13 +49,16 @@ export default class CartList extends React.Component {
     _keyExtractor = (item, index) => item.id
 
     render() {
-        const { cartItems } = this.props.cartItems
+        var item = this.state.item
+        //const { cartItems } = this.props.cartItems
+        var items = []
+        items.push(item)
 
         return(
             <View style={styles.container}>
                 <FlatList
                     keyExtractor={this._keyExtractor}
-                    data={cartItems}
+                    data={items}
                     renderItem={(rowData) => this._renderRowData(rowData)}
                 />
             </View>

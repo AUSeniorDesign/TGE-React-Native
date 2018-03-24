@@ -17,10 +17,12 @@ import StringParser from '../Utils/StringParser'
 export default class CartItemRow extends React.Component {
     constructor(props) {
         super(props)
-        this.name = this.props.item.item.Item.name
-        this.image = StringParser.getFirstImage(this.props.item.item.Item.images)
-        this.price = this.props.item.item.Item.price
-
+        // this.name = this.props.item.item.Item.name
+        // this.image = StringParser.getFirstImage(this.props.item.item.Item.images)
+        // this.price = this.props.item.item.Item.price
+        this.name = this.props.item.item.name
+        this.image = this.props.item.item.image
+        this.price = this.props.item.item.price
     }
 
     render() {
