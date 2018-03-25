@@ -63,7 +63,7 @@ export function fetchCartFromAPI() {
     return(dispatch) => {
         dispatch(getCart())
 
-        fetch(BASE_URL + 'users/1/cart', {
+        fetch(BASE_URL + 'cart', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })

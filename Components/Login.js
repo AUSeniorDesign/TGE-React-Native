@@ -17,9 +17,15 @@ import {
 } from 'react-native'
 import styles from '../Style/LoginStyle'
 import loginImage from '../Images/logo.png'
-import { BASE_URL } from '../Utils/Constants';
+import { BASE_URL } from '../Utils/Constants'
+import {loginWithFacebook, getUsersMe} from '../Utils/network' 
 
 export default class Login extends Component {
+
+    componentWillMount() {
+        const { navigate } = this.props.navigation 
+        this._attemptAutoLogin(navigate)
+    }
     static navigationOptions = {
         header: null
     }
@@ -51,10 +57,39 @@ export default class Login extends Component {
             var res = await response.json()
             var name = res.name
             var id = res.id
-            this._createUser(id, name, token,navigate)
+
+            console.log('token' + token)
+
+            request = loginWithFacebook(token)
+            request.then((res) => {
+                console.log('response from facebook login:')
+                console.log(res.json())
+                console.log('success')
+                
+                navigate('Content')
+            })
+            .catch((err) => {
+                console.log('failure' + err)
+            })
             
 
         }
+    }
+
+    _attemptAutoLogin(navigate) {
+
+        request = getUsersMe()
+        request.then((res) => {
+                console.log('response from facebook login:')
+                console.log(res.json())
+                console.log('success')
+                
+                navigate('Content')
+            })
+            .catch((err) => {
+                console.log('failure' + err)
+            })
+
     }
 
     /*
@@ -62,27 +97,7 @@ export default class Login extends Component {
     */
 
 
-    _createUser(facebookId, name, token, navigate) {
 
-        var body = {
-            "access_token": token
-        }
-
-        fetch(BASE_URL + 'users/auth/facebook', {
-            method: 'POST',
-            body: JSON.stringify(body),
-            headers: { 'Content-Type': 'application/json' }
-        })
-
-            .then(res => console.log(res.json()))
-            .then(() => {
-                console.log('success')
-                navigate('Content')
-            })
-            .catch((err) => {
-                console.log('failure' + err)
-            })
-    }
     
     render() {
         const { navigate } = this.props.navigation 

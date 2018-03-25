@@ -21,6 +21,7 @@ import {
 } from 'react-native'
 import ItemListTile from '../Components/ItemListTile'
 import styles from '../Style/ItemListStyle'
+import {getUsersMe} from '../Utils/network'
 
 export default class ItemsList extends Component {
     static navigationOptions = {
@@ -33,6 +34,7 @@ export default class ItemsList extends Component {
 
     componentWillMount() {
         this.props.getItems()
+
     }
     
     /*

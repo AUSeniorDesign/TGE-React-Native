@@ -40,6 +40,7 @@ export default class CartList extends React.Component {
 
     componentWillMount() {
         this.props.getCart()
+        
     }
 
     _renderRowData(item) {
