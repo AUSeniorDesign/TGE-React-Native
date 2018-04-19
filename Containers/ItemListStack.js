@@ -16,7 +16,7 @@ import { StackNavigator } from 'react-navigation'
 import React from 'react'
 import { Button, TouchableHighlight } from 'react-native'
 import CartListContainer from './CartListContainer'
-
+import Checkout from '../Components/Checkout'
 function rightPressed(navigate) {
   navigate('Cart')
 }
@@ -39,6 +39,9 @@ export default StackNavigator({
     },
     Cart: {
       screen: CartListContainer,
+    },
+    Checkout: {
+      screen: Checkout
     }
 
   }
