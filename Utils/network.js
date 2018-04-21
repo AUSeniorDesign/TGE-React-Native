@@ -34,6 +34,9 @@ export function getItemsFromAPI() {
             
 }
 
-export function getFeedFromAPI() {
-    
+export function removeCartItemFromAPI(itemId) {
+    return fetch(BASE_URL + 'cart/' + itemId, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    })
 }

@@ -94045,7 +94045,6 @@ var FETCHING_FEED = exports.FETCHING_FEED = "FETCHING_FEED";
 var FETCHING_FEED_SUCCESS = exports.FETCHING_FEED_SUCCESS = "FETCHING_FEED_SUCCESS";
 var FETCHING_FEED_FAILURE = exports.FETCHING_FEED_FAILURE = "FETCHING_FEED_FAILURE";
 var BASE_URL = exports.BASE_URL = "http://172.20.10.7:3000/";
-var CHECKOUT_URL = exports.CHECKOUT_URL = "https://tge.mybluemix.net/square/";
 }, 869, null, "TGE/Utils/Constants.js");
 __d(/* TGE/Reducers/cart.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
@@ -104123,7 +104122,7 @@ exports.loginWithFacebook = loginWithFacebook;
 exports.getUsersMe = getUsersMe;
 exports.getCartFromAPI = getCartFromAPI;
 exports.getItemsFromAPI = getItemsFromAPI;
-exports.getFeedFromAPI = getFeedFromAPI;
+exports.removeCartItemFromAPI = removeCartItemFromAPI;
 
 var _Constants = require(869          ); // 869 = ./Constants
 
@@ -104159,7 +104158,12 @@ function getItemsFromAPI() {
     return fetch(_Constants.BASE_URL + 'items');
 }
 
-function getFeedFromAPI() {}
+function removeCartItemFromAPI(itemId) {
+    return fetch(_Constants.BASE_URL + 'cart/' + itemId, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    });
+}
 }, 942, null, "TGE/Utils/network.js");
 __d(/* TGE/Utils/Globals.js */function(global, require, module, exports) {module.exports = {
     user: {
@@ -104185,6 +104189,8 @@ var _class,
     _temp,
     _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Containers/AppContainer.js';
 
+var _reactNative = require(99            ); // 99 = react-native
+
 var _reactNativeTabNavigator = require(944                         ); // 944 = react-native-tab-navigator
 
 var _reactNativeTabNavigator2 = _interopRequireDefault(_reactNativeTabNavigator);
@@ -104196,6 +104202,10 @@ var _ItemListStack2 = _interopRequireDefault(_ItemListStack);
 var _FeaturedItemListContainer = require(972                          ); // 972 = ./FeaturedItemListContainer
 
 var _FeaturedItemListContainer2 = _interopRequireDefault(_FeaturedItemListContainer);
+
+var _AppContainerStyle = require(981                         ); // 981 = ../Style/AppContainerStyle
+
+var _AppContainerStyle2 = _interopRequireDefault(_AppContainerStyle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -104248,44 +104258,57 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 34
+                        lineNumber: 36
                     }
                 },
                 _react3.default.createElement(
                     _reactNativeTabNavigator2.default.Item,
                     {
+                        renderIcon: function renderIcon() {
+                            return _react3.default.createElement(_reactNative.Image, { style: _AppContainerStyle2.default.tabImage, source: require(979                            ), __source: { // 979 = ../Resources/shopping-bag.png
+                                    fileName: _jsxFileName,
+                                    lineNumber: 38
+                                }
+                            });
+                        },
                         selected: this.state.selectedTab === 'itemsList',
                         title: 'Items',
                         onPress: function onPress() {
                             return _this2.setState({ selectedTab: 'itemsList' });
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 35
+                            lineNumber: 37
                         }
                     },
                     _react3.default.createElement(_ItemListStack2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 39
+                            lineNumber: 42
                         }
                     })
                 ),
                 _react3.default.createElement(
                     _reactNativeTabNavigator2.default.Item,
                     {
+                        renderIcon: function renderIcon() {
+                            return _react3.default.createElement(_reactNative.Image, { style: _AppContainerStyle2.default.tabImage, source: require(980                    ), __source: { // 980 = ../Resources/star.png
+                                    fileName: _jsxFileName,
+                                    lineNumber: 45
+                                }
+                            });
+                        },
                         selected: this.state.selectedTab === 'featuredList',
                         title: 'Featured',
                         onPress: function onPress() {
                             return _this2.setState({ selectedTab: 'featuredList' });
                         }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 41
+                            lineNumber: 44
                         }
                     },
-                    _react3.default.createElement(_FeaturedItemListContainer2.default, {
-                        __source: {
+                    _react3.default.createElement(_FeaturedItemListContainer2.default, { source: '../Resources/star.png', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 45
+                            lineNumber: 49
                         }
                     })
                 )
@@ -110791,11 +110814,20 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
     }, {
         key: '_renderRowData',
         value: function _renderRowData(item) {
-            return _react3.default.createElement(_CartItemRow2.default, { item: item, __source: {
+            return _react3.default.createElement(_CartItemRow2.default, { item: item, getCart: this.props.getCart, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 37
                 }
             });
+        }
+    }, {
+        key: '_calculateCartTotal',
+        value: function _calculateCartTotal(items) {
+            var total = 0;
+            for (var i = 0; i < items.length; i++) {
+                total += items[i].Item.price;
+            }
+            return total.toFixed(2);
         }
     }, {
         key: 'render',
@@ -110804,15 +110836,16 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
 
             var cartItems = this.props.cartItems.cartItems;
 
-
+            var total = this._calculateCartTotal(cartItems);
             return _react3.default.createElement(
                 _reactNative.View,
                 { style: _CartListStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 46
+                        lineNumber: 53
                     }
                 },
                 _react3.default.createElement(_reactNative.FlatList, {
+                    style: _CartListStyle2.default.list,
                     keyExtractor: this._keyExtractor,
                     data: cartItems,
                     renderItem: function renderItem(rowData) {
@@ -110820,9 +110853,27 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 47
+                        lineNumber: 54
                     }
-                })
+                }),
+                _react3.default.createElement(
+                    _reactNative.View,
+                    { style: _CartListStyle2.default.total, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 60
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        { style: _CartListStyle2.default.price, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 61
+                            }
+                        },
+                        'Total: $',
+                        total
+                    )
+                )
             );
         }
     }]);
@@ -110841,6 +110892,16 @@ var _reactNative = require(99            ); // 99 = react-native
 exports.default = _reactNative.StyleSheet.create({
     container: {
         flex: 1
+    },
+    total: {
+        height: 40,
+        padding: 5
+    },
+    list: {
+        height: 100
+    },
+    price: {
+        fontSize: 20
     }
 
 });
@@ -110870,6 +110931,8 @@ var _CartItemRowStyle2 = _interopRequireDefault(_CartItemRowStyle);
 var _StringParser = require(956                    ); // 956 = ../Utils/StringParser
 
 var _StringParser2 = _interopRequireDefault(_StringParser);
+
+var _network = require(942               ); // 942 = ../Utils/network
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110909,45 +110972,62 @@ var CartItemRow = _wrapComponent('CartItemRow')(function (_React$Component) {
         _this.name = _this.props.item.item.Item.name;
         _this.images = _this.props.item.item.Item.images;
         _this.price = _this.props.item.item.Item.price;
+        _this.itemId = _this.props.item.item.id;
         return _this;
     }
 
     _createClass(CartItemRow, [{
+        key: '_removePressed',
+        value: function _removePressed() {
+            console.log('removed');
+            var request = (0, _network.removeCartItemFromAPI)(this.itemId);
+            request.then(function (res) {
+                return res.json();
+            }).then(function (json) {
+                return console.log('success');
+            }).catch(function (err) {
+                return console.log('failed to remove ' + err);
+            });
+            this.props.getCart();
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var image = _StringParser2.default.getFirstImage(this.images);
 
             return _react3.default.createElement(
                 _reactNative.TouchableHighlight,
                 { underlayColor: '#C1C1C1', style: _CartItemRowStyle2.default.container, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 32
+                        lineNumber: 43
                     }
                 },
                 _react3.default.createElement(
                     _reactNative.View,
                     { style: _CartItemRowStyle2.default.viewContainer, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 33
+                            lineNumber: 44
                         }
                     },
                     _react3.default.createElement(_reactNative.Image, { source: { uri: image }, style: _CartItemRowStyle2.default.photo, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 34
+                            lineNumber: 45
                         }
                     }),
                     _react3.default.createElement(
                         _reactNative.View,
                         { style: _CartItemRowStyle2.default.textContainer, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 35
+                                lineNumber: 46
                             }
                         },
                         _react3.default.createElement(
                             _reactNative.Text,
                             { style: _CartItemRowStyle2.default.nameText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 36
+                                    lineNumber: 47
                                 }
                             },
                             this.name
@@ -110956,12 +111036,23 @@ var CartItemRow = _wrapComponent('CartItemRow')(function (_React$Component) {
                             _reactNative.Text,
                             { style: _CartItemRowStyle2.default.nameText, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 37
+                                    lineNumber: 48
                                 }
                             },
                             '$',
                             this.price
                         )
+                    ),
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        { onPress: function onPress() {
+                                return _this2._removePressed();
+                            }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 50
+                            }
+                        },
+                        'X'
                     )
                 )
             );
@@ -111076,9 +111167,10 @@ var Checkout = _wrapComponent('Checkout')(function (_React$Component) {
         key: 'render',
         value: function render() {
 
+            var checkoutUrl = _Constants.BASE_URL + "square";
             return _react3.default.createElement(_reactNative.WebView, {
                 style: _CheckoutStyle2.default.container,
-                source: { uri: _Constants.CHECKOUT_URL }, __source: {
+                source: { uri: checkoutUrl }, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 16
                 }
@@ -111464,6 +111556,23 @@ exports.default = _reactNative.StyleSheet.create({
     }
 });
 }, 976, null, "TGE/Style/FeaturedItemListStyle.js");
+__d(/* TGE/Style/AppContainerStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactNative = require(99            ); // 99 = react-native
+
+exports.default = _reactNative.StyleSheet.create({
+    tabImage: {
+        width: 24,
+        height: 24
+    }
+});
+}, 981, null, "TGE/Style/AppContainerStyle.js");
+__d(/* TGE/Resources/shopping-bag.png */function(global, require, module, exports) {module.exports=require(411                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/Resources","width":128,"height":128,"scales":[1],"hash":"1f7f45ae8626685faf35ab10016858a5","name":"shopping-bag","type":"png","fileHashes":["1f7f45ae8626685faf35ab10016858a5"]}); // 411 = react-native/Libraries/Image/AssetRegistry
+}, 979, null, "TGE/Resources/shopping-bag.png");
+__d(/* TGE/Resources/star.png */function(global, require, module, exports) {module.exports=require(411                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/Resources","width":128,"height":128,"scales":[1],"hash":"00bd8e40ac961b3482f75aee983f8e6d","name":"star","type":"png","fileHashes":["00bd8e40ac961b3482f75aee983f8e6d"]}); // 411 = react-native/Libraries/Image/AssetRegistry
+}, 980, null, "TGE/Resources/star.png");
 ;require(137);
 ;require(0);
 //# sourceMappingURL=crna-entry.map

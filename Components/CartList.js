@@ -34,21 +34,32 @@ export default class CartList extends React.Component {
     }
 
     _renderRowData(item) {
-        return <CartItemRow item={item}/>
+        return <CartItemRow item={item} getCart={this.props.getCart}/>
     }
 
     _keyExtractor = (item, index) => item.id
 
+    _calculateCartTotal(items) {
+        var total = 0
+        for (var i = 0; i < items.length; i++) {
+            total += items[i].Item.price
+        }
+        return total.toFixed(2)
+    }
     render() {
         const { cartItems } = this.props.cartItems
-
+        const total = this._calculateCartTotal(cartItems)
         return(
             <View style={styles.container}>
                 <FlatList
+                    style={styles.list}
                     keyExtractor={this._keyExtractor}
                     data={cartItems}
                     renderItem={(rowData) => this._renderRowData(rowData)}
                 />
+                <View style = {styles.total}>
+                    <Text style={styles.price}>Total: ${total}</Text>
+                </View>
             </View>
         )
     }

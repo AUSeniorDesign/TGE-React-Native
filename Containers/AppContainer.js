@@ -12,9 +12,11 @@ load the views directly, but instead they load the container for them to enable 
 
 
 import React, {Component} from 'react'
+import {Image} from 'react-native'
 import TabNavigator from 'react-native-tab-navigator';
 import ItemListStack from './ItemListStack'
 import FeaturedItemListContainer from './FeaturedItemListContainer'
+import styles from '../Style/AppContainerStyle'
 
 export default class AppContainer extends Component {
     state= {
@@ -33,16 +35,18 @@ export default class AppContainer extends Component {
         return(
             <TabNavigator>
                 <TabNavigator.Item
-                    selected={this.state.selectedTab === 'itemsList'}
+                renderIcon={() => <Image style={styles.tabImage} source={require('../Resources/shopping-bag.png')}/>}
+                selected={this.state.selectedTab === 'itemsList'}
                     title='Items'
                     onPress={() => this.setState({ selectedTab: 'itemsList' })}>
                     <ItemListStack/>
                 </TabNavigator.Item>
                 <TabNavigator.Item
+                    renderIcon={() => <Image style={styles.tabImage} source={require('../Resources/star.png')}/>}
                     selected={this.state.selectedTab === 'featuredList'}
                     title='Featured'
                     onPress={() => this.setState({ selectedTab: 'featuredList' })}>
-                    <FeaturedItemListContainer/>
+                    <FeaturedItemListContainer source={'../Resources/star.png'}/>
                 </TabNavigator.Item>
             </TabNavigator>
 
