@@ -12,23 +12,24 @@ import React from 'react'
 import { TouchableHighlight, Image, Text, View } from 'react-native';
 import styles from '../Style/FeaturedItemRowStyle'
 import StringParser from '../Utils/StringParser'
+import {BASE_URL} from '../Utils/Constants'
 
 export default class FeaturedItemRow extends React.Component {
 
-    _rowPressed() {
-        this.props.navigate('Detail', this.props) 
-    }
+
 
     render() {
 
-        const image = StringParser.getFirstImage(this.props.item.images)
-        const name = this.props.item.name
+        const image = BASE_URL + this.props.item.image
+        const description = this.props.item.description
+        const store = this.props.item.store
 
         return(
-            <TouchableHighlight underlayColor={'#BDBDBD'} style={styles.container} onPress={() => this._rowPressed()}> 
+            <TouchableHighlight underlayColor={'#BDBDBD'} style={styles.container}> 
                 <View style={styles.viewCenter}>
                     <Image source={{uri: image}} style={styles.photo}/>
-                    <Text style={styles.title}>{name}</Text>
+                    <Text style={styles.title}>{store}</Text>
+                    <Text style={styles.title}>{description}</Text>
                 </View>
                 
             </TouchableHighlight>

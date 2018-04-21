@@ -21,3 +21,19 @@ export function getUsersMe() {
     })
 
 }
+
+export function getCartFromAPI() {
+    return fetch(BASE_URL + 'cart', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    })
+}
+
+export function getItemsFromAPI() {
+    return fetch(BASE_URL + 'items')
+            
+}
+
+export function getFeedFromAPI() {
+    
+}

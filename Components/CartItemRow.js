@@ -20,19 +20,21 @@ export default class CartItemRow extends React.Component {
         // this.name = this.props.item.item.Item.name
         // this.image = StringParser.getFirstImage(this.props.item.item.Item.images)
         // this.price = this.props.item.item.Item.price
-        this.name = this.props.item.item.name
-        this.image = this.props.item.item.image
-        this.price = this.props.item.item.price
+        this.name = this.props.item.item.Item.name
+        this.images = this.props.item.item.Item.images
+        this.price = this.props.item.item.Item.price
     }
 
     render() {
+        const image = StringParser.getFirstImage(this.images)
+
         return(
             <TouchableHighlight underlayColor={'#C1C1C1'} style={styles.container}>
                 <View style={styles.viewContainer}>
-                    <Image source={{uri: this.image}} style={styles.photo} />
+                    <Image source={{uri: image}} style={styles.photo} />
                     <View style={styles.textContainer}>
                         <Text style={styles.nameText}>{this.name}</Text>
-                        <Text style={styles.priceText}>{this.price}</Text>
+                        <Text style={styles.nameText}>${this.price}</Text>
                     </View>
                 </View>
             </TouchableHighlight>

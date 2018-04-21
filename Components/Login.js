@@ -19,6 +19,7 @@ import styles from '../Style/LoginStyle'
 import loginImage from '../Images/logo.png'
 import { BASE_URL } from '../Utils/Constants'
 import {loginWithFacebook, getUsersMe} from '../Utils/network' 
+import user from '../Utils/Globals'
 
 export default class Login extends Component {
 
@@ -61,9 +62,11 @@ export default class Login extends Component {
             console.log('token' + token)
 
             request = loginWithFacebook(token)
-            request.then((res) => {
+            request
+                .then(res => res.json())
+                .then((json) => {
                 console.log('response from facebook login:')
-                console.log(res.json())
+                console.log(json)
                 console.log('success')
                 
                 navigate('Content')
@@ -79,11 +82,13 @@ export default class Login extends Component {
     _attemptAutoLogin(navigate) {
 
         request = getUsersMe()
-        request.then((res) => {
+        request
+            .then(res => res.json())
+            .then((json) => {
                 console.log('response from facebook login:')
-                console.log(res.json())
+                console.log(json)
                 console.log('success')
-                
+                user.userId = json.id
                 navigate('Content')
             })
             .catch((err) => {

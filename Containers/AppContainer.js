@@ -14,7 +14,7 @@ load the views directly, but instead they load the container for them to enable 
 import React, {Component} from 'react'
 import TabNavigator from 'react-native-tab-navigator';
 import ItemListStack from './ItemListStack'
-import FeaturedItemListStack from './FeaturedItemListStack'
+import FeaturedItemListContainer from './FeaturedItemListContainer'
 
 export default class AppContainer extends Component {
     state= {
@@ -42,7 +42,7 @@ export default class AppContainer extends Component {
                     selected={this.state.selectedTab === 'featuredList'}
                     title='Featured'
                     onPress={() => this.setState({ selectedTab: 'featuredList' })}>
-                    <FeaturedItemListStack/>
+                    <FeaturedItemListContainer/>
                 </TabNavigator.Item>
             </TabNavigator>
 

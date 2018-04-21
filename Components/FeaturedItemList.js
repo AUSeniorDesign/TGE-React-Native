@@ -23,7 +23,7 @@ import styles from '../Style/FeaturedItemListStyle'
 
 export default class FeaturedItemsList extends Component {
     componentWillMount() {
-        this.props.getItems()
+        this.props.getFeed()
     }
 
     _buttonPressed() {
@@ -31,26 +31,24 @@ export default class FeaturedItemsList extends Component {
 
     }
 
-    _renderRowData(navigate, item) {
+    _renderRowData(item) {
         return (
-            <FeaturedItemRow item={item} navigate={navigate}/>
+            <FeaturedItemRow item={item} />
         )
     }
 
     // CHANGE THIS WHEN I GET ID
-    _keyExtractor = (item, index) => item.name
+    _keyExtractor = (item, index) => item.id
 
     render() {
-        const { navigate } = this.props.navigation 
-
-        const { items } = this.props.items
+        const { feedItems } = this.props.feedItems
 
         return (
             <View style={styles.container}>
                 <FlatList
                     keyExtractor={this._keyExtractor}
-                    data={items}
-                    renderItem={(rowData) => this._renderRowData(navigate, rowData.item)}
+                    data={feedItems}
+                    renderItem={(rowData) => this._renderRowData(rowData.item)}
                 />
             </View>
         )

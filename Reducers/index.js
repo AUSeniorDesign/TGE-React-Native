@@ -12,10 +12,12 @@ separate files. Anything you want to map to props MUST be in here.
 import { combineReducers } from 'redux'
 import items from './items'
 import cartItems from './cart'
+import feedItems from './feed'
 
 const rootReducer = combineReducers({
     items,
-    cartItems
+    cartItems,
+    feedItems
 })
 
 export default rootReducer

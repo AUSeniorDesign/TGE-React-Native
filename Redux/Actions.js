@@ -16,7 +16,11 @@ import { FETCHING_ITEMS,
     FETCHING_ITEMS_FAILURE,
     FETCHING_CART,
     FETCHING_CART_SUCCESS,
-    FETCHING_CART_FAILURE, BASE_URL } from '../Utils/Constants'
+    FETCHING_CART_FAILURE,
+    FETCHING_FEED,
+    FETCHING_FEED_FAILURE,
+    FETCHING_FEED_SUCCESS,
+    BASE_URL } from '../Utils/Constants'
 
 export function fetchItemsFromAPI() {
     console.log('fetching items from api')
@@ -53,6 +57,42 @@ function getItemsFailure(err) {
 
     return {
         type: FETCHING_ITEMS_FAILURE,
+        error: true
+    }
+}
+
+export function fetchFeedFromAPI() {
+    console.log('fetching feed from api')
+    return(dispatch) => {
+        dispatch(getFeed())
+        fetch(BASE_URL + 'feed')
+            .then(res => res.json())
+            .then(json => dispatch(getFeedSuccess(json)))
+            .catch(err => dispatch(getFeedFailure(err)))
+    }
+}
+
+
+function getFeed() {
+    console.log('getting feed')
+    return {
+        type: FETCHING_FEED
+    }
+}
+
+function getFeedSuccess(payload) {
+    console.log('getting feed was successful ' + payload)
+    return {
+        type: FETCHING_FEED_SUCCESS,
+        payload
+    }
+}
+
+function getFeedFailure(err) {
+    console.log('getting feed was unsuccessful ' + err)
+
+    return {
+        type: FETCHING_FEED_FAILURE,
         error: true
     }
 }

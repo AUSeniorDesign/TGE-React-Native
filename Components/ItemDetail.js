@@ -20,7 +20,8 @@ import {
 import { StackNavigator } from 'react-navigation' 
 import styles from '../Style/ItemDetailStyle'
 import StringParser from '../Utils/StringParser'
-
+import user from '../Utils/Globals'
+import {BASE_URL} from '../Utils/Constants'
 export default class ItemDetail extends React.Component {
     
   static navigationOptions = {
@@ -46,9 +47,10 @@ export default class ItemDetail extends React.Component {
       isAddedToCart: true
     })
 
-    fetch('https://tge.mybluemix.net/users/1/cart', {
+    var url = "" + BASE_URL + "cart/" + itemId
+    console.log('url: ' + url)
+    fetch(url, {
             method: 'POST',
-            body: JSON.stringify({"itemId": itemId}), 
             headers: { 'Content-Type': 'application/json' }
         })
             .then(res => res.json())
@@ -66,7 +68,7 @@ export default class ItemDetail extends React.Component {
             <Image source={{uri: this.image}} style={styles.photo}/>
           </View>
           <Text style={styles.titleText}>{this.name}</Text>
-          <Text style={styles.subTitleText}>{this.price}</Text>
+          <Text style={styles.subTitleText}>${this.price}</Text>
           <View style={styles.viewCenter}>
             <TouchableHighlight style={styles.buttonView}  onPress={() => this._addToCartPressed(this.itemId)} underlayColor={'#00E676'}>
             <Text style={styles.buyText}>{buttonText}</Text>

@@ -19,7 +19,6 @@ import {
   View,
   TouchableHighlight,
   FlatList} from 'react-native' 
-import { StackNavigator } from 'react-navigation' 
 import styles from '../Style/CartListStyle'
 import CartItemRow from './CartItemRow'
 

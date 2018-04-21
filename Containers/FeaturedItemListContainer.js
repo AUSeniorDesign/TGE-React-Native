@@ -11,17 +11,17 @@ changes the FeaturedItemList is re-rendered.
 
 import FeaturedItemList from '../Components/FeaturedItemList'
 import { connect } from 'react-redux'
-import {fetchItemsFromAPI}  from '../Redux/Actions'
+import {fetchFeedFromAPI}  from '../Redux/Actions'
 
 function mapStateToProps(state) {
     return {
-      items: state.items
+      feedItems: state.feedItems
     }
   }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getItems: () => dispatch(fetchItemsFromAPI())
+        getFeed: () => dispatch(fetchFeedFromAPI())
     }
 }
 

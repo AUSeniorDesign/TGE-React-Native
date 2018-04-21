@@ -40,9 +40,7 @@ export default class ItemListTile extends React.Component {
           <View style={styles.viewCenter}>
             <Image source={{uri: image}} style={styles.photo}/>
           </View>
-            <Text style={styles.text}>
-            {`${name}`}
-            </Text>
+            <Text style={styles.text}>{`${name}`}</Text>
         </View>
   
     </TouchableHighlight>
