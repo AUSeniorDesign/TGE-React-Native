@@ -92244,7 +92244,7 @@ var _ConfigureStore = require(866                     ); // 866 = ./Redux/Config
 
 var _ConfigureStore2 = _interopRequireDefault(_ConfigureStore);
 
-var _AppStack = require(872                    ); // 872 = ./Containers/AppStack
+var _AppStack = require(873                    ); // 873 = ./Containers/AppStack
 
 var _AppStack2 = _interopRequireDefault(_AppStack);
 
@@ -93944,7 +93944,7 @@ var _Reducers = require(867          ); // 867 = ../Reducers
 
 var _Reducers2 = _interopRequireDefault(_Reducers);
 
-var _reduxThunk = require(871          ); // 871 = redux-thunk
+var _reduxThunk = require(872          ); // 872 = redux-thunk
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -93969,7 +93969,7 @@ var _cart = require(870     ); // 870 = ./cart
 
 var _cart2 = _interopRequireDefault(_cart);
 
-var _feed = require(977     ); // 977 = ./feed
+var _feed = require(871     ); // 871 = ./feed
 
 var _feed2 = _interopRequireDefault(_feed);
 
@@ -94044,7 +94044,7 @@ var FETCHING_CART_FAILURE = exports.FETCHING_CART_FAILURE = "FETCHING_CART_FAILU
 var FETCHING_FEED = exports.FETCHING_FEED = "FETCHING_FEED";
 var FETCHING_FEED_SUCCESS = exports.FETCHING_FEED_SUCCESS = "FETCHING_FEED_SUCCESS";
 var FETCHING_FEED_FAILURE = exports.FETCHING_FEED_FAILURE = "FETCHING_FEED_FAILURE";
-var BASE_URL = exports.BASE_URL = "http://172.20.10.7:3000/";
+var BASE_URL = exports.BASE_URL = "https://tge.mybluemix.net/";
 }, 869, null, "TGE/Utils/Constants.js");
 __d(/* TGE/Reducers/cart.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
@@ -94139,7 +94139,7 @@ function feedReducer() {
             return state;
     }
 }
-}, 977, null, "TGE/Reducers/feed.js");
+}, 871, null, "TGE/Reducers/feed.js");
 __d(/* redux-thunk/lib/index.js */function(global, require, module, exports) {'use strict';
 
 exports.__esModule = true;
@@ -94163,18 +94163,18 @@ var thunk = createThunkMiddleware();
 thunk.withExtraArgument = createThunkMiddleware;
 
 exports['default'] = thunk;
-}, 871, null, "redux-thunk/lib/index.js");
+}, 872, null, "redux-thunk/lib/index.js");
 __d(/* TGE/Containers/AppStack.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _reactNavigation = require(873               ); // 873 = react-navigation
+var _reactNavigation = require(874               ); // 874 = react-navigation
 
-var _Login = require(939                  ); // 939 = ../Components/Login
+var _Login = require(940                  ); // 940 = ../Components/Login
 
 var _Login2 = _interopRequireDefault(_Login);
 
-var _AppContainer = require(943             ); // 943 = ./AppContainer
+var _AppContainer = require(945             ); // 945 = ./AppContainer
 
 var _AppContainer2 = _interopRequireDefault(_AppContainer);
 
@@ -94188,91 +94188,91 @@ exports.default = (0, _reactNavigation.StackNavigator)({
     screen: _AppContainer2.default
   }
 });
-}, 872, null, "TGE/Containers/AppStack.js");
+}, 873, null, "TGE/Containers/AppStack.js");
 __d(/* react-navigation/src/react-navigation.js */function(global, require, module, exports) {
 
 module.exports = {
   get createNavigationContainer() {
-    return require(874                          ).default; // 874 = ./createNavigationContainer
+    return require(875                          ).default; // 875 = ./createNavigationContainer
   },
   get StateUtils() {
-    return require(879           ).default; // 879 = ./StateUtils
+    return require(880           ).default; // 880 = ./StateUtils
   },
   get addNavigationHelpers() {
-    return require(877                     ).default; // 877 = ./addNavigationHelpers
+    return require(878                     ).default; // 878 = ./addNavigationHelpers
   },
   get NavigationActions() {
-    return require(876                  ).default; // 876 = ./NavigationActions
+    return require(877                  ).default; // 877 = ./NavigationActions
   },
 
   get createNavigator() {
-    return require(880                           ).default; // 880 = ./navigators/createNavigator
+    return require(881                           ).default; // 881 = ./navigators/createNavigator
   },
   get StackNavigator() {
-    return require(881                          ).default; // 881 = ./navigators/StackNavigator
+    return require(882                          ).default; // 882 = ./navigators/StackNavigator
   },
   get TabNavigator() {
-    return require(913                        ).default; // 913 = ./navigators/TabNavigator
+    return require(914                        ).default; // 914 = ./navigators/TabNavigator
   },
   get DrawerNavigator() {
-    return require(930                           ).default; // 930 = ./navigators/DrawerNavigator
+    return require(931                           ).default; // 931 = ./navigators/DrawerNavigator
   },
 
   get StackRouter() {
-    return require(904                    ).default; // 904 = ./routers/StackRouter
+    return require(905                    ).default; // 905 = ./routers/StackRouter
   },
   get TabRouter() {
-    return require(914                  ).default; // 914 = ./routers/TabRouter
+    return require(915                  ).default; // 915 = ./routers/TabRouter
   },
 
   get Transitioner() {
-    return require(901                   ).default; // 901 = ./views/Transitioner
+    return require(902                   ).default; // 902 = ./views/Transitioner
   },
   get CardStackTransitioner() {
-    return require(882                                      ).default; // 882 = ./views/CardStack/CardStackTransitioner
+    return require(883                                      ).default; // 883 = ./views/CardStack/CardStackTransitioner
   },
   get CardStack() {
-    return require(883                          ).default; // 883 = ./views/CardStack/CardStack
+    return require(884                          ).default; // 884 = ./views/CardStack/CardStack
   },
   get Card() {
-    return require(885                     ).default; // 885 = ./views/CardStack/Card
+    return require(886                     ).default; // 886 = ./views/CardStack/Card
   },
   get SafeAreaView() {
-    return require(895                   ).default; // 895 = ./views/SafeAreaView
+    return require(896                   ).default; // 896 = ./views/SafeAreaView
   },
 
   get Header() {
-    return require(888                    ).default; // 888 = ./views/Header/Header
+    return require(889                    ).default; // 889 = ./views/Header/Header
   },
   get HeaderTitle() {
-    return require(889                         ).default; // 889 = ./views/Header/HeaderTitle
+    return require(890                         ).default; // 890 = ./views/Header/HeaderTitle
   },
   get HeaderBackButton() {
-    return require(890                              ).default; // 890 = ./views/Header/HeaderBackButton
+    return require(891                              ).default; // 891 = ./views/Header/HeaderBackButton
   },
 
   get DrawerView() {
-    return require(932                        ).default; // 932 = ./views/Drawer/DrawerView
+    return require(933                        ).default; // 933 = ./views/Drawer/DrawerView
   },
   get DrawerItems() {
-    return require(937                                  ).default; // 937 = ./views/Drawer/DrawerNavigatorItems
+    return require(938                                  ).default; // 938 = ./views/Drawer/DrawerNavigatorItems
   },
 
   get TabView() {
-    return require(915                      ).default; // 915 = ./views/TabView/TabView
+    return require(916                      ).default; // 916 = ./views/TabView/TabView
   },
   get TabBarTop() {
-    return require(927                        ).default; // 927 = ./views/TabView/TabBarTop
+    return require(928                        ).default; // 928 = ./views/TabView/TabBarTop
   },
   get TabBarBottom() {
-    return require(929                           ).default; // 929 = ./views/TabView/TabBarBottom
+    return require(930                           ).default; // 930 = ./views/TabView/TabBarBottom
   },
 
   get withNavigation() {
-    return require(938                     ).default; // 938 = ./views/withNavigation
+    return require(939                     ).default; // 939 = ./views/withNavigation
   }
 };
-}, 873, null, "react-navigation/src/react-navigation.js");
+}, 874, null, "react-navigation/src/react-navigation.js");
 __d(/* react-navigation/src/createNavigationContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -94293,17 +94293,17 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.default = createNavigationContainer;
 
-var _PlatformHelpers = require(875                ); // 875 = ./PlatformHelpers
+var _PlatformHelpers = require(876                ); // 876 = ./PlatformHelpers
 
-var _NavigationActions = require(876                  ); // 876 = ./NavigationActions
+var _NavigationActions = require(877                  ); // 877 = ./NavigationActions
 
 var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
 
-var _addNavigationHelpers = require(877                     ); // 877 = ./addNavigationHelpers
+var _addNavigationHelpers = require(878                     ); // 878 = ./addNavigationHelpers
 
 var _addNavigationHelpers2 = _interopRequireDefault(_addNavigationHelpers);
 
-var _invariant = require(878                ); // 878 = ./utils/invariant
+var _invariant = require(879                ); // 879 = ./utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -94521,7 +94521,7 @@ function createNavigationContainer(Component) {
 
   return NavigationContainer;
 }
-}, 874, null, "react-navigation/src/createNavigationContainer.js");
+}, 875, null, "react-navigation/src/createNavigationContainer.js");
 __d(/* react-navigation/src/PlatformHelpers.native.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -94533,7 +94533,7 @@ var BackHandler = _reactNative.BackHandler || _reactNative.BackAndroid;
 
 exports.BackHandler = BackHandler;
 exports.Linking = _reactNative.Linking;
-}, 875, null, "react-navigation/src/PlatformHelpers.native.js");
+}, 876, null, "react-navigation/src/PlatformHelpers.native.js");
 __d(/* react-navigation/src/NavigationActions.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -94666,7 +94666,7 @@ exports.default = {
 
   mapDeprecatedActionAndWarn: mapDeprecatedActionAndWarn
 };
-}, 876, null, "react-navigation/src/NavigationActions.js");
+}, 877, null, "react-navigation/src/NavigationActions.js");
 __d(/* react-navigation/src/addNavigationHelpers.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -94695,16 +94695,16 @@ exports.default = function (navigation) {
   });
 };
 
-var _NavigationActions = require(876                  ); // 876 = ./NavigationActions
+var _NavigationActions = require(877                  ); // 877 = ./NavigationActions
 
 var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
 
-var _invariant = require(878                ); // 878 = ./utils/invariant
+var _invariant = require(879                ); // 879 = ./utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-}, 877, null, "react-navigation/src/addNavigationHelpers.js");
+}, 878, null, "react-navigation/src/addNavigationHelpers.js");
 __d(/* react-navigation/src/utils/invariant.js */function(global, require, module, exports) {
 
 'use strict';
@@ -94741,14 +94741,14 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-}, 878, null, "react-navigation/src/utils/invariant.js");
+}, 879, null, "react-navigation/src/utils/invariant.js");
 __d(/* react-navigation/src/StateUtils.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _invariant = require(878                ); // 878 = ./utils/invariant
+var _invariant = require(879                ); // 879 = ./utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -94859,7 +94859,7 @@ var StateUtils = {
 };
 
 exports.default = StateUtils;
-}, 879, null, "react-navigation/src/StateUtils.js");
+}, 880, null, "react-navigation/src/StateUtils.js");
 __d(/* react-navigation/src/navigators/createNavigator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -94940,7 +94940,7 @@ function createNavigator(router, routeConfigs, navigatorConfig, navigatorType) {
     return Navigator;
   };
 }
-}, 880, null, "react-navigation/src/navigators/createNavigator.js");
+}, 881, null, "react-navigation/src/navigators/createNavigator.js");
 __d(/* react-navigation/src/navigators/StackNavigator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -94953,23 +94953,23 @@ var _react = require(122    ); // 122 = react
 
 var React = _interopRequireWildcard(_react);
 
-var _createNavigationContainer = require(874                           ); // 874 = ../createNavigationContainer
+var _createNavigationContainer = require(875                           ); // 875 = ../createNavigationContainer
 
 var _createNavigationContainer2 = _interopRequireDefault(_createNavigationContainer);
 
-var _createNavigator = require(880                ); // 880 = ./createNavigator
+var _createNavigator = require(881                ); // 881 = ./createNavigator
 
 var _createNavigator2 = _interopRequireDefault(_createNavigator);
 
-var _CardStackTransitioner = require(882                                       ); // 882 = ../views/CardStack/CardStackTransitioner
+var _CardStackTransitioner = require(883                                       ); // 883 = ../views/CardStack/CardStackTransitioner
 
 var _CardStackTransitioner2 = _interopRequireDefault(_CardStackTransitioner);
 
-var _StackRouter = require(904                     ); // 904 = ../routers/StackRouter
+var _StackRouter = require(905                     ); // 905 = ../routers/StackRouter
 
 var _StackRouter2 = _interopRequireDefault(_StackRouter);
 
-var _NavigatorTypes = require(912               ); // 912 = ./NavigatorTypes
+var _NavigatorTypes = require(913               ); // 913 = ./NavigatorTypes
 
 var _NavigatorTypes2 = _interopRequireDefault(_NavigatorTypes);
 
@@ -95017,7 +95017,7 @@ exports.default = function (routeConfigMap) {
 
   return (0, _createNavigationContainer2.default)(navigator);
 };
-}, 881, null, "react-navigation/src/navigators/StackNavigator.js");
+}, 882, null, "react-navigation/src/navigators/StackNavigator.js");
 __d(/* react-navigation/src/views/CardStack/CardStackTransitioner.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -95040,19 +95040,19 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _CardStack = require(883          ); // 883 = ./CardStack
+var _CardStack = require(884          ); // 884 = ./CardStack
 
 var _CardStack2 = _interopRequireDefault(_CardStack);
 
-var _CardStackStyleInterpolator = require(899                           ); // 899 = ./CardStackStyleInterpolator
+var _CardStackStyleInterpolator = require(900                           ); // 900 = ./CardStackStyleInterpolator
 
 var _CardStackStyleInterpolator2 = _interopRequireDefault(_CardStackStyleInterpolator);
 
-var _Transitioner = require(901              ); // 901 = ../Transitioner
+var _Transitioner = require(902              ); // 902 = ../Transitioner
 
 var _Transitioner2 = _interopRequireDefault(_Transitioner);
 
-var _TransitionConfigs = require(898                  ); // 898 = ./TransitionConfigs
+var _TransitionConfigs = require(899                  ); // 899 = ./TransitionConfigs
 
 var _TransitionConfigs2 = _interopRequireDefault(_TransitionConfigs);
 
@@ -95157,7 +95157,7 @@ var CardStackTransitioner = _wrapComponent('CardStackTransitioner')((_temp2 = _c
 }, _temp2));
 
 exports.default = CardStackTransitioner;
-}, 882, null, "react-navigation/src/views/CardStack/CardStackTransitioner.js");
+}, 883, null, "react-navigation/src/views/CardStack/CardStackTransitioner.js");
 __d(/* react-navigation/src/views/CardStack/CardStack.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -95176,33 +95176,33 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _clamp = require(884    ); // 884 = clamp
+var _clamp = require(885    ); // 885 = clamp
 
 var _clamp2 = _interopRequireDefault(_clamp);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _Card = require(885     ); // 885 = ./Card
+var _Card = require(886     ); // 886 = ./Card
 
 var _Card2 = _interopRequireDefault(_Card);
 
-var _Header = require(888               ); // 888 = ../Header/Header
+var _Header = require(889               ); // 889 = ../Header/Header
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _NavigationActions = require(876                      ); // 876 = ../../NavigationActions
+var _NavigationActions = require(877                      ); // 877 = ../../NavigationActions
 
 var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
 
-var _addNavigationHelpers = require(877                         ); // 877 = ../../addNavigationHelpers
+var _addNavigationHelpers = require(878                         ); // 878 = ../../addNavigationHelpers
 
 var _addNavigationHelpers2 = _interopRequireDefault(_addNavigationHelpers);
 
-var _SceneView = require(897           ); // 897 = ../SceneView
+var _SceneView = require(898           ); // 898 = ../SceneView
 
 var _SceneView2 = _interopRequireDefault(_SceneView);
 
-var _TransitionConfigs = require(898                  ); // 898 = ./TransitionConfigs
+var _TransitionConfigs = require(899                  ); // 899 = ./TransitionConfigs
 
 var _TransitionConfigs2 = _interopRequireDefault(_TransitionConfigs);
 
@@ -95627,13 +95627,13 @@ var styles = _reactNative.StyleSheet.create({
 });
 
 exports.default = CardStack;
-}, 883, null, "react-navigation/src/views/CardStack/CardStack.js");
+}, 884, null, "react-navigation/src/views/CardStack/CardStack.js");
 __d(/* clamp/index.js */function(global, require, module, exports) {module.exports = clamp;
 
 function clamp(value, min, max) {
   return min < max ? value < min ? min : value > max ? max : value : value < max ? max : value > min ? min : value;
 }
-}, 884, null, "clamp/index.js");
+}, 885, null, "clamp/index.js");
 __d(/* react-navigation/src/views/CardStack/Card.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -95652,7 +95652,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _PointerEventsContainer = require(886                       ); // 886 = ./PointerEventsContainer
+var _PointerEventsContainer = require(887                       ); // 887 = ./PointerEventsContainer
 
 var _PointerEventsContainer2 = _interopRequireDefault(_PointerEventsContainer);
 
@@ -95739,7 +95739,7 @@ var styles = _reactNative.StyleSheet.create({
 Card = (0, _PointerEventsContainer2.default)(Card);
 
 exports.default = Card;
-}, 885, null, "react-navigation/src/views/CardStack/Card.js");
+}, 886, null, "react-navigation/src/views/CardStack/Card.js");
 __d(/* react-navigation/src/views/CardStack/PointerEventsContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -95760,11 +95760,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.default = create;
 
-var _invariant = require(878                    ); // 878 = ../../utils/invariant
+var _invariant = require(879                    ); // 879 = ../../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _AnimatedValueSubscription = require(887                           ); // 887 = ../AnimatedValueSubscription
+var _AnimatedValueSubscription = require(888                           ); // 888 = ../AnimatedValueSubscription
 
 var _AnimatedValueSubscription2 = _interopRequireDefault(_AnimatedValueSubscription);
 
@@ -95899,7 +95899,7 @@ function create(Component) {
 
   return Container;
 }
-}, 886, null, "react-navigation/src/views/CardStack/PointerEventsContainer.js");
+}, 887, null, "react-navigation/src/views/CardStack/PointerEventsContainer.js");
 __d(/* react-navigation/src/views/AnimatedValueSubscription.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -95930,7 +95930,7 @@ var AnimatedValueSubscription = function () {
 }();
 
 exports.default = AnimatedValueSubscription;
-}, 887, null, "react-navigation/src/views/AnimatedValueSubscription.js");
+}, 888, null, "react-navigation/src/views/AnimatedValueSubscription.js");
 __d(/* react-navigation/src/views/Header/Header.js */function(global, require, module, exports) {
 
 'no babel-plugin-flow-react-proptypes';
@@ -95957,23 +95957,23 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _HeaderTitle = require(889            ); // 889 = ./HeaderTitle
+var _HeaderTitle = require(890            ); // 890 = ./HeaderTitle
 
 var _HeaderTitle2 = _interopRequireDefault(_HeaderTitle);
 
-var _HeaderBackButton = require(890                 ); // 890 = ./HeaderBackButton
+var _HeaderBackButton = require(891                 ); // 891 = ./HeaderBackButton
 
 var _HeaderBackButton2 = _interopRequireDefault(_HeaderBackButton);
 
-var _HeaderStyleInterpolator = require(893                        ); // 893 = ./HeaderStyleInterpolator
+var _HeaderStyleInterpolator = require(894                        ); // 894 = ./HeaderStyleInterpolator
 
 var _HeaderStyleInterpolator2 = _interopRequireDefault(_HeaderStyleInterpolator);
 
-var _SafeAreaView = require(895              ); // 895 = ../SafeAreaView
+var _SafeAreaView = require(896              ); // 896 = ../SafeAreaView
 
 var _SafeAreaView2 = _interopRequireDefault(_SafeAreaView);
 
-var _withOrientation = require(896                 ); // 896 = ../withOrientation
+var _withOrientation = require(897                 ); // 897 = ../withOrientation
 
 var _withOrientation2 = _interopRequireDefault(_withOrientation);
 
@@ -96373,7 +96373,7 @@ var styles = _reactNative.StyleSheet.create({
 });
 
 exports.default = (0, _withOrientation2.default)(Header);
-}, 888, null, "react-navigation/src/views/Header/Header.js");
+}, 889, null, "react-navigation/src/views/Header/Header.js");
 __d(/* react-navigation/src/views/Header/HeaderTitle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -96421,7 +96421,7 @@ var styles = _reactNative.StyleSheet.create({
 });
 
 exports.default = HeaderTitle;
-}, 889, null, "react-navigation/src/views/Header/HeaderTitle.js");
+}, 890, null, "react-navigation/src/views/Header/HeaderTitle.js");
 __d(/* react-navigation/src/views/Header/HeaderBackButton.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -96442,7 +96442,7 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _TouchableItem = require(891               ); // 891 = ../TouchableItem
+var _TouchableItem = require(892               ); // 892 = ../TouchableItem
 
 var _TouchableItem2 = _interopRequireDefault(_TouchableItem);
 
@@ -96516,7 +96516,7 @@ var HeaderBackButton = _wrapComponent('HeaderBackButton')((_temp2 = _class = fun
 
       var backButtonTitle = renderTruncated ? truncatedTitle : title;
 
-      var asset = require(892                      ); // 892 = ../assets/back-icon.png
+      var asset = require(893                      ); // 893 = ../assets/back-icon.png
 
       return React.createElement(
         _TouchableItem2.default,
@@ -96608,7 +96608,7 @@ var styles = _reactNative.StyleSheet.create({
 });
 
 exports.default = HeaderBackButton;
-}, 890, null, "react-navigation/src/views/Header/HeaderBackButton.js");
+}, 891, null, "react-navigation/src/views/Header/HeaderBackButton.js");
 __d(/* react-navigation/src/views/TouchableItem.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -96723,16 +96723,16 @@ var TouchableItem = _wrapComponent('TouchableItem')((_temp = _class = function (
 }, _temp));
 
 exports.default = TouchableItem;
-}, 891, null, "react-navigation/src/views/TouchableItem.js");
+}, 892, null, "react-navigation/src/views/TouchableItem.js");
 __d(/* react-navigation/src/views/assets/back-icon.png */function(global, require, module, exports) {module.exports=require(411                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/node_modules/react-navigation/src/views/assets","width":13,"height":21,"scales":[1,1.5,2,3,4],"hash":"23ea5876dd37198284f126df9ba165c8","name":"back-icon","type":"png","fileHashes":["f84d90de93cbcfe360127e44ba3e8bae","39862bf6489d4bf6ce0e68b13e9a5103","7854642916f2808e170e41183ede2c63","f3e43e2e3f862891871600e7117ac399","5d58c9c4e6e1ec0a4155e949500304d2"]}); // 411 = react-native/Libraries/Image/AssetRegistry
-}, 892, null, "react-navigation/src/views/assets/back-icon.png");
+}, 893, null, "react-navigation/src/views/assets/back-icon.png");
 __d(/* react-navigation/src/views/Header/HeaderStyleInterpolator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _getSceneIndicesForInterpolationInputRange = require(894                                                    ); // 894 = ../../utils/getSceneIndicesForInterpolationInputRange
+var _getSceneIndicesForInterpolationInputRange = require(895                                                    ); // 895 = ../../utils/getSceneIndicesForInterpolationInputRange
 
 var _getSceneIndicesForInterpolationInputRange2 = _interopRequireDefault(_getSceneIndicesForInterpolationInputRange);
 
@@ -96813,7 +96813,7 @@ exports.default = {
   forCenter: forCenter,
   forRight: forRight
 };
-}, 893, null, "react-navigation/src/views/Header/HeaderStyleInterpolator.js");
+}, 894, null, "react-navigation/src/views/Header/HeaderStyleInterpolator.js");
 __d(/* react-navigation/src/utils/getSceneIndicesForInterpolationInputRange.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -96858,7 +96858,7 @@ function getSceneIndicesForInterpolationInputRange(props) {
 }
 
 exports.default = getSceneIndicesForInterpolationInputRange;
-}, 894, null, "react-navigation/src/utils/getSceneIndicesForInterpolationInputRange.js");
+}, 895, null, "react-navigation/src/utils/getSceneIndicesForInterpolationInputRange.js");
 __d(/* react-navigation/src/views/SafeAreaView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -96881,7 +96881,7 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _withOrientation = require(896                ); // 896 = ./withOrientation
+var _withOrientation = require(897                ); // 897 = ./withOrientation
 
 var _withOrientation2 = _interopRequireDefault(_withOrientation);
 
@@ -97253,7 +97253,7 @@ var SafeView = _wrapComponent('SafeView')((_temp2 = _class = function (_Componen
 }, _temp2));
 
 exports.default = (0, _withOrientation2.default)(SafeView);
-}, 895, null, "react-navigation/src/views/SafeAreaView.js");
+}, 896, null, "react-navigation/src/views/SafeAreaView.js");
 __d(/* react-navigation/src/views/withOrientation.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -97369,7 +97369,7 @@ var isOrientationLandscape = exports.isOrientationLandscape = function isOrienta
       height = _ref.height;
   return width > height;
 };
-}, 896, null, "react-navigation/src/views/withOrientation.js");
+}, 897, null, "react-navigation/src/views/withOrientation.js");
 __d(/* react-navigation/src/views/SceneView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -97459,7 +97459,7 @@ var SceneView = _wrapComponent('SceneView')((_temp = _class = function (_React$P
 }, _temp));
 
 exports.default = SceneView;
-}, 897, null, "react-navigation/src/views/SceneView.js");
+}, 898, null, "react-navigation/src/views/SceneView.js");
 __d(/* react-navigation/src/views/CardStack/TransitionConfigs.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -97468,11 +97468,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _CardStackStyleInterpolator = require(899                           ); // 899 = ./CardStackStyleInterpolator
+var _CardStackStyleInterpolator = require(900                           ); // 900 = ./CardStackStyleInterpolator
 
 var _CardStackStyleInterpolator2 = _interopRequireDefault(_CardStackStyleInterpolator);
 
-var _ReactNativeFeatures = require(900                              ); // 900 = ../../utils/ReactNativeFeatures
+var _ReactNativeFeatures = require(901                              ); // 901 = ../../utils/ReactNativeFeatures
 
 var ReactNativeFeatures = _interopRequireWildcard(_ReactNativeFeatures);
 
@@ -97556,14 +97556,14 @@ exports.default = {
   defaultTransitionConfig: defaultTransitionConfig,
   getTransitionConfig: getTransitionConfig
 };
-}, 898, null, "react-navigation/src/views/CardStack/TransitionConfigs.js");
+}, 899, null, "react-navigation/src/views/CardStack/TransitionConfigs.js");
 __d(/* react-navigation/src/views/CardStack/CardStackStyleInterpolator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _getSceneIndicesForInterpolationInputRange = require(894                                                    ); // 894 = ../../utils/getSceneIndicesForInterpolationInputRange
+var _getSceneIndicesForInterpolationInputRange = require(895                                                    ); // 895 = ../../utils/getSceneIndicesForInterpolationInputRange
 
 var _getSceneIndicesForInterpolationInputRange2 = _interopRequireDefault(_getSceneIndicesForInterpolationInputRange);
 
@@ -97728,7 +97728,7 @@ exports.default = {
   forFade: forFade,
   canUseNativeDriver: canUseNativeDriver
 };
-}, 899, null, "react-navigation/src/views/CardStack/CardStackStyleInterpolator.js");
+}, 900, null, "react-navigation/src/views/CardStack/CardStackStyleInterpolator.js");
 __d(/* react-navigation/src/utils/ReactNativeFeatures.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -97747,7 +97747,7 @@ var supportsImprovedSpringAnimation = exports.supportsImprovedSpringAnimation = 
   }
   return false;
 };
-}, 900, null, "react-navigation/src/utils/ReactNativeFeatures.js");
+}, 901, null, "react-navigation/src/utils/ReactNativeFeatures.js");
 __d(/* react-navigation/src/views/Transitioner.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -97768,11 +97768,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _invariant = require(878                 ); // 878 = ../utils/invariant
+var _invariant = require(879                 ); // 879 = ../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _ScenesReducer = require(902              ); // 902 = ./ScenesReducer
+var _ScenesReducer = require(903              ); // 903 = ./ScenesReducer
 
 var _ScenesReducer2 = _interopRequireDefault(_ScenesReducer);
 
@@ -98080,7 +98080,7 @@ var styles = _reactNative.StyleSheet.create({
 });
 
 exports.default = Transitioner;
-}, 901, null, "react-navigation/src/views/Transitioner.js");
+}, 902, null, "react-navigation/src/views/Transitioner.js");
 __d(/* react-navigation/src/views/ScenesReducer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -98089,11 +98089,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = ScenesReducer;
 
-var _invariant = require(878                 ); // 878 = ../utils/invariant
+var _invariant = require(879                 ); // 879 = ../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _shallowEqual = require(903                    ); // 903 = ../utils/shallowEqual
+var _shallowEqual = require(904                    ); // 904 = ../utils/shallowEqual
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
@@ -98237,7 +98237,7 @@ function ScenesReducer(scenes, nextState, prevState) {
 
   return scenes;
 }
-}, 902, null, "react-navigation/src/views/ScenesReducer.js");
+}, 903, null, "react-navigation/src/views/ScenesReducer.js");
 __d(/* react-navigation/src/utils/shallowEqual.js */function(global, require, module, exports) {
 
 'use strict';
@@ -98277,7 +98277,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-}, 903, null, "react-navigation/src/utils/shallowEqual.js");
+}, 904, null, "react-navigation/src/utils/shallowEqual.js");
 __d(/* react-navigation/src/routers/StackRouter.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -98286,35 +98286,35 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _pathToRegexp = require(905             ); // 905 = path-to-regexp
+var _pathToRegexp = require(906             ); // 906 = path-to-regexp
 
 var _pathToRegexp2 = _interopRequireDefault(_pathToRegexp);
 
-var _NavigationActions = require(876                   ); // 876 = ../NavigationActions
+var _NavigationActions = require(877                   ); // 877 = ../NavigationActions
 
 var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
 
-var _createConfigGetter = require(907                   ); // 907 = ./createConfigGetter
+var _createConfigGetter = require(908                   ); // 908 = ./createConfigGetter
 
 var _createConfigGetter2 = _interopRequireDefault(_createConfigGetter);
 
-var _getScreenForRouteName = require(908                      ); // 908 = ./getScreenForRouteName
+var _getScreenForRouteName = require(909                      ); // 909 = ./getScreenForRouteName
 
 var _getScreenForRouteName2 = _interopRequireDefault(_getScreenForRouteName);
 
-var _StateUtils = require(879            ); // 879 = ../StateUtils
+var _StateUtils = require(880            ); // 880 = ../StateUtils
 
 var _StateUtils2 = _interopRequireDefault(_StateUtils);
 
-var _validateRouteConfigMap = require(910                       ); // 910 = ./validateRouteConfigMap
+var _validateRouteConfigMap = require(911                       ); // 911 = ./validateRouteConfigMap
 
 var _validateRouteConfigMap2 = _interopRequireDefault(_validateRouteConfigMap);
 
-var _getScreenConfigDeprecated = require(911                          ); // 911 = ./getScreenConfigDeprecated
+var _getScreenConfigDeprecated = require(912                          ); // 912 = ./getScreenConfigDeprecated
 
 var _getScreenConfigDeprecated2 = _interopRequireDefault(_getScreenConfigDeprecated);
 
-var _invariant = require(878                 ); // 878 = ../utils/invariant
+var _invariant = require(879                 ); // 879 = ../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -98656,8 +98656,8 @@ exports.default = function (routeConfigs) {
     getScreenConfig: _getScreenConfigDeprecated2.default
   };
 };
-}, 904, null, "react-navigation/src/routers/StackRouter.js");
-__d(/* path-to-regexp/index.js */function(global, require, module, exports) {var isarray = require(906      ); // 906 = isarray
+}, 905, null, "react-navigation/src/routers/StackRouter.js");
+__d(/* path-to-regexp/index.js */function(global, require, module, exports) {var isarray = require(907      ); // 907 = isarray
 
 module.exports = pathToRegexp;
 module.exports.parse = parse;
@@ -98952,30 +98952,30 @@ function pathToRegexp(path, keys, options) {
 
   return stringToRegexp(path, keys, options);
 }
-}, 905, null, "path-to-regexp/index.js");
+}, 906, null, "path-to-regexp/index.js");
 __d(/* isarray/index.js */function(global, require, module, exports) {module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
-}, 906, null, "isarray/index.js");
+}, 907, null, "isarray/index.js");
 __d(/* react-navigation/src/routers/createConfigGetter.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _invariant = require(878                 ); // 878 = ../utils/invariant
+var _invariant = require(879                 ); // 879 = ../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _getScreenForRouteName = require(908                      ); // 908 = ./getScreenForRouteName
+var _getScreenForRouteName = require(909                      ); // 909 = ./getScreenForRouteName
 
 var _getScreenForRouteName2 = _interopRequireDefault(_getScreenForRouteName);
 
-var _addNavigationHelpers = require(877                      ); // 877 = ../addNavigationHelpers
+var _addNavigationHelpers = require(878                      ); // 878 = ../addNavigationHelpers
 
 var _addNavigationHelpers2 = _interopRequireDefault(_addNavigationHelpers);
 
-var _validateScreenOptions = require(909                      ); // 909 = ./validateScreenOptions
+var _validateScreenOptions = require(910                      ); // 910 = ./validateScreenOptions
 
 var _validateScreenOptions2 = _interopRequireDefault(_validateScreenOptions);
 
@@ -99039,13 +99039,13 @@ exports.default = function (routeConfigs, navigatorScreenConfig) {
     return outputConfig;
   };
 };
-}, 907, null, "react-navigation/src/routers/createConfigGetter.js");
+}, 908, null, "react-navigation/src/routers/createConfigGetter.js");
 __d(/* react-navigation/src/routers/getScreenForRouteName.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = getScreenForRouteName;
 
-var _invariant = require(878                 ); // 878 = ../utils/invariant
+var _invariant = require(879                 ); // 879 = ../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -99072,7 +99072,7 @@ function getScreenForRouteName(routeConfigs, routeName) {
 
   throw new Error('Route ' + routeName + ' must define a screen or a getScreen.');
 }
-}, 908, null, "react-navigation/src/routers/getScreenForRouteName.js");
+}, 909, null, "react-navigation/src/routers/getScreenForRouteName.js");
 __d(/* react-navigation/src/routers/validateScreenOptions.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -99104,12 +99104,12 @@ exports.default = function (screenOptions, route) {
     })), ['}']).join('\n'));
   }
 };
-}, 909, null, "react-navigation/src/routers/validateScreenOptions.js");
+}, 910, null, "react-navigation/src/routers/validateScreenOptions.js");
 __d(/* react-navigation/src/routers/validateRouteConfigMap.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _invariant = require(878                 ); // 878 = ../utils/invariant
+var _invariant = require(879                 ); // 879 = ../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -99135,12 +99135,12 @@ function validateRouteConfigMap(routeConfigs) {
 }
 
 exports.default = validateRouteConfigMap;
-}, 910, null, "react-navigation/src/routers/validateRouteConfigMap.js");
+}, 911, null, "react-navigation/src/routers/validateRouteConfigMap.js");
 __d(/* react-navigation/src/routers/getScreenConfigDeprecated.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _invariant = require(878                 ); // 878 = ../utils/invariant
+var _invariant = require(879                 ); // 879 = ../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -99149,7 +99149,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = function () {
   return (0, _invariant2.default)(false, '`getScreenConfig` has been replaced with `getScreenOptions`');
 };
-}, 911, null, "react-navigation/src/routers/getScreenConfigDeprecated.js");
+}, 912, null, "react-navigation/src/routers/getScreenConfigDeprecated.js");
 __d(/* react-navigation/src/navigators/NavigatorTypes.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -99164,7 +99164,7 @@ exports.default = {
   TABS: TABS,
   DRAWER: DRAWER
 };
-}, 912, null, "react-navigation/src/navigators/NavigatorTypes.js");
+}, 913, null, "react-navigation/src/navigators/NavigatorTypes.js");
 __d(/* react-navigation/src/navigators/TabNavigator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -99178,31 +99178,31 @@ var React = _interopRequireWildcard(_react);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _createNavigator = require(880                ); // 880 = ./createNavigator
+var _createNavigator = require(881                ); // 881 = ./createNavigator
 
 var _createNavigator2 = _interopRequireDefault(_createNavigator);
 
-var _createNavigationContainer = require(874                           ); // 874 = ../createNavigationContainer
+var _createNavigationContainer = require(875                           ); // 875 = ../createNavigationContainer
 
 var _createNavigationContainer2 = _interopRequireDefault(_createNavigationContainer);
 
-var _TabRouter = require(914                   ); // 914 = ../routers/TabRouter
+var _TabRouter = require(915                   ); // 915 = ../routers/TabRouter
 
 var _TabRouter2 = _interopRequireDefault(_TabRouter);
 
-var _TabView = require(915                       ); // 915 = ../views/TabView/TabView
+var _TabView = require(916                       ); // 916 = ../views/TabView/TabView
 
 var _TabView2 = _interopRequireDefault(_TabView);
 
-var _TabBarTop = require(927                         ); // 927 = ../views/TabView/TabBarTop
+var _TabBarTop = require(928                         ); // 928 = ../views/TabView/TabBarTop
 
 var _TabBarTop2 = _interopRequireDefault(_TabBarTop);
 
-var _TabBarBottom = require(929                            ); // 929 = ../views/TabView/TabBarBottom
+var _TabBarBottom = require(930                            ); // 930 = ../views/TabView/TabBarBottom
 
 var _TabBarBottom2 = _interopRequireDefault(_TabBarBottom);
 
-var _NavigatorTypes = require(912               ); // 912 = ./NavigatorTypes
+var _NavigatorTypes = require(913               ); // 913 = ./NavigatorTypes
 
 var _NavigatorTypes2 = _interopRequireDefault(_NavigatorTypes);
 
@@ -99271,34 +99271,34 @@ TabNavigator.Presets = {
 };
 
 exports.default = TabNavigator;
-}, 913, null, "react-navigation/src/navigators/TabNavigator.js");
+}, 914, null, "react-navigation/src/navigators/TabNavigator.js");
 __d(/* react-navigation/src/routers/TabRouter.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _invariant = require(878                 ); // 878 = ../utils/invariant
+var _invariant = require(879                 ); // 879 = ../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _getScreenForRouteName = require(908                      ); // 908 = ./getScreenForRouteName
+var _getScreenForRouteName = require(909                      ); // 909 = ./getScreenForRouteName
 
 var _getScreenForRouteName2 = _interopRequireDefault(_getScreenForRouteName);
 
-var _createConfigGetter = require(907                   ); // 907 = ./createConfigGetter
+var _createConfigGetter = require(908                   ); // 908 = ./createConfigGetter
 
 var _createConfigGetter2 = _interopRequireDefault(_createConfigGetter);
 
-var _NavigationActions = require(876                   ); // 876 = ../NavigationActions
+var _NavigationActions = require(877                   ); // 877 = ../NavigationActions
 
 var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
 
-var _validateRouteConfigMap = require(910                       ); // 910 = ./validateRouteConfigMap
+var _validateRouteConfigMap = require(911                       ); // 911 = ./validateRouteConfigMap
 
 var _validateRouteConfigMap2 = _interopRequireDefault(_validateRouteConfigMap);
 
-var _getScreenConfigDeprecated = require(911                          ); // 911 = ./getScreenConfigDeprecated
+var _getScreenConfigDeprecated = require(912                          ); // 912 = ./getScreenConfigDeprecated
 
 var _getScreenConfigDeprecated2 = _interopRequireDefault(_getScreenConfigDeprecated);
 
@@ -99547,7 +99547,7 @@ exports.default = function (routeConfigs) {
     getScreenConfig: _getScreenConfigDeprecated2.default
   };
 };
-}, 914, null, "react-navigation/src/routers/TabRouter.js");
+}, 915, null, "react-navigation/src/routers/TabRouter.js");
 __d(/* react-navigation/src/views/TabView/TabView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -99570,17 +99570,17 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _reactNativeTabView = require(916                    ); // 916 = react-native-tab-view
+var _reactNativeTabView = require(917                    ); // 917 = react-native-tab-view
 
-var _SceneView = require(897           ); // 897 = ../SceneView
+var _SceneView = require(898           ); // 898 = ../SceneView
 
 var _SceneView2 = _interopRequireDefault(_SceneView);
 
-var _withCachedChildNavigation = require(926                              ); // 926 = ../../withCachedChildNavigation
+var _withCachedChildNavigation = require(927                              ); // 927 = ../../withCachedChildNavigation
 
 var _withCachedChildNavigation2 = _interopRequireDefault(_withCachedChildNavigation);
 
-var _SafeAreaView = require(895              ); // 895 = ../SafeAreaView
+var _SafeAreaView = require(896              ); // 896 = ../SafeAreaView
 
 var _SafeAreaView2 = _interopRequireDefault(_SafeAreaView);
 
@@ -99807,33 +99807,33 @@ var styles = _reactNative.StyleSheet.create({
     overflow: 'hidden'
   }
 });
-}, 915, null, "react-navigation/src/views/TabView/TabView.js");
+}, 916, null, "react-navigation/src/views/TabView/TabView.js");
 __d(/* react-native-tab-view/src/index.js */function(global, require, module, exports) {
 
 module.exports = {
   get TabViewAnimated() {
-    return require(917                ).default; // 917 = ./TabViewAnimated
+    return require(918                ).default; // 918 = ./TabViewAnimated
   },
   get TabViewPagerPan() {
-    return require(921                ).default; // 921 = ./TabViewPagerPan
+    return require(922                ).default; // 922 = ./TabViewPagerPan
   },
   get TabViewPagerScroll() {
-    return require(920                   ).default; // 920 = ./TabViewPagerScroll
+    return require(921                   ).default; // 921 = ./TabViewPagerScroll
   },
   get TabViewPagerAndroid() {
-    return require(919                    ).default; // 919 = ./TabViewPagerAndroid
+    return require(920                    ).default; // 920 = ./TabViewPagerAndroid
   },
   get TabViewPagerExperimental() {
-    return require(922                         ).default; // 922 = ./TabViewPagerExperimental
+    return require(923                         ).default; // 923 = ./TabViewPagerExperimental
   },
   get TabBar() {
-    return require(923       ).default; // 923 = ./TabBar
+    return require(924       ).default; // 924 = ./TabBar
   },
   get SceneMap() {
-    return require(925         ).default; // 925 = ./SceneMap
+    return require(926         ).default; // 926 = ./SceneMap
   }
 };
-}, 916, null, "react-native-tab-view/src/index.js");
+}, 917, null, "react-native-tab-view/src/index.js");
 __d(/* react-native-tab-view/src/TabViewAnimated.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -99861,7 +99861,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _TabViewPropTypes = require(918                 ); // 918 = ./TabViewPropTypes
+var _TabViewPropTypes = require(919                 ); // 919 = ./TabViewPropTypes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -99898,13 +99898,13 @@ var TabViewPager = void 0;
 
 switch (_reactNative.Platform.OS) {
   case 'android':
-    TabViewPager = require(919                    ).default; // 919 = ./TabViewPagerAndroid
+    TabViewPager = require(920                    ).default; // 920 = ./TabViewPagerAndroid
     break;
   case 'ios':
-    TabViewPager = require(920                   ).default; // 920 = ./TabViewPagerScroll
+    TabViewPager = require(921                   ).default; // 921 = ./TabViewPagerScroll
     break;
   default:
-    TabViewPager = require(921                ).default; // 921 = ./TabViewPagerPan
+    TabViewPager = require(922                ).default; // 922 = ./TabViewPagerPan
     break;
 }
 
@@ -100108,7 +100108,7 @@ var styles = _reactNative.StyleSheet.create({
     overflow: 'hidden'
   }
 });
-}, 917, null, "react-native-tab-view/src/TabViewAnimated.js");
+}, 918, null, "react-native-tab-view/src/TabViewAnimated.js");
 __d(/* react-native-tab-view/src/TabViewPropTypes.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -100162,7 +100162,7 @@ var PagerRendererPropType = exports.PagerRendererPropType = {
   useNativeDriver: _propTypes2.default.bool,
   children: _propTypes2.default.node.isRequired
 };
-}, 918, null, "react-native-tab-view/src/TabViewPropTypes.js");
+}, 919, null, "react-native-tab-view/src/TabViewPropTypes.js");
 __d(/* react-native-tab-view/src/TabViewPagerAndroid.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -100183,7 +100183,7 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _TabViewPropTypes = require(918                 ); // 918 = ./TabViewPropTypes
+var _TabViewPropTypes = require(919                 ); // 919 = ./TabViewPropTypes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -100361,7 +100361,7 @@ var styles = _reactNative.StyleSheet.create({
     overflow: 'hidden'
   }
 });
-}, 919, null, "react-native-tab-view/src/TabViewPagerAndroid.js");
+}, 920, null, "react-native-tab-view/src/TabViewPagerAndroid.js");
 __d(/* react-native-tab-view/src/TabViewPagerScroll.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -100383,7 +100383,7 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _TabViewPropTypes = require(918                 ); // 918 = ./TabViewPropTypes
+var _TabViewPropTypes = require(919                 ); // 919 = ./TabViewPropTypes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -100586,7 +100586,7 @@ var styles = _reactNative.StyleSheet.create({
     overflow: 'hidden'
   }
 });
-}, 920, null, "react-native-tab-view/src/TabViewPagerScroll.js");
+}, 921, null, "react-native-tab-view/src/TabViewPagerScroll.js");
 __d(/* react-native-tab-view/src/TabViewPagerPan.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -100613,7 +100613,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _TabViewPropTypes = require(918                 ); // 918 = ./TabViewPropTypes
+var _TabViewPropTypes = require(919                 ); // 919 = ./TabViewPropTypes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -100857,7 +100857,7 @@ var styles = _reactNative.StyleSheet.create({
     alignItems: 'stretch'
   }
 });
-}, 921, null, "react-native-tab-view/src/TabViewPagerPan.js");
+}, 922, null, "react-native-tab-view/src/TabViewPagerPan.js");
 __d(/* react-native-tab-view/src/TabViewPagerExperimental.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -100884,7 +100884,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _TabViewPropTypes = require(918                 ); // 918 = ./TabViewPropTypes
+var _TabViewPropTypes = require(919                 ); // 919 = ./TabViewPropTypes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -101097,7 +101097,7 @@ var styles = _reactNative.StyleSheet.create({
     alignItems: 'stretch'
   }
 });
-}, 922, null, "react-native-tab-view/src/TabViewPagerExperimental.js");
+}, 923, null, "react-native-tab-view/src/TabViewPagerExperimental.js");
 __d(/* react-native-tab-view/src/TabBar.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -101125,11 +101125,11 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _TouchableItem = require(924              ); // 924 = ./TouchableItem
+var _TouchableItem = require(925              ); // 925 = ./TouchableItem
 
 var _TouchableItem2 = _interopRequireDefault(_TouchableItem);
 
-var _TabViewPropTypes = require(918                 ); // 918 = ./TabViewPropTypes
+var _TabViewPropTypes = require(919                 ); // 919 = ./TabViewPropTypes
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -101676,7 +101676,7 @@ var styles = _reactNative.StyleSheet.create({
     height: 2
   }
 });
-}, 923, null, "react-native-tab-view/src/TabBar.js");
+}, 924, null, "react-native-tab-view/src/TabBar.js");
 __d(/* react-native-tab-view/src/TouchableItem.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -101817,7 +101817,7 @@ var TouchableItem = _wrapComponent('TouchableItem')((_temp2 = _class = function 
 }, _temp2));
 
 exports.default = TouchableItem;
-}, 924, null, "react-native-tab-view/src/TouchableItem.js");
+}, 925, null, "react-native-tab-view/src/TouchableItem.js");
 __d(/* react-native-tab-view/src/SceneMap.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -101895,7 +101895,7 @@ function SceneMap(scenes) {
     });
   };
 }
-}, 925, null, "react-native-tab-view/src/SceneMap.js");
+}, 926, null, "react-native-tab-view/src/SceneMap.js");
 __d(/* react-navigation/src/withCachedChildNavigation.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -101916,7 +101916,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.default = withCachedChildNavigation;
 
-var _addNavigationHelpers = require(877                     ); // 877 = ./addNavigationHelpers
+var _addNavigationHelpers = require(878                     ); // 878 = ./addNavigationHelpers
 
 var _addNavigationHelpers2 = _interopRequireDefault(_addNavigationHelpers);
 
@@ -102010,7 +102010,7 @@ function withCachedChildNavigation(Comp) {
     return _class;
   }(React.PureComponent), _class.displayName = 'withCachedChildNavigation(' + displayName + ')', _temp2));
 }
-}, 926, null, "react-navigation/src/withCachedChildNavigation.js");
+}, 927, null, "react-navigation/src/withCachedChildNavigation.js");
 __d(/* react-navigation/src/views/TabView/TabBarTop.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -102033,9 +102033,9 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _reactNativeTabView = require(916                    ); // 916 = react-native-tab-view
+var _reactNativeTabView = require(917                    ); // 917 = react-native-tab-view
 
-var _TabBarIcon = require(928           ); // 928 = ./TabBarIcon
+var _TabBarIcon = require(929           ); // 929 = ./TabBarIcon
 
 var _TabBarIcon2 = _interopRequireDefault(_TabBarIcon);
 
@@ -102220,7 +102220,7 @@ var styles = _reactNative.StyleSheet.create({
     backgroundColor: 'transparent'
   }
 });
-}, 927, null, "react-navigation/src/views/TabView/TabBarTop.js");
+}, 928, null, "react-navigation/src/views/TabView/TabBarTop.js");
 __d(/* react-navigation/src/views/TabView/TabBarIcon.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -102365,7 +102365,7 @@ var styles = _reactNative.StyleSheet.create({
     justifyContent: 'center'
   }
 });
-}, 928, null, "react-navigation/src/views/TabView/TabBarIcon.js");
+}, 929, null, "react-navigation/src/views/TabView/TabBarIcon.js");
 __d(/* react-navigation/src/views/TabView/TabBarBottom.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -102388,15 +102388,15 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _TabBarIcon = require(928           ); // 928 = ./TabBarIcon
+var _TabBarIcon = require(929           ); // 929 = ./TabBarIcon
 
 var _TabBarIcon2 = _interopRequireDefault(_TabBarIcon);
 
-var _SafeAreaView = require(895              ); // 895 = ../SafeAreaView
+var _SafeAreaView = require(896              ); // 896 = ../SafeAreaView
 
 var _SafeAreaView2 = _interopRequireDefault(_SafeAreaView);
 
-var _withOrientation = require(896                 ); // 896 = ../withOrientation
+var _withOrientation = require(897                 ); // 897 = ../withOrientation
 
 var _withOrientation2 = _interopRequireDefault(_withOrientation);
 
@@ -102687,7 +102687,7 @@ var styles = _reactNative.StyleSheet.create({
 });
 
 exports.default = (0, _withOrientation2.default)(TabBarBottom);
-}, 929, null, "react-navigation/src/views/TabView/TabBarBottom.js");
+}, 930, null, "react-navigation/src/views/TabView/TabBarBottom.js");
 __d(/* react-navigation/src/navigators/DrawerNavigator.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -102702,35 +102702,35 @@ var React = _interopRequireWildcard(_react);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _createNavigator = require(880                ); // 880 = ./createNavigator
+var _createNavigator = require(881                ); // 881 = ./createNavigator
 
 var _createNavigator2 = _interopRequireDefault(_createNavigator);
 
-var _createNavigationContainer = require(874                           ); // 874 = ../createNavigationContainer
+var _createNavigationContainer = require(875                           ); // 875 = ../createNavigationContainer
 
 var _createNavigationContainer2 = _interopRequireDefault(_createNavigationContainer);
 
-var _TabRouter2 = require(914                   ); // 914 = ../routers/TabRouter
+var _TabRouter2 = require(915                   ); // 915 = ../routers/TabRouter
 
 var _TabRouter3 = _interopRequireDefault(_TabRouter2);
 
-var _DrawerScreen = require(931                           ); // 931 = ../views/Drawer/DrawerScreen
+var _DrawerScreen = require(932                           ); // 932 = ../views/Drawer/DrawerScreen
 
 var _DrawerScreen2 = _interopRequireDefault(_DrawerScreen);
 
-var _DrawerView = require(932                         ); // 932 = ../views/Drawer/DrawerView
+var _DrawerView = require(933                         ); // 933 = ../views/Drawer/DrawerView
 
 var _DrawerView2 = _interopRequireDefault(_DrawerView);
 
-var _DrawerNavigatorItems = require(937                                   ); // 937 = ../views/Drawer/DrawerNavigatorItems
+var _DrawerNavigatorItems = require(938                                   ); // 938 = ../views/Drawer/DrawerNavigatorItems
 
 var _DrawerNavigatorItems2 = _interopRequireDefault(_DrawerNavigatorItems);
 
-var _SafeAreaView = require(895                    ); // 895 = ../views/SafeAreaView
+var _SafeAreaView = require(896                    ); // 896 = ../views/SafeAreaView
 
 var _SafeAreaView2 = _interopRequireDefault(_SafeAreaView);
 
-var _NavigatorTypes = require(912               ); // 912 = ./NavigatorTypes
+var _NavigatorTypes = require(913               ); // 913 = ./NavigatorTypes
 
 var _NavigatorTypes2 = _interopRequireDefault(_NavigatorTypes);
 
@@ -102856,7 +102856,7 @@ var DrawerNavigator = function DrawerNavigator(routeConfigs) {
 };
 
 exports.default = DrawerNavigator;
-}, 930, null, "react-navigation/src/navigators/DrawerNavigator.js");
+}, 931, null, "react-navigation/src/navigators/DrawerNavigator.js");
 __d(/* react-navigation/src/views/Drawer/DrawerScreen.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -102873,11 +102873,11 @@ var _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/node_modules/react-n
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _SceneView = require(897           ); // 897 = ../SceneView
+var _SceneView = require(898           ); // 898 = ../SceneView
 
 var _SceneView2 = _interopRequireDefault(_SceneView);
 
-var _withCachedChildNavigation = require(926                              ); // 926 = ../../withCachedChildNavigation
+var _withCachedChildNavigation = require(927                              ); // 927 = ../../withCachedChildNavigation
 
 var _withCachedChildNavigation2 = _interopRequireDefault(_withCachedChildNavigation);
 
@@ -102949,7 +102949,7 @@ var DrawerScreen = _wrapComponent('DrawerScreen')(function (_React$PureComponent
 }(React.PureComponent));
 
 exports.default = (0, _withCachedChildNavigation2.default)(DrawerScreen);
-}, 931, null, "react-navigation/src/views/Drawer/DrawerScreen.js");
+}, 932, null, "react-navigation/src/views/Drawer/DrawerScreen.js");
 __d(/* react-navigation/src/views/Drawer/DrawerView.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -102968,15 +102968,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _reactNativeDrawerLayoutPolyfill = require(933                                  ); // 933 = react-native-drawer-layout-polyfill
+var _reactNativeDrawerLayoutPolyfill = require(934                                  ); // 934 = react-native-drawer-layout-polyfill
 
 var _reactNativeDrawerLayoutPolyfill2 = _interopRequireDefault(_reactNativeDrawerLayoutPolyfill);
 
-var _addNavigationHelpers = require(877                         ); // 877 = ../../addNavigationHelpers
+var _addNavigationHelpers = require(878                         ); // 878 = ../../addNavigationHelpers
 
 var _addNavigationHelpers2 = _interopRequireDefault(_addNavigationHelpers);
 
-var _DrawerSidebar = require(936              ); // 936 = ./DrawerSidebar
+var _DrawerSidebar = require(937              ); // 937 = ./DrawerSidebar
 
 var _DrawerSidebar2 = _interopRequireDefault(_DrawerSidebar);
 
@@ -103177,11 +103177,11 @@ var DrawerView = _wrapComponent('DrawerView')(function (_React$PureComponent) {
 }(React.PureComponent));
 
 exports.default = DrawerView;
-}, 932, null, "react-navigation/src/views/Drawer/DrawerView.js");
-__d(/* react-native-drawer-layout-polyfill/dist/index.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", { value: true });var _reactNativeDrawerLayout = require(934                         );var _reactNativeDrawerLayout2 = _interopRequireDefault(_reactNativeDrawerLayout);function _interopRequireDefault(obj) { // 934 = react-native-drawer-layout
+}, 933, null, "react-navigation/src/views/Drawer/DrawerView.js");
+__d(/* react-native-drawer-layout-polyfill/dist/index.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", { value: true });var _reactNativeDrawerLayout = require(935                         );var _reactNativeDrawerLayout2 = _interopRequireDefault(_reactNativeDrawerLayout);function _interopRequireDefault(obj) { // 935 = react-native-drawer-layout
   return obj && obj.__esModule ? obj : { default: obj };
 }exports.default = _reactNativeDrawerLayout2.default;
-}, 933, null, "react-native-drawer-layout-polyfill/dist/index.js");
+}, 934, null, "react-native-drawer-layout-polyfill/dist/index.js");
 __d(/* react-native-drawer-layout/dist/DrawerLayout.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = undefined;var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];for (var key in source) {
@@ -103200,7 +103200,7 @@ __d(/* react-native-drawer-layout/dist/DrawerLayout.js */function(global, requir
   };
 }();var _class, _temp;
 var _react = require(122    );var _react2 = _interopRequireDefault(_react); // 122 = react
-var _reactNativeDismissKeyboard = require(935                            );var _reactNativeDismissKeyboard2 = _interopRequireDefault(_reactNativeDismissKeyboard); // 935 = react-native-dismiss-keyboard
+var _reactNativeDismissKeyboard = require(936                            );var _reactNativeDismissKeyboard2 = _interopRequireDefault(_reactNativeDismissKeyboard); // 936 = react-native-dismiss-keyboard
 var _reactNative = require(99            );function _interopRequireDefault(obj) { // 99 = react-native
   return obj && obj.__esModule ? obj : { default: obj };
 }function _classCallCheck(instance, Constructor) {
@@ -103423,7 +103423,7 @@ var styles = _reactNative.StyleSheet.create({
     bottom: 0,
     right: 0,
     zIndex: 1000 } });
-}, 934, null, "react-native-drawer-layout/dist/DrawerLayout.js");
+}, 935, null, "react-native-drawer-layout/dist/DrawerLayout.js");
 __d(/* react-native-dismiss-keyboard/dist/index.js */function(global, require, module, exports) {Object.defineProperty(exports, '__esModule', {
   value: true
 });
@@ -103438,7 +103438,7 @@ function dismissKeyboard() {
 }
 
 module.exports = exports.default;
-}, 935, null, "react-native-dismiss-keyboard/dist/index.js");
+}, 936, null, "react-native-dismiss-keyboard/dist/index.js");
 __d(/* react-navigation/src/views/Drawer/DrawerSidebar.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -103459,19 +103459,19 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _withCachedChildNavigation = require(926                              ); // 926 = ../../withCachedChildNavigation
+var _withCachedChildNavigation = require(927                              ); // 927 = ../../withCachedChildNavigation
 
 var _withCachedChildNavigation2 = _interopRequireDefault(_withCachedChildNavigation);
 
-var _NavigationActions = require(876                      ); // 876 = ../../NavigationActions
+var _NavigationActions = require(877                      ); // 877 = ../../NavigationActions
 
 var _NavigationActions2 = _interopRequireDefault(_NavigationActions);
 
-var _invariant = require(878                    ); // 878 = ../../utils/invariant
+var _invariant = require(879                    ); // 879 = ../../utils/invariant
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _SafeAreaView = require(895              ); // 895 = ../SafeAreaView
+var _SafeAreaView = require(896              ); // 896 = ../SafeAreaView
 
 var _SafeAreaView2 = _interopRequireDefault(_SafeAreaView);
 
@@ -103622,7 +103622,7 @@ var styles = _reactNative.StyleSheet.create({
     flex: 1
   }
 });
-}, 936, null, "react-navigation/src/views/Drawer/DrawerSidebar.js");
+}, 937, null, "react-navigation/src/views/Drawer/DrawerSidebar.js");
 __d(/* react-navigation/src/views/Drawer/DrawerNavigatorItems.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -103634,11 +103634,11 @@ var React = _interopRequireWildcard(_react);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _SafeAreaView = require(895              ); // 895 = ../SafeAreaView
+var _SafeAreaView = require(896              ); // 896 = ../SafeAreaView
 
 var _SafeAreaView2 = _interopRequireDefault(_SafeAreaView);
 
-var _TouchableItem = require(891               ); // 891 = ../TouchableItem
+var _TouchableItem = require(892               ); // 892 = ../TouchableItem
 
 var _TouchableItem2 = _interopRequireDefault(_TouchableItem);
 
@@ -103769,7 +103769,7 @@ var styles = _reactNative.StyleSheet.create({
 });
 
 exports.default = DrawerNavigatorItems;
-}, 937, null, "react-navigation/src/views/Drawer/DrawerNavigatorItems.js");
+}, 938, null, "react-navigation/src/views/Drawer/DrawerNavigatorItems.js");
 __d(/* react-navigation/src/views/withNavigation.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -103814,7 +103814,7 @@ function withNavigation(Component) {
 
   return (0, _hoistNonReactStatics2.default)(componentWithNavigation, Component);
 }
-}, 938, null, "react-navigation/src/views/withNavigation.js");
+}, 939, null, "react-navigation/src/views/withNavigation.js");
 __d(/* TGE/Components/Login.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -103835,19 +103835,19 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _LoginStyle = require(940                  ); // 940 = ../Style/LoginStyle
+var _LoginStyle = require(941                  ); // 941 = ../Style/LoginStyle
 
 var _LoginStyle2 = _interopRequireDefault(_LoginStyle);
 
-var _logo = require(941                 ); // 941 = ../Images/logo.png
+var _logo = require(942                 ); // 942 = ../Images/logo.png
 
 var _logo2 = _interopRequireDefault(_logo);
 
 var _Constants = require(869                 ); // 869 = ../Utils/Constants
 
-var _network = require(942               ); // 942 = ../Utils/network
+var _network = require(943               ); // 943 = ../Utils/network
 
-var _Globals = require(978               ); // 978 = ../Utils/Globals
+var _Globals = require(944               ); // 944 = ../Utils/Globals
 
 var _Globals2 = _interopRequireDefault(_Globals);
 
@@ -104068,7 +104068,7 @@ var Login = _wrapComponent('Login')((_temp = _class = function (_Component) {
 }, _temp));
 
 exports.default = Login;
-}, 939, null, "TGE/Components/Login.js");
+}, 940, null, "TGE/Components/Login.js");
 __d(/* TGE/Style/LoginStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -104112,9 +104112,9 @@ exports.default = _reactNative.StyleSheet.create({
         color: 'white'
     }
 });
-}, 940, null, "TGE/Style/LoginStyle.js");
+}, 941, null, "TGE/Style/LoginStyle.js");
 __d(/* TGE/Images/logo.png */function(global, require, module, exports) {module.exports=require(411                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/Images","width":300,"height":221,"scales":[1],"hash":"444ecf6c2f2bb548bc74a63b1672780d","name":"logo","type":"png","fileHashes":["444ecf6c2f2bb548bc74a63b1672780d"]}); // 411 = react-native/Libraries/Image/AssetRegistry
-}, 941, null, "TGE/Images/logo.png");
+}, 942, null, "TGE/Images/logo.png");
 __d(/* TGE/Utils/network.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -104123,6 +104123,7 @@ exports.getUsersMe = getUsersMe;
 exports.getCartFromAPI = getCartFromAPI;
 exports.getItemsFromAPI = getItemsFromAPI;
 exports.removeCartItemFromAPI = removeCartItemFromAPI;
+exports.checkoutCartFromAPI = checkoutCartFromAPI;
 
 var _Constants = require(869          ); // 869 = ./Constants
 
@@ -104164,13 +104165,20 @@ function removeCartItemFromAPI(itemId) {
         headers: { 'Content-Type': 'application/json' }
     });
 }
-}, 942, null, "TGE/Utils/network.js");
+
+function checkoutCartFromAPI() {
+    return fetch(_Constants.BASE_URL + 'cart/checkout/square', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+    });
+}
+}, 943, null, "TGE/Utils/network.js");
 __d(/* TGE/Utils/Globals.js */function(global, require, module, exports) {module.exports = {
     user: {
         userId: ""
     }
 };
-}, 978, null, "TGE/Utils/Globals.js");
+}, 944, null, "TGE/Utils/Globals.js");
 __d(/* TGE/Containers/AppContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -104191,19 +104199,19 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _reactNativeTabNavigator = require(944                         ); // 944 = react-native-tab-navigator
+var _reactNativeTabNavigator = require(946                         ); // 946 = react-native-tab-navigator
 
 var _reactNativeTabNavigator2 = _interopRequireDefault(_reactNativeTabNavigator);
 
-var _ItemListStack = require(953              ); // 953 = ./ItemListStack
+var _ItemListStack = require(955              ); // 955 = ./ItemListStack
 
 var _ItemListStack2 = _interopRequireDefault(_ItemListStack);
 
-var _FeaturedItemListContainer = require(972                          ); // 972 = ./FeaturedItemListContainer
+var _FeaturedItemListContainer = require(975                          ); // 975 = ./FeaturedItemListContainer
 
 var _FeaturedItemListContainer2 = _interopRequireDefault(_FeaturedItemListContainer);
 
-var _AppContainerStyle = require(981                         ); // 981 = ../Style/AppContainerStyle
+var _AppContainerStyle = require(980                         ); // 980 = ../Style/AppContainerStyle
 
 var _AppContainerStyle2 = _interopRequireDefault(_AppContainerStyle);
 
@@ -104265,7 +104273,7 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
                     _reactNativeTabNavigator2.default.Item,
                     {
                         renderIcon: function renderIcon() {
-                            return _react3.default.createElement(_reactNative.Image, { style: _AppContainerStyle2.default.tabImage, source: require(979                            ), __source: { // 979 = ../Resources/shopping-bag.png
+                            return _react3.default.createElement(_reactNative.Image, { style: _AppContainerStyle2.default.tabImage, source: require(981                            ), __source: { // 981 = ../Resources/shopping-bag.png
                                     fileName: _jsxFileName,
                                     lineNumber: 38
                                 }
@@ -104291,7 +104299,7 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
                     _reactNativeTabNavigator2.default.Item,
                     {
                         renderIcon: function renderIcon() {
-                            return _react3.default.createElement(_reactNative.Image, { style: _AppContainerStyle2.default.tabImage, source: require(980                    ), __source: { // 980 = ../Resources/star.png
+                            return _react3.default.createElement(_reactNative.Image, { style: _AppContainerStyle2.default.tabImage, source: require(982                    ), __source: { // 982 = ../Resources/star.png
                                     fileName: _jsxFileName,
                                     lineNumber: 45
                                 }
@@ -104322,7 +104330,7 @@ var AppContainer = _wrapComponent('AppContainer')((_temp = _class = function (_C
 }, _temp));
 
 exports.default = AppContainer;
-}, 943, null, "TGE/Containers/AppContainer.js");
+}, 945, null, "TGE/Containers/AppContainer.js");
 __d(/* react-native-tab-navigator/TabNavigator.js */function(global, require, module, exports) {'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -104347,7 +104355,7 @@ var _class,
     _class2,
     _temp2;
 
-var _immutable = require(945        ); // 945 = immutable
+var _immutable = require(947        ); // 947 = immutable
 
 var _propTypes = require(378         ); // 378 = prop-types
 
@@ -104355,31 +104363,31 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _Badge = require(946      ); // 946 = ./Badge
+var _Badge = require(948      ); // 948 = ./Badge
 
 var _Badge2 = _interopRequireDefault(_Badge);
 
-var _Layout = require(947       ); // 947 = ./Layout
+var _Layout = require(949       ); // 949 = ./Layout
 
 var _Layout2 = _interopRequireDefault(_Layout);
 
-var _StaticContainer = require(948                ); // 948 = ./StaticContainer
+var _StaticContainer = require(950                ); // 950 = ./StaticContainer
 
 var _StaticContainer2 = _interopRequireDefault(_StaticContainer);
 
-var _Tab = require(949    ); // 949 = ./Tab
+var _Tab = require(951    ); // 951 = ./Tab
 
 var _Tab2 = _interopRequireDefault(_Tab);
 
-var _TabBar = require(951       ); // 951 = ./TabBar
+var _TabBar = require(953       ); // 953 = ./TabBar
 
 var _TabBar2 = _interopRequireDefault(_TabBar);
 
-var _TabNavigatorItem = require(952                 ); // 952 = ./TabNavigatorItem
+var _TabNavigatorItem = require(954                 ); // 954 = ./TabNavigatorItem
 
 var _TabNavigatorItem2 = _interopRequireDefault(_TabNavigatorItem);
 
-var _ViewPropTypes = require(950                     ); // 950 = ./config/ViewPropTypes
+var _ViewPropTypes = require(952                     ); // 952 = ./config/ViewPropTypes
 
 var _ViewPropTypes2 = _interopRequireDefault(_ViewPropTypes);
 
@@ -104657,7 +104665,7 @@ var styles = _reactNative.StyleSheet.create({
 });
 
 TabNavigator.Item = _TabNavigatorItem2.default;
-}, 944, null, "react-native-tab-navigator/TabNavigator.js");
+}, 946, null, "react-native-tab-navigator/TabNavigator.js");
 __d(/* immutable/dist/immutable.js */function(global, require, module, exports) {
 
 (function (global, factory) {
@@ -109193,7 +109201,7 @@ __d(/* immutable/dist/immutable.js */function(global, require, module, exports) 
 
   return Immutable;
 });
-}, 945, null, "immutable/dist/immutable.js");
+}, 947, null, "immutable/dist/immutable.js");
 __d(/* react-native-tab-navigator/Badge.js */function(global, require, module, exports) {'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -109218,7 +109226,7 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _Layout = require(947       ); // 947 = ./Layout
+var _Layout = require(949       ); // 949 = ./Layout
 
 var _Layout2 = _interopRequireDefault(_Layout);
 
@@ -109332,7 +109340,7 @@ var styles = _reactNative.StyleSheet.create({
     overflow: 'hidden'
   }
 });
-}, 946, null, "react-native-tab-navigator/Badge.js");
+}, 948, null, "react-native-tab-navigator/Badge.js");
 __d(/* react-native-tab-navigator/Layout.js */function(global, require, module, exports) {'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -109345,7 +109353,7 @@ exports.default = {
   pixel: 1 / _reactNative.PixelRatio.get(),
   tabBarHeight: 49
 };
-}, 947, null, "react-native-tab-navigator/Layout.js");
+}, 949, null, "react-native-tab-navigator/Layout.js");
 __d(/* react-native-tab-navigator/StaticContainer.js */function(global, require, module, exports) {'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -109424,7 +109432,7 @@ var StaticContainer = _wrapComponent('StaticContainer')((_temp = _class = functi
 }, _temp));
 
 exports.default = StaticContainer;
-}, 948, null, "react-native-tab-navigator/StaticContainer.js");
+}, 950, null, "react-native-tab-navigator/StaticContainer.js");
 __d(/* react-native-tab-navigator/Tab.js */function(global, require, module, exports) {'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -109451,11 +109459,11 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _ViewPropTypes = require(950                     ); // 950 = ./config/ViewPropTypes
+var _ViewPropTypes = require(952                     ); // 952 = ./config/ViewPropTypes
 
 var _ViewPropTypes2 = _interopRequireDefault(_ViewPropTypes);
 
-var _Layout = require(947       ); // 947 = ./Layout
+var _Layout = require(949       ); // 949 = ./Layout
 
 var _Layout2 = _interopRequireDefault(_Layout);
 
@@ -109638,7 +109646,7 @@ var styles = _reactNative.StyleSheet.create({
     marginBottom: 1 + _Layout2.default.pixel
   }
 });
-}, 949, null, "react-native-tab-navigator/Tab.js");
+}, 951, null, "react-native-tab-navigator/Tab.js");
 __d(/* react-native-tab-navigator/config/ViewPropTypes.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -109648,7 +109656,7 @@ var _reactNative = require(99            ); // 99 = react-native
 var ViewPropTypes = _reactNative.ViewPropTypes || _reactNative.View.propTypes;
 
 exports.default = ViewPropTypes;
-}, 950, null, "react-native-tab-navigator/config/ViewPropTypes.js");
+}, 952, null, "react-native-tab-navigator/config/ViewPropTypes.js");
 __d(/* react-native-tab-navigator/TabBar.js */function(global, require, module, exports) {'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -109673,11 +109681,11 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _ViewPropTypes = require(950                     ); // 950 = ./config/ViewPropTypes
+var _ViewPropTypes = require(952                     ); // 952 = ./config/ViewPropTypes
 
 var _ViewPropTypes2 = _interopRequireDefault(_ViewPropTypes);
 
-var _Layout = require(947       ); // 947 = ./Layout
+var _Layout = require(949       ); // 949 = ./Layout
 
 var _Layout2 = _interopRequireDefault(_Layout);
 
@@ -109765,7 +109773,7 @@ var styles = _reactNative.StyleSheet.create({
     top: _reactNative.Platform.OS === 'android' ? 0 : -_Layout2.default.pixel
   }
 });
-}, 951, null, "react-native-tab-navigator/TabBar.js");
+}, 953, null, "react-native-tab-navigator/TabBar.js");
 __d(/* react-native-tab-navigator/TabNavigatorItem.js */function(global, require, module, exports) {'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -109790,7 +109798,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _ViewPropTypes = require(950                     ); // 950 = ./config/ViewPropTypes
+var _ViewPropTypes = require(952                     ); // 952 = ./config/ViewPropTypes
 
 var _ViewPropTypes2 = _interopRequireDefault(_ViewPropTypes);
 
@@ -109856,21 +109864,21 @@ var TabNavigatorItem = _wrapComponent('TabNavigatorItem')((_temp = _class = func
 }, _class.defaultProps = {}, _temp));
 
 exports.default = TabNavigatorItem;
-}, 952, null, "react-native-tab-navigator/TabNavigatorItem.js");
+}, 954, null, "react-native-tab-navigator/TabNavigatorItem.js");
 __d(/* TGE/Containers/ItemListStack.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var _jsxFileName = '/Users/Harry/Developer/TGE-React-Native/Containers/ItemListStack.js';
 
-var _ItemDetail = require(954                       ); // 954 = ../Components/ItemDetail
+var _ItemDetail = require(956                       ); // 956 = ../Components/ItemDetail
 
 var _ItemDetail2 = _interopRequireDefault(_ItemDetail);
 
-var _ItemListContainer = require(957                  ); // 957 = ./ItemListContainer
+var _ItemListContainer = require(959                  ); // 959 = ./ItemListContainer
 
 var _ItemListContainer2 = _interopRequireDefault(_ItemListContainer);
 
-var _reactNavigation = require(873               ); // 873 = react-navigation
+var _reactNavigation = require(874               ); // 874 = react-navigation
 
 var _react = require(122    ); // 122 = react
 
@@ -109878,13 +109886,17 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _CartListContainer = require(963                  ); // 963 = ./CartListContainer
+var _CartListContainer = require(965                  ); // 965 = ./CartListContainer
 
 var _CartListContainer2 = _interopRequireDefault(_CartListContainer);
 
-var _Checkout = require(968                     ); // 968 = ../Components/Checkout
+var _Checkout = require(971                     ); // 971 = ../Components/Checkout
 
 var _Checkout2 = _interopRequireDefault(_Checkout);
+
+var _ItemListStackStyle = require(974                          ); // 974 = ../Style/ItemListStackStyle
+
+var _ItemListStackStyle2 = _interopRequireDefault(_ItemListStackStyle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -109896,13 +109908,17 @@ _ItemListContainer2.default.navigationOptions = function (props) {
   var navigation = props.navigation;
 
   return {
-    headerRight: _react2.default.createElement(_reactNative.Button, { title: "Cart", onPress: function onPress() {
-        return rightPressed(navigation.navigate);
-      }, __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      }
-    })
+    headerRight: _react2.default.createElement(
+      _reactNative.Text,
+      { style: _ItemListStackStyle2.default.button, onPress: function onPress() {
+          return rightPressed(navigation.navigate);
+        }, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        }
+      },
+      'Cart '
+    )
   };
 };
 
@@ -109921,7 +109937,7 @@ exports.default = (0, _reactNavigation.StackNavigator)({
   }
 
 });
-}, 953, null, "TGE/Containers/ItemListStack.js");
+}, 955, null, "TGE/Containers/ItemListStack.js");
 __d(/* TGE/Components/ItemDetail.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -109942,17 +109958,17 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _reactNavigation = require(873               ); // 873 = react-navigation
+var _reactNavigation = require(874               ); // 874 = react-navigation
 
-var _ItemDetailStyle = require(955                       ); // 955 = ../Style/ItemDetailStyle
+var _ItemDetailStyle = require(957                       ); // 957 = ../Style/ItemDetailStyle
 
 var _ItemDetailStyle2 = _interopRequireDefault(_ItemDetailStyle);
 
-var _StringParser = require(956                    ); // 956 = ../Utils/StringParser
+var _StringParser = require(958                    ); // 958 = ../Utils/StringParser
 
 var _StringParser2 = _interopRequireDefault(_StringParser);
 
-var _Globals = require(978               ); // 978 = ../Utils/Globals
+var _Globals = require(944               ); // 944 = ../Utils/Globals
 
 var _Globals2 = _interopRequireDefault(_Globals);
 
@@ -110127,7 +110143,7 @@ var ItemDetail = _wrapComponent('ItemDetail')((_temp = _class = function (_React
 }, _temp));
 
 exports.default = ItemDetail;
-}, 954, null, "TGE/Components/ItemDetail.js");
+}, 956, null, "TGE/Components/ItemDetail.js");
 __d(/* TGE/Style/ItemDetailStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -110181,7 +110197,7 @@ exports.default = _reactNative.StyleSheet.create({
     marginTop: 5
   }
 });
-}, 955, null, "TGE/Style/ItemDetailStyle.js");
+}, 957, null, "TGE/Style/ItemDetailStyle.js");
 __d(/* TGE/Utils/StringParser.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110220,18 +110236,18 @@ var StringParser = function () {
 }();
 
 exports.default = StringParser;
-}, 956, null, "TGE/Utils/StringParser.js");
+}, 958, null, "TGE/Utils/StringParser.js");
 __d(/* TGE/Containers/ItemListContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
 var _reactRedux = require(840          ); // 840 = react-redux
 
-var _ItemsList = require(958                      ); // 958 = ../Components/ItemsList
+var _ItemsList = require(960                      ); // 960 = ../Components/ItemsList
 
 var _ItemsList2 = _interopRequireDefault(_ItemsList);
 
-var _Actions = require(962               ); // 962 = ../Redux/Actions
+var _Actions = require(964               ); // 964 = ../Redux/Actions
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110250,7 +110266,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_ItemsList2.default);
-}, 957, null, "TGE/Containers/ItemListContainer.js");
+}, 959, null, "TGE/Containers/ItemListContainer.js");
 __d(/* TGE/Components/ItemsList.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110271,15 +110287,15 @@ var _class,
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _ItemListTile = require(959                         ); // 959 = ../Components/ItemListTile
+var _ItemListTile = require(961                         ); // 961 = ../Components/ItemListTile
 
 var _ItemListTile2 = _interopRequireDefault(_ItemListTile);
 
-var _ItemListStyle = require(961                     ); // 961 = ../Style/ItemListStyle
+var _ItemListStyle = require(963                     ); // 963 = ../Style/ItemListStyle
 
 var _ItemListStyle2 = _interopRequireDefault(_ItemListStyle);
 
-var _network = require(942               ); // 942 = ../Utils/network
+var _network = require(943               ); // 943 = ../Utils/network
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110375,7 +110391,7 @@ var ItemsList = _wrapComponent('ItemsList')((_temp = _class = function (_Compone
 }, _temp));
 
 exports.default = ItemsList;
-}, 958, null, "TGE/Components/ItemsList.js");
+}, 960, null, "TGE/Components/ItemsList.js");
 __d(/* TGE/Components/ItemListTile.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -110398,11 +110414,11 @@ var _propTypes = require(378         ); // 378 = prop-types
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _ItemListTileStyle = require(960                         ); // 960 = ../Style/ItemListTileStyle
+var _ItemListTileStyle = require(962                         ); // 962 = ../Style/ItemListTileStyle
 
 var _ItemListTileStyle2 = _interopRequireDefault(_ItemListTileStyle);
 
-var _StringParser = require(956                    ); // 956 = ../Utils/StringParser
+var _StringParser = require(958                    ); // 958 = ../Utils/StringParser
 
 var _StringParser2 = _interopRequireDefault(_StringParser);
 
@@ -110510,7 +110526,7 @@ ItemListTile.propTypes = {
 
   item: _propTypes2.default.object.isRequired
 };
-}, 959, null, "TGE/Components/ItemListTile.js");
+}, 961, null, "TGE/Components/ItemListTile.js");
 __d(/* TGE/Style/ItemListTileStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -110539,7 +110555,7 @@ exports.default = _reactNative.StyleSheet.create({
     alignItems: 'center'
   }
 });
-}, 960, null, "TGE/Style/ItemListTileStyle.js");
+}, 962, null, "TGE/Style/ItemListTileStyle.js");
 __d(/* TGE/Style/ItemListStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110551,7 +110567,7 @@ exports.default = _reactNative.StyleSheet.create({
         flex: 1
     }
 });
-}, 961, null, "TGE/Style/ItemListStyle.js");
+}, 963, null, "TGE/Style/ItemListStyle.js");
 __d(/* TGE/Redux/Actions.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110682,7 +110698,7 @@ function getCartFailure(payload) {
         error: true
     };
 }
-}, 962, null, "TGE/Redux/Actions.js");
+}, 964, null, "TGE/Redux/Actions.js");
 __d(/* TGE/Containers/CartListContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110694,13 +110710,19 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _CartList = require(964                     ); // 964 = ../Components/CartList
+var _CartList = require(966                     ); // 966 = ../Components/CartList
 
 var _CartList2 = _interopRequireDefault(_CartList);
 
 var _reactRedux = require(840          ); // 840 = react-redux
 
-var _Actions = require(962               ); // 962 = ../Redux/Actions
+var _Actions = require(964               ); // 964 = ../Redux/Actions
+
+var _CartListContainerStyle = require(970                              ); // 970 = ../Style/CartListContainerStyle
+
+var _CartListContainerStyle2 = _interopRequireDefault(_CartListContainerStyle);
+
+var _network = require(943               ); // 943 = ../Utils/network
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110719,6 +110741,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function rightPressed(navigate) {
+    (0, _network.checkoutCartFromAPI)();
     navigate('Checkout');
 }
 
@@ -110726,18 +110749,22 @@ _CartList2.default.navigationOptions = function (props) {
     var navigation = props.navigation;
 
     return {
-        headerRight: _react2.default.createElement(_reactNative.Button, { title: "Check-Out", onPress: function onPress() {
-                return rightPressed(navigation.navigate);
-            }, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 40
-            }
-        })
+        headerRight: _react2.default.createElement(
+            _reactNative.Text,
+            { style: _CartListContainerStyle2.default.button, onPress: function onPress() {
+                    return rightPressed(navigation.navigate);
+                }, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 42
+                }
+            },
+            'Checkout  '
+        )
     };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_CartList2.default);
-}, 963, null, "TGE/Containers/CartListContainer.js");
+}, 965, null, "TGE/Containers/CartListContainer.js");
 __d(/* TGE/Components/CartList.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110756,11 +110783,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _CartListStyle = require(965                     ); // 965 = ../Style/CartListStyle
+var _CartListStyle = require(967                     ); // 967 = ../Style/CartListStyle
 
 var _CartListStyle2 = _interopRequireDefault(_CartListStyle);
 
-var _CartItemRow = require(966            ); // 966 = ./CartItemRow
+var _CartItemRow = require(968            ); // 968 = ./CartItemRow
 
 var _CartItemRow2 = _interopRequireDefault(_CartItemRow);
 
@@ -110882,7 +110909,7 @@ var CartList = _wrapComponent('CartList')(function (_React$Component) {
 }(_react3.default.Component));
 
 exports.default = CartList;
-}, 964, null, "TGE/Components/CartList.js");
+}, 966, null, "TGE/Components/CartList.js");
 __d(/* TGE/Style/CartListStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110905,7 +110932,7 @@ exports.default = _reactNative.StyleSheet.create({
     }
 
 });
-}, 965, null, "TGE/Style/CartListStyle.js");
+}, 967, null, "TGE/Style/CartListStyle.js");
 __d(/* TGE/Components/CartItemRow.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -110924,15 +110951,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _CartItemRowStyle = require(967                        ); // 967 = ../Style/CartItemRowStyle
+var _CartItemRowStyle = require(969                        ); // 969 = ../Style/CartItemRowStyle
 
 var _CartItemRowStyle2 = _interopRequireDefault(_CartItemRowStyle);
 
-var _StringParser = require(956                    ); // 956 = ../Utils/StringParser
+var _StringParser = require(958                    ); // 958 = ../Utils/StringParser
 
 var _StringParser2 = _interopRequireDefault(_StringParser);
 
-var _network = require(942               ); // 942 = ../Utils/network
+var _network = require(943               ); // 943 = ../Utils/network
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -111063,7 +111090,7 @@ var CartItemRow = _wrapComponent('CartItemRow')(function (_React$Component) {
 }(_react3.default.Component));
 
 exports.default = CartItemRow;
-}, 966, null, "TGE/Components/CartItemRow.js");
+}, 968, null, "TGE/Components/CartItemRow.js");
 __d(/* TGE/Style/CartItemRowStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111098,7 +111125,24 @@ exports.default = _reactNative.StyleSheet.create({
         fontWeight: 'bold'
     }
 });
-}, 967, null, "TGE/Style/CartItemRowStyle.js");
+}, 969, null, "TGE/Style/CartItemRowStyle.js");
+__d(/* TGE/Style/CartListContainerStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactNative = require(99            ); // 99 = react-native
+
+exports.default = _reactNative.StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    button: {
+        color: '#157dfa',
+        fontWeight: 'bold',
+        fontSize: 16
+    }
+});
+}, 970, null, "TGE/Style/CartListContainerStyle.js");
 __d(/* TGE/Components/Checkout.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111117,11 +111161,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _CheckoutStyle = require(969                     ); // 969 = ../Style/CheckoutStyle
+var _CheckoutStyle = require(972                     ); // 972 = ../Style/CheckoutStyle
 
 var _CheckoutStyle2 = _interopRequireDefault(_CheckoutStyle);
 
-var _htmlBuilder = require(970                   ); // 970 = ../Model/htmlBuilder
+var _htmlBuilder = require(973                   ); // 973 = ../Model/htmlBuilder
 
 var _htmlBuilder2 = _interopRequireDefault(_htmlBuilder);
 
@@ -111182,7 +111226,7 @@ var Checkout = _wrapComponent('Checkout')(function (_React$Component) {
 }(_react3.default.Component));
 
 exports.default = Checkout;
-}, 968, null, "TGE/Components/Checkout.js");
+}, 971, null, "TGE/Components/Checkout.js");
 __d(/* TGE/Style/CheckoutStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111195,7 +111239,7 @@ exports.default = _reactNative.StyleSheet.create({
     }
 
 });
-}, 969, null, "TGE/Style/CheckoutStyle.js");
+}, 972, null, "TGE/Style/CheckoutStyle.js");
 __d(/* TGE/Model/htmlBuilder.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111237,18 +111281,35 @@ var htmlBuilder = function () {
 }();
 
 exports.default = htmlBuilder;
-}, 970, null, "TGE/Model/htmlBuilder.js");
+}, 973, null, "TGE/Model/htmlBuilder.js");
+__d(/* TGE/Style/ItemListStackStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactNative = require(99            ); // 99 = react-native
+
+exports.default = _reactNative.StyleSheet.create({
+    container: {
+        flex: 1
+    },
+    button: {
+        color: '#157dfa',
+        fontWeight: 'bold',
+        fontSize: 16
+    }
+});
+}, 974, null, "TGE/Style/ItemListStackStyle.js");
 __d(/* TGE/Containers/FeaturedItemListContainer.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _FeaturedItemList = require(973                             ); // 973 = ../Components/FeaturedItemList
+var _FeaturedItemList = require(976                             ); // 976 = ../Components/FeaturedItemList
 
 var _FeaturedItemList2 = _interopRequireDefault(_FeaturedItemList);
 
 var _reactRedux = require(840          ); // 840 = react-redux
 
-var _Actions = require(962               ); // 962 = ../Redux/Actions
+var _Actions = require(964               ); // 964 = ../Redux/Actions
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -111267,7 +111328,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_FeaturedItemList2.default);
-}, 972, null, "TGE/Containers/FeaturedItemListContainer.js");
+}, 975, null, "TGE/Containers/FeaturedItemListContainer.js");
 __d(/* TGE/Components/FeaturedItemList.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111286,11 +111347,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _FeaturedItemRow = require(974                ); // 974 = ./FeaturedItemRow
+var _FeaturedItemRow = require(977                ); // 977 = ./FeaturedItemRow
 
 var _FeaturedItemRow2 = _interopRequireDefault(_FeaturedItemRow);
 
-var _FeaturedItemListStyle = require(976                             ); // 976 = ../Style/FeaturedItemListStyle
+var _FeaturedItemListStyle = require(979                             ); // 979 = ../Style/FeaturedItemListStyle
 
 var _FeaturedItemListStyle2 = _interopRequireDefault(_FeaturedItemListStyle);
 
@@ -111393,7 +111454,7 @@ var FeaturedItemsList = _wrapComponent('FeaturedItemsList')(function (_Component
 }(_react2.Component));
 
 exports.default = FeaturedItemsList;
-}, 973, null, "TGE/Components/FeaturedItemList.js");
+}, 976, null, "TGE/Components/FeaturedItemList.js");
 __d(/* TGE/Components/FeaturedItemRow.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111412,11 +111473,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _reactNative = require(99            ); // 99 = react-native
 
-var _FeaturedItemRowStyle = require(975                            ); // 975 = ../Style/FeaturedItemRowStyle
+var _FeaturedItemRowStyle = require(978                            ); // 978 = ../Style/FeaturedItemRowStyle
 
 var _FeaturedItemRowStyle2 = _interopRequireDefault(_FeaturedItemRowStyle);
 
-var _StringParser = require(956                    ); // 956 = ../Utils/StringParser
+var _StringParser = require(958                    ); // 958 = ../Utils/StringParser
 
 var _StringParser2 = _interopRequireDefault(_StringParser);
 
@@ -111512,7 +111573,7 @@ var FeaturedItemRow = _wrapComponent('FeaturedItemRow')(function (_React$Compone
 }(_react3.default.Component));
 
 exports.default = FeaturedItemRow;
-}, 974, null, "TGE/Components/FeaturedItemRow.js");
+}, 977, null, "TGE/Components/FeaturedItemRow.js");
 __d(/* TGE/Style/FeaturedItemRowStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111539,7 +111600,7 @@ exports.default = _reactNative.StyleSheet.create({
         fontSize: 20
     }
 });
-}, 975, null, "TGE/Style/FeaturedItemRowStyle.js");
+}, 978, null, "TGE/Style/FeaturedItemRowStyle.js");
 __d(/* TGE/Style/FeaturedItemListStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111555,7 +111616,7 @@ exports.default = _reactNative.StyleSheet.create({
 
     }
 });
-}, 976, null, "TGE/Style/FeaturedItemListStyle.js");
+}, 979, null, "TGE/Style/FeaturedItemListStyle.js");
 __d(/* TGE/Style/AppContainerStyle.js */function(global, require, module, exports) {Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -111568,11 +111629,11 @@ exports.default = _reactNative.StyleSheet.create({
         height: 24
     }
 });
-}, 981, null, "TGE/Style/AppContainerStyle.js");
+}, 980, null, "TGE/Style/AppContainerStyle.js");
 __d(/* TGE/Resources/shopping-bag.png */function(global, require, module, exports) {module.exports=require(411                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/Resources","width":128,"height":128,"scales":[1],"hash":"1f7f45ae8626685faf35ab10016858a5","name":"shopping-bag","type":"png","fileHashes":["1f7f45ae8626685faf35ab10016858a5"]}); // 411 = react-native/Libraries/Image/AssetRegistry
-}, 979, null, "TGE/Resources/shopping-bag.png");
+}, 981, null, "TGE/Resources/shopping-bag.png");
 __d(/* TGE/Resources/star.png */function(global, require, module, exports) {module.exports=require(411                                         ).registerAsset({"__packager_asset":true,"httpServerLocation":"/assets/Resources","width":128,"height":128,"scales":[1],"hash":"00bd8e40ac961b3482f75aee983f8e6d","name":"star","type":"png","fileHashes":["00bd8e40ac961b3482f75aee983f8e6d"]}); // 411 = react-native/Libraries/Image/AssetRegistry
-}, 980, null, "TGE/Resources/star.png");
+}, 982, null, "TGE/Resources/star.png");
 ;require(137);
 ;require(0);
 //# sourceMappingURL=crna-entry.map

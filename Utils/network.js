@@ -40,3 +40,10 @@ export function removeCartItemFromAPI(itemId) {
         headers: { 'Content-Type': 'application/json' }
     })
 }
+
+export function checkoutCartFromAPI() {
+    return fetch(BASE_URL + 'cart/checkout/square', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+    })
+}

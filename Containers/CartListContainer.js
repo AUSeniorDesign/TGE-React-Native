@@ -11,11 +11,12 @@ they are rendered into the table.
 */
 
 import React from 'react'
-import { Button } from 'react-native'
+import { Text } from 'react-native'
 import CartList from '../Components/CartList'
 import { connect } from 'react-redux'
 import {fetchCartFromAPI}  from '../Redux/Actions'
-
+import styles from '../Style/CartListContainerStyle'
+import {checkoutCartFromAPI} from '../Utils/network'
 
 function mapStateToProps(state) {
     return {
@@ -30,6 +31,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function rightPressed(navigate) {
+    checkoutCartFromAPI()
     navigate('Checkout')
   }
   
@@ -37,7 +39,7 @@ function rightPressed(navigate) {
     const { navigation } = props
     return {
       headerRight:(
-        <Button title={"Check-Out"} onPress={() => rightPressed(navigation.navigate)} />
+        <Text style={styles.button} onPress={() => rightPressed(navigation.navigate)}>Checkout  </Text>
       )
     }
   }

@@ -14,18 +14,21 @@ import ItemDetail from '../Components/ItemDetail'
 import ItemListContainer from './ItemListContainer'
 import { StackNavigator } from 'react-navigation' 
 import React from 'react'
-import { Button, TouchableHighlight } from 'react-native'
+import { Button,Text, TouchableHighlight } from 'react-native'
 import CartListContainer from './CartListContainer'
 import Checkout from '../Components/Checkout'
+import styles from '../Style/ItemListStackStyle'
+
 function rightPressed(navigate) {
   navigate('Cart')
 }
+
 
 ItemListContainer.navigationOptions = props => {
   const { navigation } = props
   return {
     headerRight:(
-      <Button title={"Cart"} onPress={() => rightPressed(navigation.navigate)} />
+      <Text style={styles.button} onPress={() => rightPressed(navigation.navigate)}>Cart </Text>
     )
   }
 }
