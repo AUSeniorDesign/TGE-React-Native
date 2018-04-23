@@ -23,13 +23,19 @@ export default class FeaturedItemRow extends React.Component {
         const image = BASE_URL + this.props.item.image
         const description = this.props.item.description
         const store = this.props.item.store
+        const date = this.props.item.createdAt
 
+        var jsDate = new Date(date)
+        var formattedDate = jsDate.toLocaleDateString("en-US")
+        console.log(this.props.item)
         return(
             <TouchableHighlight underlayColor={'#BDBDBD'} style={styles.container}> 
                 <View style={styles.viewCenter}>
+                    
+                    <Text style={styles.title}>{store} - {formattedDate}</Text>
                     <Image source={{uri: image}} style={styles.photo}/>
-                    <Text style={styles.title}>{store}</Text>
-                    <Text style={styles.title}>{description}</Text>
+                    <Text style={styles.description}>{description}</Text>
+                    <View style={styles.line}/>
                 </View>
                 
             </TouchableHighlight>

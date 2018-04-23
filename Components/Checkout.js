@@ -7,6 +7,7 @@ import {BASE_URL} from '../Utils/Constants'
 export default class Checkout extends React.Component {
     constructor(props) {
         super(props)
+        console.log(props)
     }
 
     render() {
@@ -19,3 +20,4 @@ export default class Checkout extends React.Component {
         )
     }
 }
+

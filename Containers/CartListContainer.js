@@ -32,7 +32,7 @@ function mapDispatchToProps(dispatch) {
 
 function rightPressed(navigate) {
     checkoutCartFromAPI()
-    navigate('Checkout')
+    navigate('Checkout', CartList.getCart)
   }
   
   CartList.navigationOptions = props => {

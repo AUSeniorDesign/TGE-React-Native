@@ -118,12 +118,6 @@ export default class Login extends Component {
                     </TouchableHighlight>
                 </View>
 
-                <View style={styles.viewCenter}>
-                    <TouchableHighlight style={styles.buttonView}  onPress={() => this._loginPressed(navigate)} underlayColor={'#afbdd4'}>
-                    <Text style={styles.buyText}>Admin Login</Text>
-                    </TouchableHighlight>
-                </View>
-                
             </View>
         )
     }

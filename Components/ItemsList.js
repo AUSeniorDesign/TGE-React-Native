@@ -28,6 +28,7 @@ export default class ItemsList extends Component {
         title: 'For Sale',
     }
 
+
     constructor(props) {
         super(props)
     }
